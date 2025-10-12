@@ -1,0 +1,97 @@
+<div class="tw-p-10">
+<h2>Job Circulars - BUTEX</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Job Position</th>
+      <th>Job Type</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>View Details</th>
+      <th>Apply Now</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let job of jobCirculars; let i = index">
+      <td>{{job.position}}</td>
+      <td>{{job.type}}</td>
+      <td>{{job.start | date:'short'}}</td>
+      <td>{{job.end | date:'short'}}</td>
+      <td><button class="btn-view" (click)="openDetailsModal(i)">View Details</button></td>
+      <td><button class="btn-apply" (click)="openApplyModal(i)">Apply Now</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Submitted Applications</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Job Position</th>
+      <th>Applicant Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Resume</th>
+      <th>Cover Letter</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let app of applications">
+      <td>{{app.job.position}}</td>
+      <td>{{app.name}}</td>
+      <td>{{app.email}}</td>
+      <td>{{app.phone}}</td>
+      <td>{{app.resume}}</td>
+      <td>{{app.cover}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Job Details Modal -->
+<div class="modal" *ngIf="showDetailsModal">
+  <div class="modal-content">
+    <span class="close" (click)="closeDetailsModal()">&times;</span>
+    <h3>Job Details</h3>
+    <div *ngIf="currentJob">
+      <p><strong>Position:</strong> {{currentJob.position}}</p>
+      <p><strong>Job Type:</strong> {{currentJob.type}}</p>
+      <p><strong>Description (EN):</strong> {{currentJob.descEng}}</p>
+      <p><strong>Description (BN):</strong> {{currentJob.descBan}}</p>
+      <p><strong>Salary:</strong> {{currentJob.salary}}</p>
+      <p><strong>Application Start:</strong> {{currentJob.start | date:'short'}}</p>
+      <p><strong>Application End:</strong> {{currentJob.end | date:'short'}}</p>
+    </div>
+  </div>
+</div>
+
+<!-- Application Form Modal -->
+<div class="modal" *ngIf="showApplyModal">
+  <div class="modal-content">
+    <span class="close" (click)="closeApplyModal()">&times;</span>
+    <h3>Application Form</h3>
+    <div class="form-group">
+      <label>Full Name</label>
+      <input type="text" [(ngModel)]="appName" name="appName">
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" [(ngModel)]="appEmail" name="appEmail">
+    </div>
+    <div class="form-group">
+      <label>Phone</label>
+      <input type="tel" [(ngModel)]="appPhone" name="appPhone">
+    </div>
+    <div class="form-group">
+      <label>Resume Upload</label>
+      <input type="file" (change)="handleResumeUpload($event)">
+    </div>
+    <div class="form-group">
+      <label>Cover Letter (Optional)</label>
+      <textarea rows="4" [(ngModel)]="appCover" name="appCover"></textarea>
+    </div>
+    <button class="btn-apply" (click)="submitApplication()">Submit Application</button>
+  </div>
+</div>
+</div>

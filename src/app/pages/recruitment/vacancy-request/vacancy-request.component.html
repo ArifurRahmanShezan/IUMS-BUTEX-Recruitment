@@ -1,0 +1,94 @@
+
+
+<div class="tw-p-10">
+<h2>BUTEX Vacancy Request Management</h2>
+<button class="btn-create" (click)="openModal()">Create Vacancy Request</button>
+
+<!-- Modal -->
+<div class="modal" [style.display]="modalOpen ? 'flex' : 'none'">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <h3>Vacancy Request Form</h3>
+
+    <div class="form-group">
+      <label>Department</label>
+      <select [(ngModel)]="selectedDepartment" (change)="loadPositions()">
+        <option value="">Select Department</option>
+        <option *ngFor="let dept of deptKeys" [value]="dept">{{dept}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Position</label>
+      <select [(ngModel)]="selectedPositionIndex" (change)="showOrgChart()">
+        <option value="">Select Position</option>
+        <option *ngFor="let pos of positions; index as i" [value]="i">{{pos.position}}</option>
+      </select>
+    </div>
+
+    <div class="org-chart-card" *ngIf="selectedOrg">
+      <p><strong>Total Positions:</strong> {{selectedOrg.total}}</p>
+      <p><strong>Booked Positions:</strong> {{selectedOrg.booked}}</p>
+      <p><strong>Vacancy:</strong> {{selectedOrg.total - selectedOrg.booked}}</p>
+    </div>
+
+    <div class="form-group">
+      <label>Number of Members Requested</label>
+      <input type="number" [(ngModel)]="numMembers" min="1">
+    </div>
+
+    <div class="form-group">
+      <label>Remarks</label>
+      <textarea [(ngModel)]="remarks"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Requested Date</label>
+      <input type="date" [(ngModel)]="requestedDate">
+    </div>
+
+    <div class="form-buttons">
+    <button class="btn-delete" (click)="cancelEdit()">Cancel</button>
+    <button class="btn-create" (click)="submitVacancy()">Submit</button>
+  
+</div>
+  </div>
+</div>
+
+<!-- Table -->
+<h3>Submitted Vacancy Requests</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Department</th>
+      <th>Position</th>
+      <th>Total</th>
+      <th>Booked</th>
+      <th>Vacancy</th>
+      <th>Members Requested</th>
+      <th>Remarks</th>
+      <th>Requested Date</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let d of vacancyData; let i = index">
+      <td>{{d.department}}</td>
+      <td>{{d.position}}</td>
+      <td>{{d.total}}</td>
+      <td>{{d.booked}}</td>
+      <td>{{d.vacancy}}</td>
+      <td>{{d.membersRequested}}</td>
+      <td>{{d.remarks}}</td>
+      <td>{{d.requestedDate}}</td>
+      <td [ngClass]="'status-' + d.status">{{d.status}}</td>
+      <td>
+        <button class="btn-view" (click)="viewVacancy(d)">View</button>
+        <button class="btn-edit" (click)="editVacancy(i)">Edit</button>
+        <button class="btn-delete" (click)="deleteVacancy(i)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>

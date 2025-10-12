@@ -1,0 +1,86 @@
+<div class="tw-p-10">
+    <h2>HR Director Approval - BUTEX</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Requisition ID</th>
+      <th>Department</th>
+      <th>Position</th>
+      <th>Requested Members</th>
+      <th>Org Details</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let d of approvalData; let i=index">
+      <td>{{d.requisitionId}}</td>
+      <td>{{d.department}}</td>
+      <td>{{d.position}}</td>
+      <td>{{d.requestedMembers}}</td>
+      <td>Total:{{d.total}}, Booked:{{d.booked}}, Vacancy:{{d.vacancy}}</td>
+      <td [class]="getStatusClass(d.decision)">{{d.decision}}</td>
+      <td>
+        <button class="btn-approve" (click)="openModal(i,'Approve')">Approve</button>
+        <button class="btn-review" (click)="openModal(i,'Review')">Review</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Modal -->
+<div class="modal" *ngIf="currentIndex>=0">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <h3>{{currentMode}} - {{approvalData[currentIndex].requisitionId}}</h3>
+
+    <div class="form-group">
+      <label>Requisition ID</label>
+      <input type="text" [value]="approvalData[currentIndex].requisitionId" readonly>
+    </div>
+    <div class="form-group">
+      <label>Position Title</label>
+      <input type="text" [value]="approvalData[currentIndex].position" readonly>
+    </div>
+    <div class="form-group">
+      <label>Department</label>
+      <input type="text" [value]="approvalData[currentIndex].department" readonly>
+    </div>
+    <div class="org-chart-card">
+      <p><strong>Total Positions:</strong> {{approvalData[currentIndex].total}}</p>
+      <p><strong>Booked Positions:</strong> {{approvalData[currentIndex].booked}}</p>
+      <p><strong>Vacancy:</strong> {{approvalData[currentIndex].vacancy}}</p>
+    </div>
+    <div class="form-group">
+      <label>Requested Members</label>
+      <input type="number" [(ngModel)]="modalRequested" [readonly]="currentMode==='Approve'">
+    </div>
+    <div class="form-group">
+      <label>Budget Fit?</label>
+      <input type="text" [value]="approvalData[currentIndex].budgetFit" readonly>
+    </div>
+    <div class="form-group">
+      <label>Org Gap?</label>
+      <input type="text" [value]="approvalData[currentIndex].orgGap" readonly>
+    </div>
+    <div class="form-group">
+      <label>Comments / Remarks</label>
+      <textarea rows="3" [(ngModel)]="modalComments"></textarea>
+    </div>
+    <div class="form-group" *ngIf="currentMode!=='View'">
+      <label>Decision</label>
+      <select [(ngModel)]="modalDecision">
+        <option value="Approved">Approve</option>
+        <option value="Review">Review</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Approval Date</label>
+      <input type="text" [value]="approvalData[currentIndex].approvalDate" readonly>
+    </div>
+    <button class="btn-approve" *ngIf="currentMode!=='View'" (click)="submitModal()">Submit</button>
+  </div>
+</div>
+
+</div>

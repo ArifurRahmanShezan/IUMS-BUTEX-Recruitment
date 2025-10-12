@@ -1,0 +1,131 @@
+<div class="tw-p-10">
+<h2>HR Job Posting - BUTEX</h2>
+
+<div class="filter-group">
+  <label>Department:
+    <select [(ngModel)]="filterDept">
+      <option value="">All</option>
+      <option *ngFor="let d of departments" [value]="d">{{d}}</option>
+    </select>
+  </label>
+  <label>Position:
+    <select [(ngModel)]="filterPos">
+      <option value="">All</option>
+      <option *ngFor="let p of positions" [value]="p">{{p}}</option>
+    </select>
+  </label>
+  <label>Status:
+    <select [(ngModel)]="filterStatus">
+      <option value="">All</option>
+      <option value="Draft">Draft</option>
+      <option value="Posted">Posted</option>
+    </select>
+  </label>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Requisition ID</th>
+      <th>Department</th>
+      <th>Position</th>
+      <th>Requested Members</th>
+      <th>Status</th>
+      <th>Posting Time</th>
+      <th>Attachment</th>
+      <th>Posting Channels</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let job of filteredJobs; let i=index">
+      <td>{{job.id}}</td>
+      <td>{{job.department}}</td>
+      <td>{{job.position}}</td>
+      <td>{{job.requested}}</td>
+      <td [ngClass]="'status-' + job.status">{{job.status}}</td>
+      <td>{{job.postingTime}}</td>
+      <td>{{job.attachment}}</td>
+      <td>{{job.channels}}</td>
+      <td><button class="btn-jobpost" (click)="openJobModal(i)">Job Post</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Job Post Modal -->
+<div class="modal" *ngIf="modalOpen">
+  <div class="modal-content">
+    <span class="close" (click)="closeJobModal()">&times;</span>
+    <h3>Job Posting Form</h3>
+    <div class="form-group">
+      <label>Job Position</label>
+      <input type="text" [(ngModel)]="jobPosition" readonly>
+    </div>
+    <div class="form-group">
+      <label>Department</label>
+      <input type="text" [(ngModel)]="jobDepartment" readonly>
+    </div>
+    <div class="form-group">
+      <label>Job Type</label>
+      <input type="text" [(ngModel)]="jobType" readonly>
+    </div>
+    <div class="form-group">
+      <label>Job Description (English)</label>
+      <textarea [(ngModel)]="jobDescEng" rows="4"></textarea>
+    </div>
+    <div class="form-group">
+      <label>Job Description (Bangla)</label>
+      <textarea [(ngModel)]="jobDescBan" rows="4"></textarea>
+    </div>
+    <div class="form-group">
+      <label>Salary Range</label>
+      <input type="text" [(ngModel)]="jobSalary">
+    </div>
+    <div class="form-group">
+      <label>Application Start Date & Time</label>
+      <input type="datetime-local" [(ngModel)]="appStart">
+    </div>
+    <div class="form-group">
+      <label>Application Deadline Date & Time</label>
+      <input type="datetime-local" [(ngModel)]="appDeadline">
+    </div>
+    <div class="form-group">
+      <label>Attachment</label>
+      <input type="file" (change)="onAttachmentChange($event)">
+    </div>
+    <div class="form-group">
+      <label>Posting Channels</label>
+      <div class="checkbox-group">
+        <label *ngFor="let ch of ['Website','Portal','LinkedIn','Others']">
+          <input type="checkbox" [(ngModel)]="channelsSelected[ch]"> {{ch}}
+        </label>
+      </div>
+    </div>
+    <div class="form-group">
+      <button class="btn-draft" (click)="saveDraft()">Save Draft</button>
+      <button class="btn-preview" (click)="previewJob()">Preview</button>
+    </div>
+  </div>
+</div>
+
+<!-- Job Preview Modal -->
+<div class="modal" *ngIf="previewOpen">
+  <div class="modal-content">
+    <span class="close" (click)="closePreviewModal()">&times;</span>
+    <h3>Job Preview</h3>
+    <div>
+      <p><strong>Position:</strong> {{jobPosition}}</p>
+      <p><strong>Department:</strong> {{jobDepartment}}</p>
+      <p><strong>Job Type:</strong> {{jobType}}</p>
+      <p><strong>Job Description (EN):</strong> {{jobDescEng}}</p>
+      <p><strong>Job Description (BN):</strong> {{jobDescBan}}</p>
+      <p><strong>Salary:</strong> {{jobSalary}}</p>
+      <p><strong>Start Date:</strong> {{appStart}}</p>
+      <p><strong>Deadline:</strong> {{appDeadline}}</p>
+      <p><strong>Channels:</strong> {{getSelectedChannels()}}</p>
+      <p><strong>Attachment:</strong> {{jobAttachment?.name || '-'}}</p>
+    </div>
+    <button class="btn-publish" (click)="publishJob()">Publish Job</button>
+  </div>
+</div>
+</div>
