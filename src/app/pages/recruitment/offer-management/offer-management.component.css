@@ -1,0 +1,142 @@
+/* Ensure flex layout doesn’t hide button */
+.container {
+  display: flex;
+  flex-wrap: wrap;      /* allows panels to stack on small screens */
+  gap: 20px;
+  padding: 20px;
+  align-items: flex-start;
+}
+
+/* Panels look consistent */
+.panel {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  flex: 1 1 45%;        /* each panel roughly half width */
+  min-width: 350px;
+}
+
+/* Form spacing */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Inputs and selects look uniform */
+input, select, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+/* --- FIX FOR BUTTON VISIBILITY --- */
+button {
+  margin-top: 15px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+button[disabled] {
+  background-color: #ccc !important;
+  color: #666;
+  cursor: not-allowed;
+}
+
+/* Distinct color for Send Offer */
+button[type="button"] {
+  background-color: #007bff;
+  color: white;
+}
+
+button[type="button"]:hover:not([disabled]) {
+  background-color: #0056b3;
+}
+
+/* Table buttons */
+.edit-btn {
+  background-color: #ffc107;
+  color: #000;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+.view-btn {
+  background-color: #17a2b8;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  margin-left: 5px;
+}
+
+/* Ensure panels never clip the button */
+.panel form {
+  overflow: visible;
+}
+
+/* Optional: highlight the active form */
+.panel:has(input[readonly]) {
+  border: 2px solid #007bff33;
+}
+
+/* Fix modal layering if it's on top of button accidentally */
+.modal {
+  z-index: 1000;
+}
+
+/* Table visuals */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+th {
+  background: #007bff;
+  color: #fff;
+}
+
+/* Status colors */
+.status-pending { color: gray; }
+.status-sent { color: blue; }
+.status-accepted { color: green; }
+.status-rejected { color: red; }
+
+/* Modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+.close-btn {
+  background: #dc3545;
+  color: #fff;
+  width: 100%;
+  margin-top: 10px;
+  border: none;
+  border-radius: 6px;
+  padding: 8px;
+  cursor: pointer;
+}

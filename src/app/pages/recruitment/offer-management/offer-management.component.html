@@ -1,0 +1,81 @@
+<div class="container">
+  <!-- Left Panel: Offer Letter Generator -->
+  <div class="panel">
+    <h2>Offer Letter Generator</h2>
+
+    <form>
+      <label>Candidate Name:
+        <input type="text" [(ngModel)]="offer.candidateName" name="name" readonly />
+      </label>
+
+      <label>Position Title:
+        <input type="text" [(ngModel)]="offer.positionTitle" name="position" readonly />
+      </label>
+
+      <label>Salary:
+        <input type="text" [(ngModel)]="offer.salary" name="salary" placeholder="Enter Salary" />
+      </label>
+
+      <label>Joining Date:
+        <input type="date" [(ngModel)]="offer.joiningDate" name="date" />
+      </label>
+
+      <label>Offer Letter Preview:
+        <textarea [(ngModel)]="offer.preview" name="preview" placeholder="[PDF Preview Placeholder]"></textarea>
+      </label>
+
+      <label>Offer Status:
+        <select [(ngModel)]="offer.status" name="status">
+          <option>Pending</option>
+          <option>Sent</option>
+          <option>Accepted</option>
+          <option>Rejected</option>
+        </select>
+      </label>
+
+      <button type="button" (click)="sendOffer()" [disabled]="!selectedCandidate">Send Offer</button>
+    </form>
+  </div>
+
+  <!-- Right Panel: Candidate List -->
+  <div class="panel">
+    <h2>Candidate List</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Candidate</th>
+          <th>Position</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of candidates">
+          <td>{{ c.name }}</td>
+          <td>{{ c.position }}</td>
+          <td [ngClass]="getStatusClass(c.status)">{{ c.status }}</td>
+          <td>
+            <button class="edit-btn" (click)="editCandidate(c)">Edit</button>
+            <button class="view-btn" (click)="viewCandidate(c)">View</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- View Modal -->
+<div class="modal" *ngIf="viewingCandidate">
+  <div class="modal-content">
+    <h3>Offer Details</h3>
+    <p><strong>Name:</strong> {{ viewingCandidate.name }}</p>
+    <p><strong>Position:</strong> {{ viewingCandidate.position }}</p>
+    <p><strong>Salary:</strong> {{ viewingCandidate.salary || 'N/A' }}</p>
+    <p><strong>Joining Date:</strong> {{ viewingCandidate.joiningDate || 'N/A' }}</p>
+    <p><strong>Offer Letter Preview:</strong></p>
+    <div class="preview-box">{{ viewingCandidate.preview || '[No Preview]' }}</div>
+    <p><strong>Status:</strong> {{ viewingCandidate.status }}</p>
+
+    <button class="close-btn" (click)="closeModal()">Close</button>
+  </div>
+</div>

@@ -1,0 +1,89 @@
+<div class="page-container">
+  <div class="form-section">
+    <h3>Schedule Interview</h3>
+    <form (ngSubmit)="sendInvite()">
+      <label>Candidate Name*</label>
+      <input type="text" [(ngModel)]="candidateName" name="candidateName" required />
+
+<label>Assigned Interviewer(s)*</label>
+<div class="checkbox-group">
+  <label *ngFor="let interviewer of allInterviewers">
+  <input 
+    type="checkbox" 
+    [(ngModel)]="assignedInterviewersMap[interviewer]"
+    name="assignedInterviewers_{{interviewer}}" 
+  />
+  {{interviewer}}
+</label>
+</div>
+
+      <label>Date & Time*</label>
+      <input type="datetime-local" [(ngModel)]="dateTime" name="dateTime" required />
+
+      <label>Mode*</label>
+      <div class="radio-group">
+  <label>
+    <input type="radio" [(ngModel)]="mode" name="mode" value="Online" /> Online
+  </label>
+  <label>
+    <input type="radio" [(ngModel)]="mode" name="mode" value="Offline" /> Offline
+  </label>
+</div>
+
+      <label>Interview Link (if Online)</label>
+      <input type="url" [(ngModel)]="interviewLink" name="interviewLink" placeholder="https://" />
+
+      <label>Notes</label>
+      <textarea [(ngModel)]="notes" name="notes"></textarea>
+
+      <button type="submit" class="btn-send">Send Invite</button>
+
+    </form>
+  </div>
+
+  <div class="tables-section">
+    <div class="table-container">
+      <h4>Upcoming Interviews</h4>
+      <table>
+        <thead>
+          <tr>
+            <th>Candidate</th>
+            <th>Date</th>
+            <th>Mode</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let i of upcomingInterviews">
+            <td>{{ i.candidate }}</td>
+            <td>{{ i.dateTime }}</td>
+            <td>{{ i.mode }}</td>
+            <td class="status">{{ i.status }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-container">
+      <h4>All Invites</h4>
+      <table>
+        <thead>
+          <tr>
+            <th>Candidate</th>
+            <th>Interviewer(s)</th>
+            <th>Date & Time</th>
+            <th>Mode</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let i of allInvites">
+            <td>{{ i.candidate }}</td>
+            <td>{{ i.interviewers.join(', ') }}</td>
+            <td>{{ i.dateTime }}</td>
+            <td>{{ i.mode }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

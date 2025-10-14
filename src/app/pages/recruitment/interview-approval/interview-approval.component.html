@@ -1,0 +1,99 @@
+<div class="container">
+  <!-- Candidate List -->
+  <div class="panel">
+    <h2>Candidate List</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Interview Date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of candidates">
+          <td>{{ c.name }}</td>
+          <td>{{ c.interviewDate }}</td>
+          <td>
+            <button (click)="viewDetails(c)">View Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Evaluation Form -->
+  <div class="panel">
+    <h2>Evaluation Form</h2>
+    <form (ngSubmit)="submitEvaluation()" #evalForm="ngForm">
+      <label>Candidate Name:
+        <input type="text" [(ngModel)]="selectedCandidate.name" name="name" readonly />
+      </label>
+
+      <label>Interview Date:
+        <input type="date" [(ngModel)]="selectedCandidate.interviewDate" name="date" readonly />
+      </label>
+
+      <label>Candidate Ranking:
+        <select [(ngModel)]="evaluation.ranking" name="ranking" required>
+          <option value="">-- Select Ranking --</option>
+          <option>1st</option>
+          <option>2nd</option>
+          <option>3rd</option>
+        </select>
+      </label>
+
+      <label>Strengths:
+        <textarea [(ngModel)]="evaluation.strengths" name="strengths"></textarea>
+      </label>
+
+      <label>Weaknesses:
+        <textarea [(ngModel)]="evaluation.weaknesses" name="weaknesses"></textarea>
+      </label>
+
+      <label>Final Recommendation:
+        <select [(ngModel)]="evaluation.recommendation" name="recommendation" required>
+          <option value="">-- Select Recommendation --</option>
+          <option>Approve</option>
+          <option>Hold</option>
+          <option>Reject</option>
+        </select>
+      </label>
+
+      <label>Panel Comments:
+        <textarea [(ngModel)]="evaluation.comments" name="comments"></textarea>
+      </label>
+
+      <button type="submit" [disabled]="!selectedCandidate.name">Submit Evaluation</button>
+    </form>
+  </div>
+</div>
+
+<!-- Submitted Evaluations -->
+<div class="panel full-width">
+  <h2>Submitted Evaluations</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Candidate Name</th>
+        <th>Interview Date</th>
+        <th>Ranking</th>
+        <th>Strengths</th>
+        <th>Weaknesses</th>
+        <th>Recommendation</th>
+        <th>Comments</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let e of submittedEvaluations">
+        <td>{{ e.name }}</td>
+        <td>{{ e.date }}</td>
+        <td>{{ e.ranking }}</td>
+        <td>{{ e.strengths }}</td>
+        <td>{{ e.weaknesses }}</td>
+        <td>{{ e.recommendation }}</td>
+        <td>{{ e.comments }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

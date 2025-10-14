@@ -1,0 +1,147 @@
+<div class="tw-p-10"><div class="topbar">
+  <div class="title">
+    Applications <span class="count">{{ filteredApps.length }}</span>
+  </div>
+
+  <div class="controls">
+    <input
+      type="text"
+      placeholder="Search name, email, app id"
+      [(ngModel)]="searchText"
+      (input)="filterApplications()"
+    />
+
+    <select [(ngModel)]="statusFilter" (change)="filterApplications()">
+      <option value="all">All status</option>
+      <option value="pending">Pending</option>
+      <option value="shortlisted">Shortlisted</option>
+      <option value="rejected">Rejected</option>
+    </select>
+
+    <input
+      type="number"
+      placeholder="Min score %"
+      [(ngModel)]="minScore"
+      (input)="filterApplications()"
+    />
+
+    <button class="btn-reset" (click)="resetFilters()">Reset</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Application ID</th>
+          <th>Candidate</th>
+          <th>Email</th>
+          <th>Score</th>
+          <th>Status</th>
+          <th>Submitted</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let app of filteredApps">
+          <td>{{ app.id }}</td>
+          <td>
+            <strong>{{ app.name }}</strong>
+            <div class="muted">{{ app.phone }}</div>
+          </td>
+          <td>{{ app.email }}</td>
+          <td>
+            <div class="progress">
+              <div class="bar" [style.width.%]="app.score"></div>
+            </div>
+            <span class="muted">{{ app.score }}%</span>
+          </td>
+          <td>
+            <span
+              class="badge"
+              [ngClass]="{
+                'badge-green': app.status === 'shortlisted',
+                'badge-yellow': app.status === 'pending',
+                'badge-red': app.status === 'rejected'
+              }"
+              >{{ app.status | titlecase }}</span
+            >
+          </td>
+          <td class="muted">{{ app.submitted }}</td>
+
+          <td class="actions">
+            <button class="btn-view" (click)="viewDetails(app)">View</button>
+            <button class="btn-green" (click)="markShortlisted(app)">Shortlist</button>
+            <button class="btn-red" (click)="markRejected(app)">Reject</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Detail Panel -->
+  <div class="detail-panel" *ngIf="selectedApp">
+    <div class="detail-header">
+      <div>
+        <h3>{{ selectedApp.name }}</h3>
+        <div class="muted">{{ selectedApp.email }} • {{ selectedApp.phone }}</div>
+      </div>
+
+      <div class="status-box">
+        <span
+          class="badge"
+          [ngClass]="{
+            'badge-green': selectedApp.status === 'shortlisted',
+            'badge-yellow': selectedApp.status === 'pending',
+            'badge-red': selectedApp.status === 'rejected'
+          }"
+          >{{ selectedApp.status | titlecase }}</span
+        >
+        <div class="score">Score: {{ selectedApp.score }}%</div>
+      </div>
+    </div>
+
+    <div class="detail-body">
+      <h4>Cover Letter</h4>
+      <p>{{ selectedApp.cover }}</p>
+
+      <h4>Resume</h4>
+      <pre>{{ selectedApp.resume }}</pre>
+      <h4>Screening Feedback</h4>
+      <textarea [(ngModel)]="feedbackText" placeholder="Write your feedback here..."></textarea>
+
+      <div class="detail-actions">
+        <button class="btn-green" (click)="saveFeedback()">Save Feedback</button>
+        <button class="btn-red" (click)="downloadResume()">DownLoad Resume</button>
+        <button class="btn-close" (click)="closeDetail()">Close</button>
+      </div>
+    </div>
+    <div class="detail-right">
+      <div class="detail-right">
+        <div class="info-card">
+          <p><strong>Email:</strong> {{ selectedApp.email }}</p>
+          <p><strong>Phone:</strong> {{ selectedApp.phone }}</p>
+          <p><strong>Score:</strong> {{ selectedApp.score }}%</p>
+          <p><strong>Status:</strong> 
+            <span class="badge" [ngClass]="{
+                'badge-green': selectedApp.status === 'shortlisted',
+                'badge-yellow': selectedApp.status === 'pending',
+                'badge-red': selectedApp.status === 'rejected'
+              }">{{ selectedApp.status | titlecase }}</span>
+          </p>
+          <p><strong>Resume:</strong> {{ selectedApp.resume.substring(0, 150) }}...</p>
+
+          <div class="detail-actions">
+            <button class="btn-yellow" (click)="markPending(selectedApp)">Pending</button>
+            <button class="btn-green" (click)="markShortlisted(selectedApp)">Shortlist</button>
+            <button class="btn-red" (click)="markRejected(selectedApp)">Reject</button>
+          </div>
+        </div>
+  </div>
+
+    </div>
+    
+</div>
+</div>
