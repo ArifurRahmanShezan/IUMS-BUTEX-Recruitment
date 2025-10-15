@@ -1,0 +1,75 @@
+.filter-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.filter-section label {
+  font-weight: bold;
+}
+
+.filter-section input[type="text"] {
+  padding: 5px;
+}
+
+.upload-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  padding: 8px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+thead {
+  background-color: #007bff;
+  color: white;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tbody td {
+  font-size: 14px;
+}
+
+td.Present { color: green; font-weight: bold; }
+td.Late { color: orange; font-weight: bold; }
+td.Absent { color: red; font-weight: bold; }
+td.Leave { color: blue; font-weight: bold; }
+
+.download-buttons {
+  margin-top: 15px;
+}
+
+.download-buttons button {
+  margin-right: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.btn-close {
+  background-color: #0789fa;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.serachn{
+    position:absolute;
+    right:0;
+}

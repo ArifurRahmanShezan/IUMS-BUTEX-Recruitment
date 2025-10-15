@@ -1,0 +1,49 @@
+<div class="attendance-container">
+  <div class="header">
+    <label>Month:
+      <select [(ngModel)]="selectedMonth">
+        <option *ngFor="let month of months" [value]="month">{{ month }}</option>
+      </select>
+    </label>
+    <label>Year:
+      <select [(ngModel)]="selectedYear">
+        <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+      </select>
+    </label>
+    <input type="text" placeholder="Search Name/ID" [(ngModel)]="searchTerm" />
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Employee ID</th>
+        <th>Name</th>
+        <th>Role</th>
+        <th>Department</th>
+        <th>Present</th>
+        <th>Absent</th>
+        <th>Late</th>
+        <th>Leave</th>
+        <th>Attendance %</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of filteredEmployees()">
+        <td>{{ emp.id }}</td>
+        <td>{{ emp.name }}</td>
+        <td><span class="role" [ngClass]="emp.role.toLowerCase()">{{ emp.role }}</span></td>
+        <td>{{ emp.department }}</td>
+        <td>{{ emp.present }}</td>
+        <td>{{ emp.absent }}</td>
+        <td>{{ emp.late }}</td>
+        <td>{{ emp.leave }}</td>
+        <td>{{ emp.attendance }}</td>
+        <td>
+          <span class="status" [ngClass]="emp.status.toLowerCase()">{{ emp.status }}</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

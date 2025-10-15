@@ -8,6 +8,12 @@ import { HRSeeShorlistedComponent } from './pages/recruitment/hr-see-shorlisted/
 import { HRScheduleInterviewComponent } from './pages/recruitment/hr-schedule-interview/hr-schedule-interview.component';
 import { InterviewApprovalComponent } from './pages/recruitment/interview-approval/interview-approval.component';
 import { OfferManagementComponent } from './pages/recruitment/offer-management/offer-management.component';
+import { ExperienceCertificateApplyComponent } from './pages/recruitment/experience-certificate-apply/experience-certificate-apply.component';
+import { PendingApplicationComponent } from './pages/recruitment/pending-application/pending-application.component';
+import { HRAttendenceExcelComponent } from './pages/recruitment/hr-attendence-excel/hr-attendence-excel.component';
+import { DhEmployeeAttendenceComponent } from './pages/recruitment/dh-employee-attendence/dh-employee-attendence.component';
+import { EmployeeServiceBookComponent } from './pages/recruitment/employee-service-book/employee-service-book.component';
+import { HrDashboardComponent } from './pages/recruitment/hr-dashboard/hr-dashboard.component';
 
 const routes: Routes = [
   {
@@ -41,6 +47,30 @@ const routes: Routes = [
   {
     path:'offer-management',
     component:OfferManagementComponent
+  },
+  {
+    path:'experience-certificate-apply',
+    component:ExperienceCertificateApplyComponent
+  },
+  {
+    path:'pending-application',
+    component:PendingApplicationComponent
+  },
+  {
+    path:'hr-attendence-excel',
+    component:HRAttendenceExcelComponent
+  },
+  {
+    path:'dh-employee-attendence',
+    component:DhEmployeeAttendenceComponent
+  },
+  {
+    path:'employee-service-book',
+    component:EmployeeServiceBookComponent
+  },
+  {
+    path:'hr-dashboard',
+    component:HrDashboardComponent
   }
 ];
 

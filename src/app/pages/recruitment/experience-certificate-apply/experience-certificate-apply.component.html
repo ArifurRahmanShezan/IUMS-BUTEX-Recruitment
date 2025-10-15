@@ -1,0 +1,100 @@
+<div class="container">
+  <div class="header">
+    <h2>Experience Certificate Applications</h2>
+    <button (click)="openForm()" class="apply-btn">Apply for New Certificate</button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Full Name</th>
+        <th>Employee ID</th>
+        <th>Department</th>
+        <th>Designation</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let emp of employees; let i = index">
+        <td>{{ emp.fullName }}</td>
+        <td>{{ emp.employeeId }}</td>
+        <td>{{ emp.department }}</td>
+        <td>{{ emp.designation }}</td>
+        <td>{{ emp.startDate }}</td>
+        <td>{{ emp.endDate }}</td>
+        <td [ngClass]="emp.status">{{ emp.status }}</td>
+        <td>
+          <button class="action-btn edit-btn" (click)="editEmployee(i)">Edit</button>
+          <button class="action-btn delete-btn" (click)="deleteEmployee(i)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Popup Modal -->
+<div class="modal" *ngIf="showForm">
+  <div class="modal-content">
+    <button class="close-btn" (click)="closeForm()">×</button>
+    <h3>{{ editIndex !== null ? 'Edit Experience Certificate' : 'Apply for Experience Certificate' }}</h3>
+
+     <div  class="form-section">
+    <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+      <label>Full Name *</label>
+      <input formControlName="fullName" type="text" placeholder="Enter full name" />
+
+      <label>Employee ID / Staff ID *</label>
+      <input formControlName="employeeId" type="text" placeholder="Enter employee ID" />
+
+      <label>Email *</label>
+      <input formControlName="email" type="email" placeholder="Enter email address" />
+
+      <label>Phone Number</label>
+      <input formControlName="phone" type="text" placeholder="Enter phone number" />
+
+      <label>Department</label>
+      <select formControlName="department">
+        <option value="">Select Department</option>
+        <option value="IT">IT</option>
+        <option value="HR">HR</option>
+        <option value="Accounts">Accounts</option>
+        <option value="Admin">Admin</option>
+      </select>
+
+      <label>Designation / Position *</label>
+      <input formControlName="designation" type="text" placeholder="Enter designation" />
+
+      <label>Start Date *</label>
+      <input formControlName="startDate" type="date" />
+
+      <label>End Date *</label>
+      <input formControlName="endDate" type="date" />
+
+      <label>Reason for Certificate</label>
+      <textarea formControlName="reason" rows="3" placeholder="Enter reason"></textarea>
+
+      <label>Upload Supporting Documents</label>
+      <input type="file" (change)="onFileUpload($event)" />
+
+      <label>Status</label>
+      <select formControlName="status">
+        <option value="Pending">Pending</option>
+        <option value="Approved">Approved</option>
+        <option value="Rejected">Rejected</option>
+      </select>
+
+      <div class="btn-group">
+        <button type="submit" class="submit-btn">
+          {{ editIndex !== null ? 'Update' : 'Submit' }}
+        </button>
+        <button type="button" class="cancel-btn" (click)="closeForm()">Cancel</button>
+      </div>
+    </form>
+  </div>
+
+  </div>
+</div>

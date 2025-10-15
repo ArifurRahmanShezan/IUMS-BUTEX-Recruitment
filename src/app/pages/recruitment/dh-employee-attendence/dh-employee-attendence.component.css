@@ -1,0 +1,57 @@
+.attendance-container {
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.header {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+select, input[type="text"] {
+  padding: 5px;
+  font-size: 14px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+thead {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.role {
+  padding: 5px 10px;
+  border-radius: 12px;
+  color: white;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.role.teacher { background-color: #3498db; }
+.role.officer { background-color: #f39c12; }
+.role.staff   { background-color: #2ecc71; }
+
+.status {
+  padding: 5px 10px;
+  border-radius: 12px;
+  color: white;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.status.present { background-color: #27ae60; }
+.status.absent { background-color: #c0392b; }
+.status.late { background-color: #e67e22; }
+.status.leave { background-color: #9b59b6; }

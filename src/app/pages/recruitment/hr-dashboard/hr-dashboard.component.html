@@ -1,0 +1,48 @@
+<div class="tw-p-10">
+    <div class="profile-container">
+  <div class="employee-card">
+    <div><strong>Name:</strong> {{ employee.name }}</div>
+    <div><strong>Employee ID:</strong> {{ employee.id }}</div>
+    <div><strong>Department:</strong> {{ employee.department }}</div>
+    <div><strong>Designation / Grade:</strong> {{ employee.designation }}</div>
+    <div><strong>Date of Joining:</strong> {{ employee.joiningDate }}</div>
+    <div><strong>Date of Retirement:</strong> {{ employee.retirementDate }}</div>
+    <div><strong>Government Service Status:</strong> {{ employee.status }}</div>
+    <div><strong>Scale / Pay:</strong> {{ employee.scale }}</div>
+  </div>
+
+  <div class="event-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Event Type</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Department</th>
+          <th>Designation / Grade</th>
+          <th>Remarks</th>
+          <th>Document</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let event of events">
+          <td>{{ event.type }}</td>
+          <td>{{ event.startDate }}</td>
+          <td>{{ event.endDate }}</td>
+          <td>{{ event.department }}</td>
+          <td>{{ event.grade }}</td>
+          <td>{{ event.remarks }}</td>
+          <td><a href="#" class="view-link">View</a></td>
+          <td>
+            <span class="status-pill" [ngClass]="event.status.toLowerCase()">
+              {{ event.status }}
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</div>

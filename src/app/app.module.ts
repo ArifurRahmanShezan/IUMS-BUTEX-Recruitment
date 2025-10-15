@@ -13,6 +13,12 @@ import { HRScheduleInterviewComponent } from './pages/recruitment/hr-schedule-in
 import { } from './pages/recruitment/hr-schedule-interview/hr-schedule-interview.component';
 import { InterviewApprovalComponent } from './pages/recruitment/interview-approval/interview-approval.component';
 import { OfferManagementComponent } from './pages/recruitment/offer-management/offer-management.component';
+import { ExperienceCertificateApplyComponent } from './pages/recruitment/experience-certificate-apply/experience-certificate-apply.component';
+import { PendingApplicationComponent } from './pages/recruitment/pending-application/pending-application.component';
+import { HRAttendenceExcelComponent } from './pages/recruitment/hr-attendence-excel/hr-attendence-excel.component';
+import { DhEmployeeAttendenceComponent } from './pages/recruitment/dh-employee-attendence/dh-employee-attendence.component';
+import { EmployeeServiceBookComponent } from './pages/recruitment/employee-service-book/employee-service-book.component';
+import { HrDashboardComponent } from './pages/recruitment/hr-dashboard/hr-dashboard.component';
 
 
 @NgModule({
@@ -25,7 +31,13 @@ import { OfferManagementComponent } from './pages/recruitment/offer-management/o
     HRSeeShorlistedComponent,
     HRScheduleInterviewComponent,
     InterviewApprovalComponent,
-    OfferManagementComponent
+    OfferManagementComponent,
+    ExperienceCertificateApplyComponent,
+    PendingApplicationComponent,
+    HRAttendenceExcelComponent,
+    DhEmployeeAttendenceComponent,
+    EmployeeServiceBookComponent,
+    HrDashboardComponent
   ],
   imports: [
     BrowserModule,

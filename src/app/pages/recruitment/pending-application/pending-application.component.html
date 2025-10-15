@@ -1,0 +1,61 @@
+<div class="tw-p-10">
+    <div class="container">
+  <h2>Pending Applications</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Applicant Name</th>
+        <th>Employee ID</th>
+        <th>Department</th>
+        <th>Designation</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let app of applications; let i = index">
+        <td>{{ app.name }}</td>
+        <td>{{ app.employeeId }}</td>
+        <td>{{ app.department }}</td>
+        <td>{{ app.designation }}</td>
+        <td>
+          <span 
+            [ngClass]="{
+              'status-pending': app.status === 'Pending',
+              'status-approved': app.status === 'Approved',
+              'status-rejected': app.status === 'Rejected'
+            }">
+            {{ app.status }}
+          </span>
+        </td>
+        <td>
+          <button class="btn-view" (click)="viewApplication(app)">View</button>
+          <button class="btn-approve" (click)="approveApplication(i)">Approve</button>
+          <button class="btn-reject" (click)="rejectApplication(i)">Reject</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+
+<!-- View Modal -->
+<div class="modal" *ngIf="modalOpen">
+  <div class="modal-content">
+    <h3>Application Details</h3>
+    <p><strong>Name:</strong> {{ selectedApplication?.name }}</p>
+    <p><strong>Employee ID:</strong> {{ selectedApplication?.employeeId }}</p>
+    <p><strong>Email:</strong> {{ selectedApplication?.email }}</p>
+    <p><strong>Phone:</strong> {{ selectedApplication?.phone }}</p>
+    <p><strong>Department:</strong> {{ selectedApplication?.department }}</p>
+    <p><strong>Designation:</strong> {{ selectedApplication?.designation }}</p>
+    <p><strong>Joining Date:</strong> {{ selectedApplication?.joinDate }}</p>
+    <p><strong>Status:</strong> {{ selectedApplication?.status }}</p>
+
+    <div class="modal-actions">
+      <button class="btn-close" (click)="closeModal()">Close</button>
+    </div>
+  </div>
+</div>

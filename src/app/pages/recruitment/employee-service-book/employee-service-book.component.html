@@ -1,0 +1,60 @@
+<div class="tw-p-10">
+   <div class="retirement-container">
+  <table>
+    <thead>
+      <tr>
+        <th>SL</th>
+        <th>EMPLOYEE NAME</th>
+        <th>EMPLOYEE ID</th>
+        <th>DEPARTMENT</th>
+        <th>DESIGNATION</th>
+        <th>DATE OF JOINING</th>
+        <th>DATE OF BIRTH</th>
+        <th>EXPECTED RETIREMENT</th>
+        <th>ELIGIBILITY STATUS</th>
+        <th>ACTION</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of employees; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ emp.name }}</td>
+        <td>{{ emp.id }}</td>
+        <td>{{ emp.department }}</td>
+        <td>{{ emp.designation }}</td>
+        <td>{{ emp.joining }}</td>
+        <td>{{ emp.birth }}</td>
+        <td>{{ emp.retirement }}</td>
+        <td>
+          <span class="status" [ngClass]="emp.status.toLowerCase()">{{ emp.status }}</span>
+        </td>
+        <td>
+          <button class="view-btn" (click)="viewDetails(emp)">View</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Modal -->
+  <div class="modal-backdrop" *ngIf="selectedEmployee">
+    <div class="modal-content">
+      <h3>Employee Details</h3>
+      <ul>
+        <li><strong>Name:</strong> {{ selectedEmployee.name }}</li>
+        <li><strong>Employee ID:</strong> {{ selectedEmployee.id }}</li>
+        <li><strong>Department:</strong> {{ selectedEmployee.department }}</li>
+        <li><strong>Designation:</strong> {{ selectedEmployee.designation }}</li>
+        <li><strong>Date of Joining:</strong> {{ selectedEmployee.joining }}</li>
+        <li><strong>Date of Birth:</strong> {{ selectedEmployee.birth }}</li>
+        <li><strong>Expected Retirement:</strong> {{ selectedEmployee.retirement }}</li>
+        <li><strong>Eligibility Status:</strong> 
+          <span class="status" [ngClass]="selectedEmployee.status.toLowerCase()">
+            {{ selectedEmployee.status }}
+          </span>
+        </li>
+      </ul>
+      <button class="close-btn" (click)="closeModal()">Close</button>
+    </div>
+  </div>
+</div>
+
+</div>

@@ -1,0 +1,80 @@
+<div class="tw-p-10">
+<div class="filter-section">
+  <label>Role:
+    <select [(ngModel)]="filter.role">
+      <option value="All">All</option>
+      <option value="Teacher">Teacher</option>
+      <option value="Officer">Officer</option>
+      <option value="Staff">Staff</option>
+    </select>
+  </label>
+
+  <label>Department:
+    <select [(ngModel)]="filter.department">
+      <option value="All">All</option>
+      <option value="Physics">Physics</option>
+      <option value="Math">Math</option>
+      <option value="English">English</option>
+      <option value="CSE">CSE</option>
+      <option value="Accounts">Accounts</option>
+      <option value="Admin">Admin</option>
+      <option value="Maintenance">Maintenance</option>
+    </select>
+  </label>
+
+  <label>Month:
+    <select [(ngModel)]="filter.month">
+      <option *ngFor="let m of months">{{ m }}</option>
+    </select>
+  </label>
+
+  <label>Year:
+    <select [(ngModel)]="filter.year">
+      <option *ngFor="let y of years">{{ y }}</option>
+    </select>
+  </label>
+<div class="serachn">
+  <input type="text" placeholder="Search Name/ID" [(ngModel)]="searchText" />
+  <input type="file" (change)="onFileUpload($event)" />
+  <button class="upload-btn">Upload</button>
+</div>
+
+</div>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Employee ID</th>
+      <th>Name</th>
+      <th>Role</th>
+      <th>Department</th>
+      <th>Present</th>
+      <th>Absent</th>
+      <th>Late</th>
+      <th>Leave</th>
+      <th>Attendance %</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of filteredEmployees()">
+      <td>{{ emp.employeeId }}</td>
+      <td>{{ emp.name }}</td>
+      <td>{{ emp.role }}</td>
+      <td>{{ emp.department }}</td>
+      <td>{{ emp.present }}</td>
+      <td>{{ emp.absent }}</td>
+      <td>{{ emp.late }}</td>
+      <td>{{ emp.leave }}</td>
+      <td>{{ emp.attendance }}</td>
+      <td [ngClass]="emp.status">{{ emp.status }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="download-buttons">
+  <button class="btn-close"  (click)="downloadMonthly()">Download Monthly</button>
+  <button class="btn-close" (click)="downloadYearly()">Download Yearly</button>
+</div>
+</div>
