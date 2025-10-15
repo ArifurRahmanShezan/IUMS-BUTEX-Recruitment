@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./dh-employee-attendence.component.css']
 })
 export class DhEmployeeAttendenceComponent {
-  selectedMonth = 'March';
+  selectedMonth = 'January';
   selectedYear = 2025;
   searchTerm = '';
 
@@ -28,7 +28,7 @@ export class DhEmployeeAttendenceComponent {
     { id: 'T006', name: 'Dr. Farhana Akter', role: 'Teacher', department: 'Physics', present: 23, absent: 2, late: 1, leave: 1, attendance: '88%', status: 'Present' },
     { id: 'S006', name: 'Ms. Shirin Akter', role: 'Staff', department: 'Physics', present: 19, absent: 5, late: 1, leave: 2, attendance: '76%', status: 'Absent' },
     { id: 'T010', name: 'Dr. Salma Khatun', role: 'Teacher', department: 'Physics', present: 21, absent: 3, late: 1, leave: 2, attendance: '80%', status: 'Late' },
-    // Add more as needed...
+
   ];
 
   filteredEmployees() {
