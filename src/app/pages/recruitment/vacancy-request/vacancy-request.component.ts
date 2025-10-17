@@ -1,3 +1,4 @@
+import { PdfService } from './../../../services/pdf-service.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,7 +8,11 @@ import { Component } from '@angular/core';
 })
 export class VacancyRequestComponent {
   modalOpen = false;
-  editIndex = -1; 
+  editIndex = -1;
+
+  constructor(private PdfService: PdfService) {
+
+  }
 
   departmentOrgData: { [key: string]: { position: string; total: number; booked: number; }[] } = {
     "HR & Admin": [
@@ -30,10 +35,14 @@ export class VacancyRequestComponent {
   requestedDate = '';
   vacancyData: any[] = [];
 
-  openModal() { this.modalOpen = true; }
-  closeModal() { 
+  openModal() {
+    //  this.modalOpen = true; 
+    this.PdfService.generatePdf('Ryan', 'Fakkeenya Seervisii PDF Angular 16');
+
+  }
+  closeModal() {
     this.modalOpen = false;
-    this.editIndex = -1; 
+    this.editIndex = -1;
   }
 
   loadPositions() {
@@ -63,11 +72,11 @@ export class VacancyRequestComponent {
     };
 
     if (this.editIndex > -1) {
-     
+
       this.vacancyData[this.editIndex] = newVacancy;
       this.editIndex = -1;
     } else {
-      
+
       this.vacancyData.push(newVacancy);
     }
 
@@ -75,36 +84,36 @@ export class VacancyRequestComponent {
   }
 
   viewVacancy(v: any) {
-  alert(
-    `Department: ${v.department}\n` +
-    `Position: ${v.position}\n` +
-    `Members Requested: ${v.membersRequested}\n` +
-    `Remarks: ${v.remarks}\n` +
-    `Requested Date: ${v.requestedDate}\n` +
-    `Status: ${v.status}`
-  );
-}
+    alert(
+      `Department: ${v.department}\n` +
+      `Position: ${v.position}\n` +
+      `Members Requested: ${v.membersRequested}\n` +
+      `Remarks: ${v.remarks}\n` +
+      `Requested Date: ${v.requestedDate}\n` +
+      `Status: ${v.status}`
+    );
+  }
 
-cancelEdit() {
-  // Close modal without saving
-  this.modalOpen = false;
+  cancelEdit() {
+    // Close modal without saving
+    this.modalOpen = false;
 
-  // Reset edit index
-  this.editIndex = -1;
+    // Reset edit index
+    this.editIndex = -1;
 
-  // Optional: reset form fields
-  this.selectedDepartment = '';
-  this.selectedPositionIndex = '';
-  this.selectedOrg = null;
-  this.numMembers = 0;
-  this.remarks = '';
-  this.requestedDate = '';
-}
+    // Optional: reset form fields
+    this.selectedDepartment = '';
+    this.selectedPositionIndex = '';
+    this.selectedOrg = null;
+    this.numMembers = 0;
+    this.remarks = '';
+    this.requestedDate = '';
+  }
 
 
   editVacancy(i: number) {
     const v = this.vacancyData[i];
-    this.editIndex = i; 
+    this.editIndex = i;
     this.selectedDepartment = v.department;
     this.loadPositions();
     this.selectedPositionIndex = this.positions.findIndex(p => p.position === v.position);
