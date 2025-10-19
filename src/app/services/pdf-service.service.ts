@@ -477,6 +477,350 @@ export class PdfService {
     }
   };
 
+  public bc2(): void {
+    const docDefinition: any = {
+
+      pageSize: 'A4',
+      pageOrientation: 'portrait',
+      pageMargins: [20, 100, 20, 60],
+      header: () => {
+        return [
+          // this.pdfHeaderControllerOffice(),
+        ]
+
+      },
+
+      content: [
+        {
+          columns: [
+            { text: 'স্মারক নং-বুটেক্স/পঃনিঃ/১২৮/২০২৪/৩২', alignment: 'left' },
+            { text: 'তারিখ : ১৩/০১/২০২৫', alignment: 'right' }
+          ],
+        },
+
+        { text: 'অফিস আদেশ', alignment: 'center', style: 'header', decoration: 'underline' },
+
+        {
+          alignment: 'justify',
+          text: [
+            'বাংলাদেশ টেক্সটাইল বিশ্ববিদ্যালয়ের বি. এসসি. ইন টেক্সটাইল ইঞ্জিনিয়ারিং (',
+            { text: 'OBE ', bold: true },
+            'কারিকুলামের অধীনে পরিচালিত ৫০তম ব্যাচ), লেভেল-১ টার্ম-১ ও ২ (সেশন : ২০২৩-২০২৪),',
+            ' চূড়ান্ত পরীক্ষা-২০২৪ এর জন্য সংশ্লিষ্ট একাডেমিক বিধির আলোকে নিম্ন-বর্ণিত সদস্যগণের সমন্বয়ে এতদ্বারা ',
+            { text: 'ইয়ার্ণ ইঞ্জিনিয়ারিং বিভাগের', bold: true },
+            ' কমিটি গঠন করা হ\'ল :'
+          ]
+        },
+
+        {
+          style: 'tableExample',
+
+          table: {
+            widths: [30, '*', 60,],
+            headerRows: 0,
+            // keepWithHeaderRows: 1,
+            body: [
+
+
+              [{ text: 'ক্রম', alignment: 'center' },
+              { text: 'নাম ও পদবী', alignment: 'center' },
+              { text: '', alignment: 'center' },
+              ],
+
+              [{ text: '১.', alignment: 'center' },
+              { text: 'বিভাগীয় প্রধান\nইয়ার্ণ ইঞ্জিনিয়ারিং বিভাগ, বুটেক্স ।', },
+              { text: 'সভাপতি', alignment: 'center' },
+              ],
+
+              [{ text: '2.', alignment: 'center' },
+              { text: 'ড. মোঃ সুলতান মাহমুদ\nসহযোগী অধ্যাপক, ইয়ার্ণ ইঞ্জিনিয়ারিং বিভাগ, বুটেক্স ।', },
+              { text: 'সদস্য', alignment: 'center' },
+              ],
+
+              [{ text: '৩.', alignment: 'center' },
+              { text: 'ড. আহমেদ জালাল উদ্দিন\nসহকারী অধ্যাপক, ইয়ার্ণ ইঞ্জিনিয়ারিং বিভাগ, বুটেক্স ।', },
+              { text: 'সদস্য', alignment: 'center' },
+              ],
+
+              [{ text: '8.', alignment: 'center' },
+              { text: 'ড. রিনা খানম\nপ্রভাষক, টেক্সটাইল মেশিনারী ডিজাইন এন্ড মেইনটেন্যান্স বিভাগ বুটেক্স ।', },
+              { text: 'সদস্য', alignment: 'center' },
+              ],
+
+
+            ]
+          }
+        },
+        {
+
+          alignment: 'justify',
+          text: [
+            '২। কমিটি উক্ত চূড়ান্ত পরীক্ষার জন্য অনুমোদিত পরীক্ষক প্যানেল ' +
+            'হতে প্রশ্নপত্র প্রনয়নকারী ও উত্তরপত্র মূল্যায়নকারীর তালিকা তৈরী এবং' +
+            ' প্রশ্নপত্র মডারেশন সহ সংশ্লিষ্ট একাডেমিক বিধি অনুযায়ী পরীক্ষা সংক্রান্ত প্রয়োজনীয় অন্যান্য সকল কাজ সম্পন্ন করবেন।',
+          ]
+        },
+        {
+
+          margin: [400, 20, 0, 0],
+          stack: [
+            { text: 'উপাচার্য মহোদয়ের অনুমোদনক্রমে-', alignment: 'center' },
+            { text: '\n', alignment: 'center' },
+            { text: '(মোঃ রেজাউল হক)', alignment: 'center' },
+            { text: 'পরীক্ষা নিয়ন্ত্রক (চলতি দায়িত্ব)', alignment: 'center' },
+            { text: 'বাংলাদেশ টেক্সটাইল বিশ্ববিদ্যালয়', alignment: 'center' },
+          ],
+        },
+
+        { text: '\nবিতরণ :', bold: 'true', decoration: 'underline' },
+        {
+          ol: [
+            'বিভাগীয় প্রধান, ইয়ার্ণ ইঞ্জিনিয়ারিং বিভাগ, বুটেক্স । ',
+            'ড. মোঃ সুলতান মাহমুদ, সহযোগী অধ্যাপক, ইয়ার্ণ ইঞ্জিনিয়ারিং বিভাগ, বুটেক্স ।',
+            'ড. আহমেদ জালাল উদ্দিন, সহকারী অধ্যাপক, ইয়ার্ণ ইঞ্জিনিয়ারিং বিভাগ, বুটেক্স।',
+            'ড. রিনা খানম, প্রভাষক, টেক্সটাইল মেশিনারী ডিজাইন এন্ড মেইনটেন্যান্স বিভাগ বুটেক্স।\n\n',
+          ],
+
+          margin: [15, 5, 0, 0],
+        },
+
+        {
+          columns: [
+            { text: 'স্মারক নং-বুটেক্স/পঃনিঃ/১২৮/২০২৪/৩২', alignment: 'left' },
+            { text: 'তারিখ : ১৩/০১/২০২৫', alignment: 'right' }
+          ],
+        },
+
+        { text: '\nসদয় অবগতির জন্য অনুলিপি প্রেরণ:', bold: 'true', decoration: 'underline' },
+        {
+          ol: [
+            'সভাপতি, পরীক্ষা কো-অর্ডিনেশন কমিটি, বুটেক্স।',
+            'পিএস টু ভিসি, ভিসি অফিস (ভিসি মহোদয়ের সদয় অবগতির জন্য), বুটেক্স।  ',
+            'সংশ্লিষ্ট নথি । ',
+          ],
+
+          margin: [15, 5, 0, 0],
+        },
+
+
+        {
+
+          margin: [400, 20, 0, 0],
+          stack: [
+            { text: '(মারজানী তুবন নাহার)', alignment: 'center' },
+            { text: 'সহকারী-পরীক্ষা নিয়ন্ত্রক', alignment: 'center' },
+            { text: 'বাংলাদেশ টেক্সটাইল বিশ্ববিদ্যালয়', alignment: 'center' },
+          ],
+        },
+
+      ],
+      styles: {
+        header: {
+          fontSize: 18,
+          bold: true,
+          margin: [0, 0, 0, 10]
+        },
+        subheader: {
+          fontSize: 16,
+          bold: true,
+          margin: [0, 10, 0, 5]
+        },
+        tableExample: {
+          margin: [40, 5, 40, 15]
+        },
+        tableHeader: {
+          bold: true,
+          fontSize: 12.5,
+          color: 'black'
+        }
+      },
+
+      defaultStyle: {
+        font: 'NotoSerifBengali',
+        fontSize: 10,
+      }
+    };
+
+    try {
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+
+
+      console.log('[pdfMake] PDF generated successfully.');
+    } catch (e) {
+      console.error('[pdfMake] Error generating PDF:', e);
+    }
+  };
+
+  public bc3(): void {
+    const docDefinition: any = {
+
+      pageSize: 'A4',
+      pageOrientation: 'portrait',
+      pageMargins: [20, 100, 20, 60],
+      header: () => {
+        return [
+          // this.pdfHeaderControllerOffice(),
+        ]
+
+      },
+
+      content: [
+        {
+          columns: [
+            { text: 'স্মারক নং-বুটেক্স/পঃনিঃ/১২০/২০২৪/৮৭', alignment: 'left' },
+            { text: 'তারিখ : ১২/০৫/২০২৪', alignment: 'right' }
+          ],
+        },
+
+        { text: 'বিজ্ঞপ্তি', alignment: 'center', style: 'header', decoration: 'underline' },
+
+        {
+          alignment: 'justify',
+          text: [
+            'এতদ্বারা অত্র বিশ্ববিদ্যালয়ের বি. এসসি. ইন টেক্সটাইল ইঞ্জিনিয়ারিং, লেভেল-১ টার্ম-১, লেভেল-২ টার্ম-১ ও লেভেল-৩ টার্ম-১ (সেশন ঃ ২০২২-২০২৩) এবং লেভেল-৩ টার্ম-২ (সেশনঃ ২০২১-২০২২) এর ',
+            { text: 'সকল তাত্ত্বিক বিষয়ের জন্য কন্টিনিউয়াস এ্যাসেসমেন্ট (ক্লাস টেষ্ট ও ক্লাশ হাজিরা)-এর নম্বরপত্র এবং সকল ব্যবহারিক/সেশনাল বিষয়ের (কন্টিনিউয়াস এ্যাসেসমেন্ট ও ব্যবহারিক ফাইনাল) নম্বরপত্র', bold: true },
+            'নিম্নের ছকে বর্ণিত লেভেল/টার্ম ও তারিখ অনুযায়ী জমা দেওয়ার জন্য সংশ্লিষ্ট কোর্স শিক্ষকগণকে অনুরোধ জানানো যাচ্ছে।',
+          ]
+        },
+
+        {
+          style: 'tableExample',
+
+          table: {
+            widths: [30, '*', 120,],
+            headerRows: 0,
+            // keepWithHeaderRows: 1,
+            body: [
+
+
+              [{ text: 'ক্রম', alignment: 'center' },
+              { text: 'লেভেল/টার্ম', alignment: 'center' },
+              { text: 'নম্বরপত্র জমা দানের তারিখ', alignment: 'center' },
+              ],
+
+              [{ text: '১.', alignment: 'center' },
+              { text: 'লেভেল-১ টার্ম-১, (সেশন : ২০২২-২০২৩)', alignment: 'center' },
+              { text: '১৪/০৫/২০২৩', alignment: 'center', rowSpan: 2 },
+              ],
+
+              [{ text: '2.', alignment: 'center' },
+              { text: 'লেভেল-৩ টার্ম-১, (সেশনঃ ২০২২-২০২৩)', alignment: 'center' },
+              { text: '', alignment: 'center' },
+              ],
+
+              [{ text: '৩.', alignment: 'center' },
+              { text: 'লেভেল-২ টার্ম-১, (সেশনঃ ২০২২-২০২৩)', alignment: 'center' },
+              { text: '১৫/০৫/২০২৩', alignment: 'center', rowSpan: 2 },
+              ],
+
+              [{ text: '8.', alignment: 'center' },
+              { text: 'লেভেল-৩ টার্ম-২, (সেশনঃ ২০২১-২০২২)', alignment: 'center' },
+              { text: '', alignment: 'center' },
+              ],
+
+
+            ]
+          }
+        },
+        {
+
+          alignment: 'justify',
+          text: [
+            'উল্লেখ্য, ২ (দুই) কপি নম্বরপত্র নির্ধারিত খামে সিলগালা করে সংশ্লিষ্ট পরীক্ষা' +
+            ' কমিটির সভাপতির নিকট এবং ৩য় কপি নম্বরপত্র নির্ধারিত খামে সিলগালা করে' +
+            ' (তাত্ত্বিক বিষয়ের ক্ষেত্রে সকল উত্তরপত্রসহ) পরীক্ষা নিয়ন্ত্রকের দপ্তরে জমা দিতে হবে।\n\n',
+            'উক্ত খাম ও নির্ধারিত ফরমেটের নম্বরপত্র পরীক্ষা নিয়ন্ত্রকের দপ্তর থেকে সংগ্রহ করার জন্য কোর্স শিক্ষকগণকে অনুরোধ জানানো হ\'ল।',
+          ],
+
+        },
+        {
+
+          margin: [400, 20, 0, 0],
+          stack: [
+            { text: '', alignment: 'center' },
+            { text: 'স্বাঃ/-', alignment: 'center' },
+            { text: '(মোঃ রেজাউল হক)', alignment: 'center' },
+            { text: 'পরীক্ষা নিয়ন্ত্রক (চলতি দায়িত্ব)', alignment: 'center' },
+            { text: 'বাংলাদেশ টেক্সটাইল বিশ্ববিদ্যালয়', alignment: 'center' },
+          ],
+        },
+
+        {
+          columns: [
+            { text: 'স্মারক নং-বুটেক্স/পঃনিঃ/১২০/২০২৪/৮৭', alignment: 'left' },
+            { text: 'তারিখ : ১২/০৫/২০২৪', alignment: 'right' }
+          ],
+        },
+
+        { text: '\nঅনুলিপি, সদয় অবগতি ও প্রয়োজনীয় কার্যার্থে ঃ', bold: 'true', decoration: 'underline' },
+        {
+          ol: [
+            'সংশ্লিষ্ট পরীক্ষা কমিটির সভাপতি সহ সকল ডীন, বুটেক্স ।',
+            'রেজিস্ট্রার, বুটেক্স ।',
+            'সকল বিভাগীয় প্রধান, বুটেক্স ।',
+            'সংশ্লিষ্ট কোর্স শিক্ষক, অধ্যাপক/ ড./ জনাব ঃ................................................., বুটেক্স, ।',
+            'ডেপুটি রেজিস্ট্রার, একাডেমিক শাখা, রেজিস্ট্রার অফিস, বুটেক্স ।',
+            {
+              text: ['প্রোগ্রামার, আইসিটি সেল ' +
+                { text: '(বিজ্ঞপ্তিটি বিশ্ববিদ্যালয়ের ওয়েব সাইটে আপলোডের অনুরোধ সহ)', bold: 'true' } +
+                ', বুটেক্স ।']
+            },
+            'পিএস টু ভিসি, ভিসি অফিস (ভিসি মহোদয়ের সদয় অবগতির জন্য), বুটেক্স ।',
+            'শিক্ষক কমনরুম, বুটেক্স ।',
+            'সংরক্ষণ নথি ।\n\n',
+          ],
+
+          margin: [15, 5, 0, 0],
+        },
+
+        {
+
+          margin: [400, 20, 0, 0],
+          stack: [
+            { text: '(মারজানী তুবন নাহার)', alignment: 'center' },
+            { text: 'সহকারী-পরীক্ষা নিয়ন্ত্রক', alignment: 'center' },
+            { text: 'বাংলাদেশ টেক্সটাইল বিশ্ববিদ্যালয়', alignment: 'center' },
+          ],
+        },
+
+      ],
+      styles: {
+        header: {
+          fontSize: 18,
+          bold: true,
+          margin: [0, 0, 0, 10]
+        },
+        subheader: {
+          fontSize: 16,
+          bold: true,
+          margin: [0, 10, 0, 5]
+        },
+        tableExample: {
+          margin: [40, 5, 40, 15]
+        },
+        tableHeader: {
+          bold: true,
+          fontSize: 12.5,
+          color: 'black'
+        }
+      },
+
+      defaultStyle: {
+        font: 'NotoSerifBengali',
+        fontSize: 10,
+      }
+    };
+
+    try {
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+
+
+      console.log('[pdfMake] PDF generated successfully.');
+    } catch (e) {
+      console.error('[pdfMake] Error generating PDF:', e);
+    }
+  };
+
   public bc4(): void {
     const docDefinition: any = {
 
@@ -850,7 +1194,53 @@ export class PdfService {
             { text: 'বাংলাদেশ টেক্সটাইল বিশ্ববিদ্যালয়', alignment: 'center' },
           ],
         },
+        { text: '\n\n' },
+        {
+          columns: [
+            { text: 'স্মারক নং-বুটেক্স/পঃনিঃ/১২৮/২০২৪/১৬', alignment: 'left' },
+            { text: 'তারিখ : ০৬/০১/২০২৫', alignment: 'right' }
+          ],
+        },
+
+        { text: '\nঅনুলিপি, সদয় অবগতি ও প্রয়োজনীয় কার্যার্থে :', decoration: 'underline', fontSize: 12 },
+        {
+          fontSize: 12,
+          ol: [
+            'সংশ্লিষ্ট পরীক্ষা কমিটির সভাপতি সহ সকল ডীন, বুটেক্স।',
+            'রেজিস্ট্রার, বুটেক্স।',
+            'সকল বিভাগীয় প্রধান, বুটেক্স।',
+            'প্রভোষ্ট, জি. এম. এ. জি ওসমানী/শহীদ আজিজ/সৈয়দ নজরুল ইসলাম/শেখ হাসিনা হল, বুটেক্স ।',
+            'ডেপুটি রেজিস্ট্রার, একাডেমিক শাখা, বুটেক্স।',
+            {
+              text: ['প্রোগ্রামার, আইসিটি সেল ',
+                { text: '(বিজ্ঞপ্তিটি বিশ্ববিদ্যালয়ের ওয়েব সাইটে আপলোডের অনুরোধ সহ),', bold: 'true' },
+                ' বুটেক্স।',],
+            },
+            'যানবাহন কর্মকর্তা, বুটেক্স।',
+            'পিএস টু ভিসি, ভিসি আফস (ভিসি মহোদয়ের সদয় অবগতির জন্য), বুটেক্স ।',
+            'এস্টেট এন্ড সিকিউরিটি অফিসার/কেয়ারটেকার, বুটেক্স।',
+            'মেডিক্যাল সেন্টার, বুটেক্স।',
+            'শিক্ষক কমন রুম, বুটেক্স।',
+            'হল সহ বিশ্ববিদ্যালয়ের সকল নোটিশ বোর্ড, বুটেক্স।',
+            ' সংরক্ষণ নথি ।'
+          ],
+
+          margin: [15, 5, 0, 0],
+        },
+
+
+        {
+          fontSize: 10,
+          margin: [340, 20, 0, 0],
+          stack: [
+            { text: '(মারজানী তুবন নাহার)', alignment: 'center' },
+            { text: 'সহকারী-পরীক্ষা নিয়ন্ত্রক', alignment: 'center' },
+            { text: 'বাংলাদেশ টেক্সটাইল বিশ্ববিদ্যালয়', alignment: 'center' },
+          ],
+        },
       ],
+
+
       styles: {
         header: {
           fontSize: 18,
@@ -875,6 +1265,104 @@ export class PdfService {
       defaultStyle: {
         font: 'NotoSerifBengali',
         fontSize: 8,
+      }
+    };
+
+    try {
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+
+
+      console.log('[pdfMake] PDF generated successfully.');
+    } catch (e) {
+      console.error('[pdfMake] Error generating PDF:', e);
+    }
+  };
+
+  public bc6(): void {
+    const docDefinition: any = {
+
+      pageSize: 'A4',
+      pageOrientation: 'portrait',
+      pageMargins: [20, 100, 20, 60],
+      header: () => {
+        return [
+          // this.pdfHeaderControllerOffice(),
+        ]
+
+      },
+
+      content: [
+        {
+          columns: [
+            { text: 'স্মারক নং- বুটেক্স/পঃনিঃ/১২০/২০২৪/৮৫-৫/২১', alignment: 'left' },
+            { text: 'তারিখ ঃ ০৮/০৫/২০২৪', alignment: 'right' }
+          ],
+        },
+        '\n',
+        {
+          columns: [
+            { text: 'প্রাপক :', width: 'auto' },
+            {
+              margin: [10, 0, 0, 0],
+              stack: [
+                'Md. Abid Al Morshed',
+                'Part Time Teacher',
+                'Department of Idustrial and Production Engineering',
+                'Bangladesh University of Textiles',
+                'Tejgaon, Dhaka-1208\n\n'
+              ],
+
+            }
+          ]
+        },
+        {
+
+          alignment: 'justify',
+
+          text: [
+            'মে-জুন, ২০২৪ এ অনুষ্ঠিতব্য বি. এসসি. ইন টেক্সটাইল ইঞ্জিনিয়ারিং ',
+            '(OBE কারিকুলামের অধীনে পরিচালিত ৪৯তম ব্যাচ), লেভেল-১ টার্ম-১, চূড়ান্ত পরীক্ষা-২০২৩ এর ',
+            { text: 'IPE 102-0788: Engeineering Drawing and CAD Lab (Practical)', bold: 'true', decoration: 'underline' },
+            ' বিষয়ের AE, TEM & IPE বিভাগের জন্য কর্তৃপক্ষের অনুমোদনক্রমে এতদ্বারা আপনাকে পরীক্ষক (অভ্যন্তরীণ) নিয়োগ করা হ\'ল ।',
+          ]
+        },
+        {
+
+          margin: [370, 20, 0, 0],
+          stack: [
+            { text: '', alignment: 'center' },
+            { text: '\n', alignment: 'center' },
+            { text: '', alignment: 'center' },
+            { text: 'পরীক্ষা নিয়ন্ত্রক ', alignment: 'center' },
+            { text: '', alignment: 'center' },
+          ],
+        },
+
+      ],
+      styles: {
+        header: {
+          fontSize: 18,
+          bold: true,
+          margin: [0, 0, 0, 10]
+        },
+        subheader: {
+          fontSize: 16,
+          bold: true,
+          margin: [0, 10, 0, 5]
+        },
+        tableExample: {
+          margin: [40, 5, 40, 15]
+        },
+        tableHeader: {
+          bold: true,
+          fontSize: 12.5,
+          color: 'black'
+        }
+      },
+
+      defaultStyle: {
+        font: 'NotoSerifBengali',
+        fontSize: 10,
       }
     };
 
@@ -931,7 +1419,7 @@ export class PdfService {
 
           text: [
             'মে-জুন, ২০২৪ এ অনুষ্ঠিতব্য বি. এসসি. ইন টেক্সটাইল ইঞ্জিনিয়ারিং ',
-            '(OBE কারিকুলামের অধীনে পরিচালিত ৪৯তম ব্যাচ), লেভেল-১ টার্ম-১, চূড়ান্ত পরীক্ষা-2023 এর ',
+            '(OBE কারিকুলামের অধীনে পরিচালিত ৪৯তম ব্যাচ), লেভেল-১ টার্ম-১, চূড়ান্ত পরীক্ষা-২০২৩ এর ',
             { text: 'IPE 102-0788: Engeineering Drawing and CAD Lab', bold: 'true', decoration: 'underline' },
             ' বিষয়ের IPE বিভাগের জন্য কর্তৃপক্ষের অনুমোদনক্রমে এতদ্বারা আপনাকে পরীক্ষক (অভ্যন্তরীণ) নিয়োগ করা হ\'ল ।',
           ]
@@ -1028,7 +1516,7 @@ export class PdfService {
 
           text: [
             'মে-জুন, ২০২৪ এ অনুষ্ঠিতব্য বি. এসসি. ইন টেক্সটাইল ইঞ্জিনিয়ারিং ',
-            '(OBE কারিকুলামের অধীনে পরিচালিত ৪৯তম ব্যাচ), লেভেল-১ টার্ম-১, চূড়ান্ত পরীক্ষা-2023 এর ',
+            '(OBE কারিকুলামের অধীনে পরিচালিত ৪৯তম ব্যাচ), লেভেল-১ টার্ম-১, চূড়ান্ত পরীক্ষা-২০২৩ এর ',
             { text: 'MATH 101-0541: Mathematics-I (Theory)', bold: 'true', decoration: 'underline' },
             ' বিষয়টির প্রশ্নপত্রের খসড়া অনুমোদনের জন্য আপনাকে পরীক্ষক',
             { text: '[Part-A (DCE, YE, AE) & Part-B (WPE, IPE)]', bold: 'true', },
@@ -1146,7 +1634,7 @@ export class PdfService {
 
           text: [
             'মে-জুন, ২০২৪ এ অনুষ্ঠিতব্য বি. এসসি. ইন টেক্সটাইল ইঞ্জিনিয়ারিং ',
-            '(OBE কারিকুলামের অধীনে পরিচালিত ৪৯তম ব্যাচ), লেভেল-১ টার্ম-১, চূড়ান্ত পরীক্ষা-2023 এর ',
+            '(OBE কারিকুলামের অধীনে পরিচালিত ৪৯তম ব্যাচ), লেভেল-১ টার্ম-১, চূড়ান্ত পরীক্ষা-২০২৩ এর ',
             { text: 'MATH 101-0541: Mathematics-I (Theory)', bold: 'true', decoration: 'underline' },
             ' বিষয়ের জন্য কর্তৃপক্ষের অনুমোদনক্রমে আপনাকে এতদ্বারা প্রশ্নপত্র প্রণেতা ও পরীক্ষক ',
             { text: '[Part-A (TEM, TMDM) & Part-B (FE, TFD, DCE)]', bold: 'true', },
@@ -1170,6 +1658,152 @@ export class PdfService {
             'প্রণীত প্রশ্নপত্র গ্রথিত খামে সিলমোহরপূর্বক বীমাকৃত ডাকে অথবা ব্যক্তিগতভাবে ০৮/০৫/২০২৪ তারিখের মধ্যে ' +
             'অবশ্যই সংশ্লিষ্ট পরীক্ষা কমিটির সভাপতি ড. অনুপ কুমার দত্ত (মোবাইল নং- ০১৭৩০৬২৪৩৮৭), ' +
             'সহযোগী অধ্যাপক ও বিভাগীয় প্রধান, গণিত ও পরিসংখ্যান বিভাগ, বুটেক্স। এর নিকট জমা ' +
+            'দেওয়ার জন্য আপনাকে সবিনয় অনুরোধ করছি।\n\n'
+          ], decoration: 'underline'
+        },
+
+        {
+          text: 'আপনার প্রণীত প্রশ্নপত্র নির্ধারিত তারিখের মধ্যে পাওয়া না গেলে বিশ্ববিদ্যালয়' +
+            ' কর্তৃপক্ষ বিকল্প ব্যবস্থা গ্রহণ করতে বাধ্য হবে। নিযুক্তিপত্র গ্রহণে অপারগ হলে অবশ্যই' +
+            ' উহার কারণ জানিয়ে সংগে সংগে এতদসংগে কাগজপত্রাদিও ফেরত পাঠানোর জন্য অনুরোধ করছি।\n\n'
+        },
+        {
+          text: 'প্রণয়নকৃত প্রশ্নপত্রের পান্ডুলিপি পরিস্কার পরিচ্ছন্ন ও সুস্পষ্ট হওয়া একান্ত বাঞ্ছনীয় ।' +
+            ' কোন ছক বা অন্যকোন তথ্যাদি প্রশ্নপত্রের সংগে সরবরাহ করার প্রয়োজন হলে তাহা পৃথকভাবে ' +
+            'সংশ্লিষ্ট সভাপতিকে সঠিক নির্দেশিকা প্রদান করতে অনুরোধ করছি ।\n\n'
+        },
+        {
+          text: 'আপনার কোন নিকট আত্নীয়, যেমনঃ ১ । ভাই ২ । বোন ৩ । স্ত্রীর/স্বামীর (ক) ভাই (খ) বোন ৪ । ছেলে ৫। মেয়ে ' +
+            '৬। ভাতৃবধু ৭। ভগ্নিপতি ৮। স্ত্রী ৯। স্বামী ১০। ভাই ও বোনের সন্তান ১১। পুত্রবধু ১২। জামাতা ১৩। আপন চাচা/চাচী ' +
+            '১৪। আপন মামা/মামী ১৫। আপন ফুফা/ফুফু এবং ১৬। আপন খালা/খালু এই পরীক্ষায় যদি পরীক্ষার্থী/পরীক্ষার্থীনি থাকে' +
+            ' তবে তাহা নিয়োগপত্র গ্রহণের পূর্বে অত্র অফিসে জানানোর জন্য অনুরোধ করছি।\n\n'
+        },
+        {
+          text: 'আপনি যদি শিক্ষা প্রতিষ্ঠান/বিভাগ ছাড়া অন্য কোন সরকারী দপ্তরের কর্মচারী হন,' +
+            ' তবে আপনাকে এই কাজের পারিশ্রমিক গ্রহণের জন্য সরকারী অনুমোদনপত্র বিলের সাথে' +
+            ' গ্রথিত করে দিতে হবে। সরকারী কর্মচারীদেরকে নিযুক্তি গ্রহণের পূর্বে অবশ্যই কর্তৃপক্ষের অনুমতি নিতে হবে।\n\n'
+        },
+        {
+          text: 'উক্ত বিষয়ে আপনার সম্মতি যথাশীঘ্র জানাবার জন্য অনুরোধ করছি।'
+        },
+
+        {
+
+          margin: [370, 20, 0, 0],
+          stack: [
+            { text: '', alignment: 'center' },
+            { text: '\n', alignment: 'center' },
+            { text: '', alignment: 'center' },
+            { text: 'পরীক্ষা নিয়ন্ত্রক ', alignment: 'center' },
+            { text: '', alignment: 'center' },
+          ],
+        },
+
+      ],
+      styles: {
+        header: {
+          fontSize: 18,
+          bold: true,
+          margin: [0, 0, 0, 10]
+        },
+        subheader: {
+          fontSize: 16,
+          bold: true,
+          margin: [0, 10, 0, 5]
+        },
+        tableExample: {
+          margin: [40, 5, 40, 15]
+        },
+        tableHeader: {
+          bold: true,
+          fontSize: 12.5,
+          color: 'black'
+        }
+      },
+
+      defaultStyle: {
+        font: 'NotoSerifBengali',
+        fontSize: 10,
+      }
+    };
+
+    try {
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+
+
+      console.log('[pdfMake] PDF generated successfully.');
+    } catch (e) {
+      console.error('[pdfMake] Error generating PDF:', e);
+    }
+  };
+
+  public bc10(): void {
+    const docDefinition: any = {
+
+      pageSize: 'A4',
+      pageOrientation: 'portrait',
+      pageMargins: [20, 100, 20, 60],
+      header: () => {
+        return [
+          // this.pdfHeaderControllerOffice(),
+        ]
+
+      },
+
+      content: [
+        {
+          columns: [
+            { text: 'স্মারক নং-বটেক্সবি/পরীক্ষা/১২০/২০২৪/৮২-১৭/৩৩', alignment: 'left' },
+            { text: 'তারিখ ঃ ০৫/০৫/২০২৪', alignment: 'right' }
+          ],
+        },
+        '\n',
+        {
+          columns: [
+            { text: 'প্রাপক :', width: 'auto' },
+            {
+              margin: [10, 0, 0, 0],
+              stack: [
+                'ড. দিলারা হোসেন',
+                'সহযোগী অধ্যাপক, হিউম্যানেটিজ এন্ড সোস্যাল সাইন্স বিভাগ',
+                'বাংলাদেশ টেক্সটাইল বিশ্ববিদ্যালয়',
+                'তেজগাঁও, ঢাকা-১২০৮।\n\n'
+              ],
+
+            }
+          ]
+        },
+
+        {
+
+          alignment: 'justify',
+
+          text: [
+            'মে-জুন, ২০২৪ এ অনুষ্ঠিতব্য বি. এসসি. ইন টেক্সটাইল ইঞ্জিনিয়ারিং ',
+            '(OBE কারিকুলামের অধীনে পরিচালিত ৪৯তম ব্যাচ), লেভেল-১ টার্ম-১, চূড়ান্ত পরীক্ষা-২০২৩ এর ',
+            { text: 'ENG 101-0231; Business and Communicative English (Theory)', bold: 'true', decoration: 'underline' },
+            ' বিষয়ের জন্য কর্তৃপক্ষের অনুমোদনক্রমে আপনাকে এতদ্বারা প্রশ্নপত্র প্রণেতা ও পরীক্ষক ',
+            { text: '(Part-A ', bold: 'true', },
+            'উত্তরপত্রের জন্য) নিয়োগ করা হ\'ল ।',
+          ]
+        },
+
+        { text: '\nবিশেষ নির্দেশনাবলীঃ-\n\n', decoration: 'underline' },
+
+        {
+          text: [
+            'ইংরেজী ভাষায় OBE কারিকুলাম অনুযায়ী প্রশ্নপত্র প্রণয়ন করতে হবে।' +
+            ' ENG 101-0231; Business and Communicative English (Theory) বিষয়ে ২ ঘণ্টার পরীক্ষার জন্য আপনার প্রণীত' +
+            ' প্রশ্নপত্রে Part-A এবং Part-B নামে দু\'টি অংশ থাকবে। দু\'টি অংশের প্রতিটিতে ৩টি করে' +
+            ' মোট ৬টি প্রশ্ন থাকবে এবং পরীক্ষার্থীদেরকে প্রত্যেকটি প্রশ্নের উত্তর করতে হবে। প্রতিটি প্রশ্নের মান হবে ১০ এবং বিষয়ের পূর্ণমান হবে ৬০ ।\n\n'
+          ], decoration: 'underline'
+        },
+
+        {
+          text: [
+            'প্রণীত প্রশ্নপত্র গ্রথিত খামে সিলমোহরপূর্বক বীমাকৃত ডাকে অথবা ব্যক্তিগতভাবে ০৮/০৫/২০২৪ তারিখের মধ্যে ' +
+            'অবশ্যই সংশ্লিষ্ট পরীক্ষা কমিটির সভাপতি জনাব শামিমা আক্তার রোজি (মোবাইল নং- ০১৭৩০৬২৪৩৮৭), ' +
+            'সহকারী অধ্যাপক ও বিভাগীয় প্রধান, হিউম্যানেটিজ এন্ড সোস্যাল সাইন্স বিভাগ বুটেক্স। এর নিকট জমা ' +
             'দেওয়ার জন্য আপনাকে সবিনয় অনুরোধ করছি।\n\n'
           ], decoration: 'underline'
         },
@@ -1793,7 +2427,7 @@ export class PdfService {
             },
             {
               text: 'উল্লেখ্য, ৫০% নম্বর (৫০ নম্বর) কন্টিনিউয়াস এ্যাসেসমেন্ট হিসেবে সংশ্লিষ্ট সুপারভাইজার মূল্যায়ন করবেন ।',
-              
+
             }
           ]
         },
@@ -1812,18 +2446,22 @@ export class PdfService {
           ],
         },
 
-        { text: '\nবিতরণ (জ্যেষ্ঠতার ভিত্তিতে নয়) :',  decoration: 'underline' },
+        { text: '\nবিতরণ (জ্যেষ্ঠতার ভিত্তিতে নয়) :', decoration: 'underline' },
         {
           ol: [
-            {text:'ডীন, ফ্যাকাল্টি অব টেক্সটাইল কেমিক্যাল ইঞ্জিনিয়ারিং, বুটেক্স । '},
-            {text:['বিভাগীয় প্রধান ',
-              {text:'(সংশ্লিষ্ট সকল সুপারভাইজারকে অবহিত করার অনুরোধ সহ),', bold:'true'},
-              ' ওয়েট প্রসেস ইঞ্জিনিয়ারিং বিভাগ, বুটেক্স।']},
-            {text:['সংশ্লিষ্ট সুপারভাইজার ',
-              {text:'(প্রজেক্ট ওয়ার্ক বিষয়ের চূড়ান্ত মূল্যায়ন পরীক্ষা অনুষ্ঠিত হওয়ার পূর্বে কন্টিনিউয়াস এ্যাসেসমেন্টের নম্বরপত্র জমা দেয়ার অনুরোধ জানানো হ\'ল),', bold:'true'},
-              ' ওয়েট প্রসেস ইঞ্জিনিয়ারিং বিভাগ, বুটেক্স।']},
-            {text:'ড. মোঃ সাইদুজ্জামান, অধ্যাপক, টেক্সটাইল ইঞ্জিনিয়ারিং ম্যানেজমেন্ট বিভাগ, বুটেক্স।'},
-            {text:'Engr. Md. Salahuddin Repon, General Manager (Sales & Technical), Auxicolor Bangladesh Ltd. \n\n'},
+            { text: 'ডীন, ফ্যাকাল্টি অব টেক্সটাইল কেমিক্যাল ইঞ্জিনিয়ারিং, বুটেক্স । ' },
+            {
+              text: ['বিভাগীয় প্রধান ',
+                { text: '(সংশ্লিষ্ট সকল সুপারভাইজারকে অবহিত করার অনুরোধ সহ),', bold: 'true' },
+                ' ওয়েট প্রসেস ইঞ্জিনিয়ারিং বিভাগ, বুটেক্স।']
+            },
+            {
+              text: ['সংশ্লিষ্ট সুপারভাইজার ',
+                { text: '(প্রজেক্ট ওয়ার্ক বিষয়ের চূড়ান্ত মূল্যায়ন পরীক্ষা অনুষ্ঠিত হওয়ার পূর্বে কন্টিনিউয়াস এ্যাসেসমেন্টের নম্বরপত্র জমা দেয়ার অনুরোধ জানানো হ\'ল),', bold: 'true' },
+                ' ওয়েট প্রসেস ইঞ্জিনিয়ারিং বিভাগ, বুটেক্স।']
+            },
+            { text: 'ড. মোঃ সাইদুজ্জামান, অধ্যাপক, টেক্সটাইল ইঞ্জিনিয়ারিং ম্যানেজমেন্ট বিভাগ, বুটেক্স।' },
+            { text: 'Engr. Md. Salahuddin Repon, General Manager (Sales & Technical), Auxicolor Bangladesh Ltd. \n\n' },
           ],
 
           margin: [15, 5, 0, 0],
@@ -1833,6 +2471,412 @@ export class PdfService {
           columns: [
             { text: 'স্মারক নং-বুটেক্স/পঃনিঃ/১২৬/২০২৪/২৫২-১/২', alignment: 'left' },
             { text: 'তারিখ : ২৩/০৭/২০২৫', alignment: 'right' }
+          ],
+        },
+
+        { text: '\nসদয় অবগতির জন্য অনুলিপি প্রেরণ:', bold: 'true', decoration: 'underline' },
+        {
+          ol: [
+            'ডীন, ফ্যাকাল্টি অব টেক্সটাইল ইঞ্জিনিয়ারিং, বুটেক্স ও সভাপতি, সংশ্লিষ্ট পরীক্ষা কমিটি, বুটেক্স।',
+            'পিএস টু ভিসি, ভিসি অফিস (ভিসি মহোদয়ের সদয় অবগতির জন্য), বুটেক্স।  ',
+            'সংশ্লিষ্ট নথি । ',
+          ],
+
+          margin: [15, 5, 0, 0],
+        },
+
+
+        {
+
+          margin: [340, 20, 0, 0],
+          stack: [
+            { text: '(মারজানী তুবন নাহার)', alignment: 'center' },
+            { text: 'উপ-পরীক্ষা নিয়ন্ত্রক', alignment: 'center' },
+            { text: 'বাংলাদেশ টেক্সটাইল বিশ্ববিদ্যালয়', alignment: 'center' },
+          ],
+        },
+
+      ],
+      styles: {
+        header: {
+          fontSize: 16,
+          bold: true,
+          margin: [0, 0, 0, 10]
+        },
+        subheader: {
+          fontSize: 16,
+          bold: true,
+          margin: [0, 10, 0, 5]
+        },
+        tableExample: {
+          margin: [40, 5, 40, 15]
+        },
+        tableHeader: {
+          bold: true,
+          fontSize: 12.5,
+          color: 'black'
+        }
+      },
+
+      defaultStyle: {
+        font: 'NotoSerifBengali',
+        fontSize: 10,
+      }
+    };
+
+    try {
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+
+
+      console.log('[pdfMake] PDF generated successfully.');
+    } catch (e) {
+      console.error('[pdfMake] Error generating PDF:', e);
+    }
+  };
+
+  public bc15(): void {
+    const docDefinition: any = {
+
+      pageSize: 'A4',
+      pageOrientation: 'portrait',
+      pageMargins: [20, 100, 20, 60],
+      header: () => {
+        return [
+          // this.pdfHeaderControllerOffice(),
+        ]
+
+      },
+
+      content: [
+        {
+          columns: [
+            { text: 'স্মারক নং-বুটেক্স/পঃনিঃ/১২৬/২০২৪/২৪১-৩/৫', alignment: 'left' },
+            { text: 'তারিখ : ০৩/০৭/২০২৫', alignment: 'right' }
+          ],
+        },
+
+        { text: 'অফিস আদেশ', alignment: 'center', style: 'header', decoration: 'underline' },
+
+        {
+          alignment: 'justify',
+          text: [
+            'বাংলাদেশ টেক্সটাইল বিশ্ববিদ্যালয়ের বি. এসসি. ইন টেক্সটাইল ইঞ্জিনিয়ারিং,' +
+            ' লেভেল-৪ টার্ম-২ (সেশনঃ ২০২২-২০২৩), চূড়ান্ত পরীক্ষা-২০২৩ এর টেক্সটাইল ফ্যাশন এন্ড ডিজাইন বিভাগের পরীক্ষার্থীদের ইন্ডাস্ট্রিয়াল এটাচমেন্ট ও' +
+            ' প্রজেক্ট ওয়ার্ক বিষয়ের চূড়ান্ত মূল্যায়ন করার নিমিত্ত এতদ্বারা নিম্ন-বর্ণিত বোর্ড গঠন করা হল ঃ'
+          ]
+        },
+
+        {
+          style: 'tableExample',
+
+          table: {
+            widths: [30, '*', 60,],
+            headerRows: 0,
+            // keepWithHeaderRows: 1,
+            body: [
+
+
+              [{ text: 'ক্রম', alignment: 'center' },
+              { text: 'নাম ও পদবী (জ্যেষ্ঠতার ভিত্তিতে নয়)', alignment: 'center' },
+              { text: 'কমিটির পদবী', alignment: 'center' },
+              ],
+
+              [{ text: '১.', alignment: 'center' },
+              { text: 'ডীন\nফ্যাকাল্টি অব ফ্যাশন ডিজাইন এন্ড এ্যাপারেল ইঞ্জিনিয়ারিং, বুটেক্স।', },
+              { text: 'আহ্বায়ক', alignment: 'center' },
+              ],
+
+              [{ text: '2.', alignment: 'center' },
+              { text: 'বিভাগীয় প্রধান\nটেক্সটাইল ফ্যাশন এন্ড ডিজাইন বিভাগ, বুটেক্স ।', },
+              { text: 'সদস্য', alignment: 'center' },
+              ],
+
+              [{ text: '৩.', alignment: 'center' },
+              { text: 'সংশ্লিষ্ট সুপারভাইজার *\nটেক্সটাইল ফ্যাশন এন্ড ডিজাইন বিভাগ, বুটেক্স ।', },
+              { text: 'সদস্য', alignment: 'center' },
+              ],
+
+              [{ text: '8.', alignment: 'center' },
+              { text: 'ড. মোঃ রফিকুর রশীদ\nসহযোগী অধ্যাপক, ইন্ডাস্ট্রিয়াল এন্ড প্রোডাকশন ইঞ্জিনিয়ারিং বিভাগ, বুটেক্স ।', },
+              { text: 'সদস্য', alignment: 'center' },
+              ],
+
+              [{ text: '৫.', alignment: 'center' },
+              { text: 'জনাব হাবিব উল্লাহ ভাসানী\nসিনিয়র ম্যানেজার, মার্কেটিং এন্ড মার্চেন্ডাইজিং বিভাগ, মাসকো গ্রুপ ।', },
+              { text: 'সদস্য', alignment: 'center' },
+              ],
+
+            ]
+          }
+        },
+
+        {
+          text: '* সংশ্লিষ্ট সুপারভাইজার বলতে যে পরীক্ষার্থীর ইন্ডাস্ট্রিয়াল এটাচমেন্ট ও প্রজেক্ট ওয়ার্ক মূল্যায়ন করা হবে তার সুপারভাইজারকে বুঝানো হয়েছে।\n',
+        },
+        {
+          text: '২। ইন্ডাস্ট্রিয়াল এটাচমেন্ট ও প্রজেক্ট ওয়ার্ক মূল্যায়ন পদ্ধতি ঃ',
+        },
+        {
+          margin: [10, 5, 0, 0],
+          stack: [
+            {
+              ul: [
+                { text: 'উক্ত কমিটি ইন্ডাস্ট্রিয়াল এটাচমেন্ট ও প্রজেক্ট ওয়ার্ক বিষয়ের মোট নম্বরের ৫০% (৫০ নম্বর) এর উপর চূড়ান্ত মূল্যায়ন করবেন।' },
+                { text: 'Report এর Presentation এবং সদস্যগণের প্রশ্ন-উত্তরের মাধ্যমে কমিটি পরীক্ষার্থীর ইন্ডাস্ট্রিয়াল এটাচমেন্ট ও প্রজেক্ট ওয়ার্ক মূল্যায়ন করবেন।' }
+              ]
+            },
+            {
+              text: 'উল্লেখ্য, ৫০% নম্বর (৫০ নম্বর) কন্টিনিউয়াস এ্যাসেসমেন্ট হিসেবে সংশ্লিষ্ট সুপারভাইজার মূল্যায়ন করবেন।',
+
+            }
+          ]
+        },
+
+        { text: '৩। আহ্বায়ক “ইন্ডাস্ট্রিয়াল এটাচমেন্ট ও প্রজেক্ট ওয়ার্ক” বিষয়ের জন্য বিভাগ ভিত্তিক আলাদা চূড়ান্ত নম্বরপত্র জমা দিবেন।', },
+
+        {
+
+          margin: [340, 20, 0, 0],
+          stack: [
+            { text: 'ভাইস চ্যান্সেলর মহোদয় অনুমোদনক্রমে-', alignment: 'center' },
+            { text: '\nস্বাঃ/-', alignment: 'center' },
+            { text: '(মোঃ রেজাউল হক)', alignment: 'center' },
+            { text: 'পরীক্ষা নিয়ন্ত্রক (চলতি দায়িত্ব)', alignment: 'center' },
+            { text: 'বাংলাদেশ টেক্সটাইল বিশ্ববিদ্যালয়', alignment: 'center' },
+          ],
+        },
+
+        { text: '\nবিতরণ (জ্যেষ্ঠতার ভিত্তিতে নয়) :', decoration: 'underline' },
+        {
+          ol: [
+            { text: 'ডীন, ফ্যাকাল্টি অব ফ্যাশন ডিজাইন এন্ড এ্যাপারেল ইঞ্জিনিয়ারিং, বুটেক্স। ' },
+            {
+              text: ['বিভাগীয় প্রধান ',
+                { text: '(সংশ্লিষ্ট সকল সুপারভাইজারকে অবহিত করার অনুরোধ সহ),', bold: 'true' },
+                ' টেক্সটাইল ফ্যাশন এন্ড ডিজাইন বিভাগ, বুটেক্স ।']
+            },
+            {
+              text: ['সংশ্লিষ্ট সুপারভাইজার ',
+                { text: '(ইন্ডাস্ট্রিয়াল এটাচমেন্ট ও প্রজেক্ট ওয়ার্ক বিষয়ের চূড়ান্ত মূল্যায়ন পরীক্ষা অনুষ্ঠিত হওয়ার পূর্বে কন্টিনিউয়াস এ্যাসেসমেন্টের নম্বরপত্র জমা দেয়ার অনুরোধ জানানো হ\'ল)', bold: 'true' },
+                ' টেক্সটাইল ফ্যাশন এন্ড ডিজাইন বিভাগ, বুটেক্স ।']
+            },
+            { text: 'ড. মোঃ রফিকুর রশীদ, সহযোগী অধ্যাপক, ইন্ডাস্ট্রিয়াল এন্ড প্রোডাকশন ইঞ্জিনিয়ারিং বিভাগ, বুটেক্স।' },
+            { text: 'জনাব হাবিব উল্লাহ ভাসানী, সিনিয়র ম্যানেজার, মার্কেটিং এন্ড মার্চেন্ডাইজিং বিভাগ, মাসকো গ্রুপ । \n\n' },
+          ],
+
+          margin: [15, 5, 0, 0],
+        },
+
+        {
+          columns: [
+            { text: 'স্মারক নং-বুটেক্স/পঃনিঃ/১২৬/২০২৪/২৪১-৩/৫', alignment: 'left' },
+            { text: 'তারিখ : ০৩/০৭/২০২৫', alignment: 'right' }
+          ],
+        },
+
+        { text: '\nসদয় অবগতির জন্য অনুলিপি প্রেরণ:', bold: 'true', decoration: 'underline' },
+        {
+          ol: [
+            'ডীন, ফ্যাকাল্টি অব টেক্সটাইল ইঞ্জিনিয়ারিং, বুটেক্স ও সভাপতি, সংশ্লিষ্ট পরীক্ষা কমিটি, বুটেক্স।',
+            'পিএস টু ভিসি, ভিসি অফিস (ভিসি মহোদয়ের সদয় অবগতির জন্য), বুটেক্স।  ',
+            'সংশ্লিষ্ট নথি । ',
+          ],
+
+          margin: [15, 5, 0, 0],
+        },
+
+
+        {
+
+          margin: [340, 20, 0, 0],
+          stack: [
+            { text: '(মারজানী তুবন নাহার)', alignment: 'center' },
+            { text: 'উপ-পরীক্ষা নিয়ন্ত্রক', alignment: 'center' },
+            { text: 'বাংলাদেশ টেক্সটাইল বিশ্ববিদ্যালয়', alignment: 'center' },
+          ],
+        },
+
+      ],
+      styles: {
+        header: {
+          fontSize: 16,
+          bold: true,
+          margin: [0, 0, 0, 10]
+        },
+        subheader: {
+          fontSize: 16,
+          bold: true,
+          margin: [0, 10, 0, 5]
+        },
+        tableExample: {
+          margin: [40, 5, 40, 15]
+        },
+        tableHeader: {
+          bold: true,
+          fontSize: 12.5,
+          color: 'black'
+        }
+      },
+
+      defaultStyle: {
+        font: 'NotoSerifBengali',
+        fontSize: 10,
+      }
+    };
+
+    try {
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+
+
+      console.log('[pdfMake] PDF generated successfully.');
+    } catch (e) {
+      console.error('[pdfMake] Error generating PDF:', e);
+    }
+  };
+
+  public bc16(): void {
+    const docDefinition: any = {
+
+      pageSize: 'A4',
+      pageOrientation: 'portrait',
+      pageMargins: [20, 100, 20, 60],
+      header: () => {
+        return [
+          // this.pdfHeaderControllerOffice(),
+        ]
+
+      },
+
+      content: [
+        {
+          columns: [
+            { text: 'স্মারক নং-বুটেক্স/পঃনিঃ/১২৬/২০২৪/২৪১-২/৫', alignment: 'left' },
+            { text: 'তারিখ : ০৩/০৭/২০২৫', alignment: 'right' }
+          ],
+        },
+
+        { text: 'অফিস আদেশ', alignment: 'center', style: 'header', decoration: 'underline' },
+
+        {
+          alignment: 'justify',
+          text: [
+            'বাংলাদেশ টেক্সটাইল বিশ্ববিদ্যালয়ের বি. এসসি. ইন টেক্সটাইল ইঞ্জিনিয়ারিং,' +
+            ' লেভেল-৪ টার্ম-২ (সেশনঃ ২০২২-২০২৩), চূড়ান্ত পরীক্ষা-২০২৩ এর এ্যাপারেল ইঞ্জিনিয়ারিং বিভাগের পরীক্ষার্থীদের ইন্ডাস্ট্রিয়াল এটাচমেন্ট ও' +
+            ' প্রজেক্ট ওয়ার্ক বিষয়ের চূড়ান্ত মূল্যায়ন করার নিমিত্ত এতদ্বারা নিম্ন-বর্ণিত বোর্ড গঠন করা হল ঃ'
+          ]
+        },
+
+        {
+          style: 'tableExample',
+
+          table: {
+            widths: [30, '*', 150,],
+            headerRows: 0,
+            // keepWithHeaderRows: 1,
+            body: [
+
+
+              [{ text: 'ক্রম', alignment: 'center' },
+              { text: 'নাম ও পদবী (জ্যেষ্ঠতার ভিত্তিতে নয়)', alignment: 'center' },
+              { text: 'কমিটির পদবী', alignment: 'center' },
+              ],
+
+              [{ text: '১.', alignment: 'center' },
+              { text: 'ডীন\nফ্যাকাল্টি অব ফ্যাশন ডিজাইন এন্ড এ্যাপারেল ইঞ্জিনিয়ারিং, বুটেক্স।', },
+              { text: 'আহ্বায়ক', alignment: 'center' },
+              ],
+
+              [{ text: '2.', alignment: 'center' },
+              { text: 'বিভাগীয় প্রধান\nএ্যাপারেল ইঞ্জিনিয়ারিং বিভাগ, বুটেক্স।', },
+              { text: 'সদস্য', alignment: 'center' },
+              ],
+
+              [{ text: '৩.', alignment: 'center' },
+              { text: 'সংশ্লিষ্ট সুপারভাইজার *\nএ্যাপারেল ইঞ্জিনিয়ারিং বিভাগ, বুটেক্স ।' },
+              { text: 'সদস্য', alignment: 'center' },
+              ],
+
+              [{ text: '8.', alignment: 'center' },
+              { text: 'ড. মোঃ রিয়াজুল ইসলাম\nঅধ্যাপক, ইয়ার্ণ ইঞ্জিনিয়ারিং বিভাগ, বুটেক্স।', },
+              { text: 'সদস্য', alignment: 'center' },
+              ],
+
+              [{ text: '৫.', alignment: 'center' },
+              { text: 'জনাব নাজমুত তারেক\nচীফ অপারেটিং অফিসার, নাহী ফ্যাশন লিমিটেড ।', },
+              { text: 'সদস্য\n(ইন্ডাস্ট্রিয়াল এটাচমেন্ট মূল্যায়ন কমিটি)', alignment: 'center' },
+              ],
+
+              [{ text: '৬.', alignment: 'center' },
+              { text: 'জনাব আইরিন আক্তার\nফরমার গ্লোবাল টেকনিক্যাল ম্যানেজার, ম্যাটেরিয়াল এন্ড টেস্টং, জি-স্টার ।', },
+              { text: 'সদস্য\n(প্রজেক্ট ওয়ার্ক মূল্যায়ন কমিটি)', alignment: 'center' },
+              ],
+
+            ]
+          }
+        },
+
+        {
+          text: '* সংশ্লিষ্ট সুপারভাইজার বলতে যে পরীক্ষার্থীর ইন্ডাস্ট্রিয়াল এটাচমেন্ট ও প্রজেক্ট ওয়ার্ক মূল্যায়ন করা হবে তার সুপারভাইজারকে বুঝানো হয়েছে।\n',
+        },
+        {
+          text: '২। ইন্ডাস্ট্রিয়াল এটাচমেন্ট ও প্রজেক্ট ওয়ার্ক মূল্যায়ন পদ্ধতি ঃ',
+        },
+        {
+          margin: [10, 5, 0, 0],
+          stack: [
+            {
+              ul: [
+                { text: 'উক্ত কমিটি ইন্ডাস্ট্রিয়াল এটাচমেন্ট ও প্রজেক্ট ওয়ার্ক বিষয়ের মোট নম্বরের ৫০% (৫০ নম্বর) এর উপর চূড়ান্ত মূল্যায়ন করবেন।' },
+                { text: 'Report এর Presentation এবং সদস্যগণের প্রশ্ন-উত্তরের মাধ্যমে কমিটি পরীক্ষার্থীর ইন্ডাস্ট্রিয়াল এটাচমেন্ট ও প্রজেক্ট ওয়ার্ক মূল্যায়ন করবেন ।' }
+              ]
+            },
+            {
+              text: 'উল্লেখ্য, ৫০% নম্বর (৫০ নম্বর) কন্টিনিউয়াস এ্যাসেসমেন্ট হিসেবে সংশ্লিষ্ট সুপারভাইজার মূল্যায়ন করবেন ।',
+
+            }
+          ]
+        },
+
+        { text: '৩। আহ্বায়ক “ইন্ডাস্ট্রিয়াল এটাচমেন্ট ও প্রজেক্ট ওয়ার্ক” বিষয়ের জন্য বিভাগ ভিত্তিক আলাদা চূড়ান্ত নম্বরপত্র জমা দিবেন ।', },
+
+        {
+
+          margin: [340, 20, 0, 0],
+          stack: [
+            { text: 'ভাইস চ্যান্সেলর মহোদয় অনুমোদনক্রমে-', alignment: 'center' },
+            { text: '\n', alignment: 'center' },
+            { text: '(মোঃ রেজাউল হক)', alignment: 'center' },
+            { text: 'পরীক্ষা নিয়ন্ত্রক (চলতি দায়িত্ব)', alignment: 'center' },
+            { text: 'বাংলাদেশ টেক্সটাইল বিশ্ববিদ্যালয়', alignment: 'center' },
+          ],
+        },
+
+        { text: '\nবিতরণ (জ্যেষ্ঠতার ভিত্তিতে নয়) :', decoration: 'underline' },
+        {
+          ol: [
+            { text: 'ডীন, ফ্যাকাল্টি অব ফ্যাশন ডিজাইন এন্ড এ্যাপারেল ইঞ্জিনিয়ারিং, বুটেক্স। ' },
+            {
+              text: ['বিভাগীয় প্রধান ',
+                { text: '(সংশ্লিষ্ট সকল সুপারভাইজারকে অবহিত করার অনুরোধ সহ),', bold: 'true' },
+                ' এ্যাপারেল ইঞ্জিনিয়ারিং বিভাগ, বুটেক্স।']
+            },
+            {
+              text: ['সংশ্লিষ্ট সুপারভাইজার ',
+                { text: '(ইন্ডাস্ট্রিয়াল এটাচমেন্ট ও প্রজেক্ট ওয়ার্ক বিষয়ের চূড়ান্ত মূল্যায়ন পরীক্ষা অনুষ্ঠিত হওয়ার পূর্বে কন্টিনিউয়াস এ্যাসেসমেন্টের নম্বরপত্র জমা দেয়ার অনুরোধ জানানো হ\'ল), ', bold: 'true' },
+                ' এ্যাপারেল ইঞ্জিনিয়ারিং বিভাগ, বুটেক্স।']
+            },
+            { text: 'ড. মোঃ রিয়াজুল ইসলাম, অধ্যাপক, ইয়ার্ণ ইঞ্জিনিয়ারিং বিভাগ, বুটেক্স।' },
+            {text:'জনাব নাজমুত তারেক, চীফ অপারেটিং অফিসার, নাহী ফ্যাশন লিমিটেড।'},
+            { text: 'জনাব আইরিন আক্তার, ফরমার গ্লোবাল টেকনিক্যাল ম্যানেজার, ম্যাটেরিয়াল এন্ড টেস্টং, জি-স্টার। \n\n' },
+          ],
+
+          margin: [15, 5, 0, 0],
+        },
+
+        {
+          columns: [
+            { text: 'স্মারক নং-বুটেক্স/পঃনিঃ/১২৬/২০২৪/২৪১-২/৫', alignment: 'left' },
+            { text: 'তারিখ : ০৩/০৭/২০২৫', alignment: 'right' }
           ],
         },
 
