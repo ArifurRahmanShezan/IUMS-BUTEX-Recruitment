@@ -19,6 +19,7 @@ import { HRAttendenceExcelComponent } from './pages/recruitment/hr-attendence-ex
 import { DhEmployeeAttendenceComponent } from './pages/recruitment/dh-employee-attendence/dh-employee-attendence.component';
 import { EmployeeServiceBookComponent } from './pages/recruitment/employee-service-book/employee-service-book.component';
 import { HrDashboardComponent } from './pages/recruitment/hr-dashboard/hr-dashboard.component';
+import { PdfTrialComponent } from './pages/recruitment/pdf-trial/pdf-trial.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { HrDashboardComponent } from './pages/recruitment/hr-dashboard/hr-dashbo
     HRAttendenceExcelComponent,
     DhEmployeeAttendenceComponent,
     EmployeeServiceBookComponent,
-    HrDashboardComponent
+    HrDashboardComponent,
+    PdfTrialComponent
   ],
   imports: [
     BrowserModule,

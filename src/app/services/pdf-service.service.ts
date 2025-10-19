@@ -1,7 +1,14 @@
+import { style } from '@angular/animations';
 import { Injectable } from '@angular/core';
 import * as pdfMake from 'pdfmake/build/pdfmake';
 
 const FONT_DEFINITIONS = {
+  Roboto: {
+    normal: "Roboto-Regular.ttf",
+    bold: "Roboto-Medium.ttf",
+    italics: "Roboto-Italic.ttf",
+    bolditalics: "Roboto-MediumItalic.ttf",
+  },
   NotoSerifBengali: {
     normal: 'NotoSerifBengali-Regular.ttf',
     bold: 'NotoSerifBengali-Bold.ttf',
@@ -284,5 +291,1608 @@ export class PdfService {
     } catch (e) {
       console.error('[pdfMake] Error generating PDF:', e);
     }
-  }
+  };
+
+
+
+  public bc1(): void {
+    const docDefinition: any = {
+
+      pageSize: 'A4',
+      pageOrientation: 'portrait',
+      pageMargins: [20, 100, 20, 60],
+      header: () => {
+        return [
+          // this.pdfHeaderControllerOffice(),
+        ]
+
+      },
+
+      content: [
+        {
+          columns: [
+            { text: 'স্মারক নং-বুটেক্স/পঃনিঃ/১২৮/২০২৪/০৭', alignment: 'left' },
+            { text: 'তারিখ : ০১/০১/২০২৫', alignment: 'right' }
+          ],
+        },
+
+        { text: 'অফিস আদেশ', alignment: 'center', style: 'header', decoration: 'underline' },
+
+        {
+          alignment: 'justify',
+          text: [
+            'বাংলাদেশ টেক্সটাইল বিশ্ববিদ্যালয়ের বি. এসসি. ইন টেক্সটাইল ইঞ্জিনিয়ারিং (',
+            { text: 'OBE ', bold: true },
+            'কারিকুলামের অধীনে পরিচালিত ৫০তম ব্যাচ), লেভেল-১ টার্ম-১ ও ২ (সেশন : ২০২৩-২০২৪),',
+            ' চূড়ান্ত পরীক্ষা-২০২৪ এর জন্য সংশ্লিষ্ট একাডেমিক বিধির আলোকে নিম্ন-বর্ণিত সদস্যগণের সমন্বয়ে এতদ্বারা ',
+            { text: ' পরীক্ষা কো-অর্ডিনেশন ', bold: true },
+            ' কমিটি গঠন করা হ\'ল :'
+          ]
+        },
+
+        {
+          style: 'tableExample',
+
+          table: {
+            widths: [30, '*', 60,],
+            headerRows: 0,
+            // keepWithHeaderRows: 1,
+            body: [
+
+
+              [{ text: 'ক্রম', alignment: 'center' },
+              { text: 'নাম ও পদবী', alignment: 'center' },
+              { text: '', alignment: 'center' },
+              ],
+
+              [{ text: '১.', alignment: 'center' },
+              { text: 'ডীন\nফ্যাকাল্টি অব টেক্সটাইল ম্যানেজমেন্ট এন্ড বিজনেস স্টাডিজ, বুটেক্স।', },
+              { text: 'সভাপতি', alignment: 'center' },
+              ],
+
+              [{ text: '2.', alignment: 'center' },
+              { text: 'অধ্যাপক ড. নারগীস জাহান আরা\nবিভাগীয় প্রধান, রসায়ন বিভাগ, বুটেক্স।', },
+              { text: 'সদস্য', alignment: 'center' },
+              ],
+
+              [{ text: '৩.', alignment: 'center' },
+              { text: 'অধ্যাপক শিল্পী আক্তার\nফেব্রিক ইঞ্জিনিয়ারিং বিভাগ, বুটেক্স।', },
+              { text: 'সদস্য', alignment: 'center' },
+              ],
+
+              [{ text: '8.', alignment: 'center' },
+              { text: 'অধ্যাপক ড. হাসিনা আক্তার\nবিভাগীয় প্রধান, পদার্থ বিজ্ঞান বিভাগ, বুটেক্স ।', },
+              { text: 'সদস্য', alignment: 'center' },
+              ],
+
+              [{ text: '৫.', alignment: 'center' },
+              { text: 'অধ্যাপক ড. মোঃ সাইদুজ্জামান\nটেক্সটাইল ইঞ্জিনিয়ারিং ম্যানেজমেন্ট বিভাগ, বুটেক্স ।', },
+              { text: 'সদস্য', alignment: 'center' },
+              ],
+
+
+
+
+
+            ]
+          }
+        },
+        {
+
+          alignment: 'justify',
+          text: [
+            '২। কমিটি উক্ত চূড়ান্ত পরীক্ষার জন্য পরীক্ষার বিস্তারিত সময়-সূচি ও হল ' +
+            'পরিদর্শী তালিকা প্রস্তুত এবং প্রশ্নপত্র ছাপানো ও পরীক্ষার হল অনুযায়ী প্যাকেট' +
+            ' করা সহ সংশ্লিষ্ট একাডেমিক বিধি অনুযায়ী পরীক্ষা সংক্রান্ত প্রয়োজনীয় অন্যান্য সকল কাজ সম্পন্ন করবেন।',
+          ]
+        },
+        {
+
+          margin: [400, 20, 0, 0],
+          stack: [
+            { text: 'উপাচার্য মহোদয়ের অনুমোদনক্রমে-', alignment: 'center' },
+            { text: '\n', alignment: 'center' },
+            { text: '(মোঃ রেজাউল হক)', alignment: 'center' },
+            { text: 'পরীক্ষা নিয়ন্ত্রক (চলতি দায়িত্ব)', alignment: 'center' },
+            { text: 'বাংলাদেশ টেক্সটাইল বিশ্ববিদ্যালয়', alignment: 'center' },
+          ],
+        },
+
+        { text: '\nবিতরণ :', bold: 'true', decoration: 'underline' },
+        {
+          ol: [
+            'ডীন, ফ্যাকাল্টি অব টেক্সটাইল ম্যানেজমেন্ট এন্ড বিজনেস স্টাডিজ, বুটেক্স। ',
+            'অধ্যাপক ড. নারগীস জাহান আরা, বিভাগীয় প্রধান, রসায়ন বিভাগ, বুটেক্স । ',
+            'অধ্যাপক শিল্পী আক্তার, ফেব্রিক ইঞ্জিনিয়ারিং বিভাগ, বুটেক্স।',
+            'অধ্যাপক ড. হাসিনা আক্তার, বিভাগীয় প্রধান, পদার্থ বিজ্ঞান বিভাগ, বুটেক্স । ',
+            'অধ্যাপক ড. মোঃ সাইদুজ্জামান, টেক্সটাইল ইঞ্জিনিয়ারিং ম্যানেজমেন্ট বিভাগ, বুটেক্স । \n\n',
+          ],
+
+          margin: [15, 5, 0, 0],
+        },
+
+        {
+          columns: [
+            { text: 'স্মারক নং-বুটেক্স/পঃনিঃ/১২৮/২০২৪/০৭', alignment: 'left' },
+            { text: 'তারিখ : ০১/০১/২০২৫', alignment: 'right' }
+          ],
+        },
+
+        { text: '\nসদয় অবগতির জন্য অনুলিপি প্রেরণ:', bold: 'true', decoration: 'underline' },
+        {
+          ol: [
+            'পিএস টু ভিসি, ভিসি অফিস (ভিসি মহোদয়ের সদয় অবগতির জন্য), বুটেক্স।  ',
+            'সংশ্লিষ্ট নথি । ',
+          ],
+
+          margin: [15, 5, 0, 0],
+        },
+
+
+        {
+
+          margin: [400, 20, 0, 0],
+          stack: [
+            { text: '(মারজানী তুবন নাহার)', alignment: 'center' },
+            { text: 'সহকারী-পরীক্ষা নিয়ন্ত্রক', alignment: 'center' },
+            { text: 'বাংলাদেশ টেক্সটাইল বিশ্ববিদ্যালয়', alignment: 'center' },
+          ],
+        },
+
+      ],
+      styles: {
+        header: {
+          fontSize: 18,
+          bold: true,
+          margin: [0, 0, 0, 10]
+        },
+        subheader: {
+          fontSize: 16,
+          bold: true,
+          margin: [0, 10, 0, 5]
+        },
+        tableExample: {
+          margin: [40, 5, 40, 15]
+        },
+        tableHeader: {
+          bold: true,
+          fontSize: 12.5,
+          color: 'black'
+        }
+      },
+
+      defaultStyle: {
+        font: 'NotoSerifBengali',
+        fontSize: 10,
+      }
+    };
+
+    try {
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+
+
+      console.log('[pdfMake] PDF generated successfully.');
+    } catch (e) {
+      console.error('[pdfMake] Error generating PDF:', e);
+    }
+  };
+
+  public bc4(): void {
+    const docDefinition: any = {
+
+      pageSize: 'A4',
+      pageOrientation: 'portrait',
+      pageMargins: [20, 100, 20, 60],
+      header: () => {
+        return [
+          // this.pdfHeaderControllerOffice(),
+        ]
+
+      },
+
+      content: [
+        {
+          columns: [
+            { text: 'স্মারক নং-বুটেক্স/পঃনিঃ/১২৮/২০২৪/২০১', alignment: 'left' },
+            { text: 'তারিখ : ১৯/০৬/২০২৫', alignment: 'right' }
+          ],
+        },
+
+        {
+          stack: [
+            '\nপ্ৰাপক',
+            'বিভাগীয় প্রধান\n',
+            {
+              text: 'ইয়ার্ণ ইঞ্জিনিয়ারিং/ফেব্রিক ইঞ্জিনিয়ারিং/ওয়েট প্রসেস ইঞ্জিনিয়ারিং/' +
+                'এ্যাপারেল ইঞ্জিনিয়ারিং/টেক্সটাইল ইঞ্জিনিয়ারিং ম্যানেজমেন্ট/ টেক্সটাইল ফ্যাশন এন্ড ডিজাইন/' +
+                'ইন্ড্রাস্ট্রিয়াল এন্ড প্রোডাকশন ইঞ্জিনিয়ারিং/টেক্সটাইল মেশিনারি ডিজাইন এন্ড মেইনটেন্যান্স/' +
+                ' ডাইজ এন্ড কেমিক্যাল ইঞ্জিনিয়ারিং/এনভায়রনমেন্টাল সাইন্স এন্ড ইঞ্জিনিয়ারিং/পদার্থবিজ্ঞান/' +
+                'রসায়ন/গণিত পরিসংখ্যান/হিউমিনিটিজ এন্ড সোসাল সাইন্স বিভাগ'
+            },
+            'বাংলাদেশ টেক্সটাইল বিশ্ববিদ্যালয়',
+            'তেজগাঁও, ঢাকা-১২০৮।\n\n'
+          ]
+        },
+
+        {
+          columns: [
+            { text: 'বিষয় :', width: 'auto' },
+            {
+              text: 'বি. এসসি. ইন টেক্সটাইল ইঞ্জিনিয়ারিং,' +
+                ' লেভেল-১ টার্ম-২ (সেশন ঃ ২০২৩-২০২৪), চূড়ান্ত পরীক্ষা-২০২৪ এর ' +
+                'প্রশ্নপত্র প্রণেতা ও পরীক্ষকগণের তালিকা এবং লেভেল-২ টার্ম-১ (সেশন ঃ ২০২৩-২৪),' +
+                ' চূড়ান্ত পরীক্ষা-২০২৪ এর বিভাগীয় পরীক্ষা কমিটিসহ প্রশ্নপত্র প্রণেতা ও পরীক্ষকগণের তালিকা প্রেরণ প্রসংগে ।', width: '*', margin: [10, 0, 0, 0]
+            }
+          ]
+        },
+        {
+
+          alignment: 'justify',
+
+          text: [
+            '\nমহোদয়\n',
+            'আপনি অবগত আছেন যে, বিষয়োক্ত পরীক্ষাসমূহ আগামী ১৩/০৭/২০২৫ ও ১৪/০৭/২০২৫ তারিখ' +
+            ' থেকে শুরু হতে যাচ্ছে। ইতোমধ্যে এ সংক্রান্ত একটি বিজ্ঞপ্তি জারি করা হয়েছে। এমতাবস্থায়, লেভেল-১ টার্ম-২ (সেশন ঃ ২০২৩-২০২৪), ' +
+            'চূড়ান্ত পরীক্ষা-২০২৪ এর প্রশ্নপত্র প্রণেতা ও পরীক্ষকগণের প্রস্তাবিত তালিকা এবং লেভেল-২ টার্ম-১ (সেশন ঃ ২০২৩-২৪), ' +
+            'চূড়ান্ত পরীক্ষা-২০২৪ এর জন্য বিভাগীয় পরীক্ষা কমিটির প্রস্তাব সহ প্রশ্নপত্র প্রণেতা ও পরীক্ষকগণের তালিকা ',
+            { text: 'আগামী ২৩/০৬/২০২৫ তারিখের মধ্যে ', bold: 'true' },
+            'নিম্ন-স্বাক্ষরকারীর দপ্তরে প্রেরণের জন্য আপনাকে অনুরোধ জানানো \'ল ।',
+          ]
+        },
+        {
+
+          margin: [350, 20, 0, 0],
+          stack: [
+            { text: 'ভাইস চ্যান্সেলর মহোদয় এর নির্দেশক্রমে-', alignment: 'center' },
+            { text: '\n', alignment: 'center' },
+            { text: '(মোঃ রেজাউল হক)', alignment: 'center' },
+            { text: 'পরীক্ষা নিয়ন্ত্রক (চলতি দায়িত্ব)', alignment: 'center' },
+            { text: 'বাংলাদেশ টেক্সটাইল বিশ্ববিদ্যালয়\n\n', alignment: 'center' },
+          ],
+        },
+
+        {
+          columns: [
+            { text: 'স্মারক নং-বুটেক্স/পঃনিঃ/১২৮/২০২৪/২০১', alignment: 'left' },
+            { text: 'তারিখ : ১৯/০৬/২০২৫', alignment: 'right' }
+          ],
+        },
+
+        { text: '\nসদয় অবগতির জন্য অনুলিপি প্রদান ঃ', bold: 'true', decoration: 'underline' },
+        {
+          ol: [
+            'পিএস টু ভিসি, ভিসি অফিস (ভিসি মহোদয়ের সদয় অবগতির জন্য), বুটেক্স।  ',
+            'সংশ্লিষ্ট নথি । ',
+          ],
+
+          margin: [15, 5, 0, 0],
+        },
+
+
+        {
+
+          margin: [350, 20, 0, 0],
+          stack: [
+            { text: '(মারজানী তুবন নাহার)', alignment: 'center' },
+            { text: 'উপ-পরীক্ষা নিয়ন্ত্রক', alignment: 'center' },
+            { text: 'বাংলাদেশ টেক্সটাইল বিশ্ববিদ্যালয়', alignment: 'center' },
+          ],
+        },
+
+      ],
+      styles: {
+        header: {
+          fontSize: 18,
+          bold: true,
+          margin: [0, 0, 0, 10]
+        },
+        subheader: {
+          fontSize: 16,
+          bold: true,
+          margin: [0, 10, 0, 5]
+        },
+        tableExample: {
+          margin: [40, 5, 40, 15]
+        },
+        tableHeader: {
+          bold: true,
+          fontSize: 12.5,
+          color: 'black'
+        }
+      },
+
+      defaultStyle: {
+        font: 'NotoSerifBengali',
+        fontSize: 10,
+      }
+    };
+
+    try {
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+
+
+      console.log('[pdfMake] PDF generated successfully.');
+    } catch (e) {
+      console.error('[pdfMake] Error generating PDF:', e);
+    }
+  };
+
+  public bc5(): void {
+    const docDefinition: any = {
+
+      pageSize: 'A4',
+      pageOrientation: 'portrait',
+      pageMargins: [20, 100, 20, 60],
+      header: () => {
+        return [
+          // this.pdfHeaderControllerOffice(),
+        ]
+
+      },
+
+      content: [
+        {
+          columns: [
+            { text: 'স্মারক নং-বুটেক্স/পঃনিঃ/১২৮/২০২৪/১৬', alignment: 'left' },
+            { text: 'তারিখ : ০৬/০১/২০২৫', alignment: 'right' }
+          ],
+        },
+
+        { text: 'বিজ্ঞপ্তি', alignment: 'center', style: 'header', decoration: 'underline' },
+
+        {
+          fontSize: 12,
+          alignment: 'justify',
+          text: [
+            'এতদ্বারা সংশ্লিষ্ট সকলের অবগতির জন্য জানানো যাচ্ছে যে, ',
+            'অত্র বিশ্ববিদ্যালয়ের বি. এসসি. ইন টেক্সটাইল ইঞ্জিনিয়ারিং ',
+            { text: '(OBE কারিকুলামের অধীনে পরিচালিত ৫০তম ব্যাচ)', bold: true },
+            ', লেভেল-১ টার্ম-১ (সেশন : ২০২৩-২০২৪), চূড়ান্ত পরীক্ষা-২০২৪ আগামী',
+            { text: ' ২৭/০১/২০২৫ ', bold: true },
+            'তারিখ হতে নিম্নবর্ণিত সময়-সূচি অনুযায়ী অনুষ্ঠিত হবে।\n\n পরীক্ষার স্থান : বাংলাদেশ টেক্সটাইল বিশ্ববিদ্যালয়, তেজগাঁও, ঢাকা-১২০৮।'
+          ]
+        },
+
+        {
+          style: 'tableExample',
+
+          table: {
+            widths: ['*', '*', 160, '*', '*'],
+            headerRows: 2,
+            // keepWithHeaderRows: 1,
+            body: [
+
+              [{ text: 'লেভেল-১ টার্ম-১ (সেশন : ২০২৩-২০২৪), চূড়ান্ত পরীক্ষা-২০২৪ অনুষ্ঠানের বিস্তারিত সময়-সূচি', style: 'tableHeader', colSpan: 5, alignment: 'center' }, '', '', '', ''],
+              [{ text: 'Exam & Day', style: 'tableHeader', alignment: 'center' },
+              { text: 'Subject Code', style: 'tableHeader', alignment: 'center' },
+              { text: 'Name of Subject(s)', style: 'tableHeader', alignment: 'center' },
+              { text: 'Dept(s)', style: 'tableHeader', alignment: 'center' },
+              { text: 'Exam. Time', style: 'tableHeader', alignment: 'center' }
+              ],
+
+              [{ rowSpan: 2, text: '27/01/2025\nMonday', alignment: 'center' },
+              { text: 'MATH 101-0541', alignment: 'center' },
+              { text: 'Mathematics-I', alignment: 'start' },
+              { text: 'All+Retake', alignment: 'center' },
+              { text: '10:00 AM - 1:00 PM', rowSpan: 2, alignment: 'center' }],
+
+              [{ text: '', alignment: 'center' },
+              { text: 'MS 101/AS 101', alignment: 'center' },
+              { text: 'Mathematics-I', alignment: 'start' },
+              { text: 'Retake (All)', alignment: 'center' },
+              { text: '', alignment: 'center' },],
+
+
+
+              [{ rowSpan: 2, text: '02/02/2025\nSunday', alignment: 'center' },
+              { text: 'PHY 101-0533', alignment: 'center' },
+              { text: 'Physics-I', alignment: 'start' },
+              { text: 'All+Retake', alignment: 'center' },
+              { text: '10:00 AM - 1:00 PM', rowSpan: 2, alignment: 'center' }],
+
+              [{ text: '', alignment: 'center' },
+              { text: 'PHY 101/AS 105', alignment: 'center' },
+              { text: 'Physics-I', alignment: 'start' },
+              { text: 'Retake (All)', alignment: 'center' },
+              { text: '', alignment: 'center' },],
+
+
+
+
+
+
+
+              [{ rowSpan: 2, text: '06/02/2025\nThursday', alignment: 'center' },
+              { text: 'CHEM 101-0531', alignment: 'center' },
+              { text: 'Chemistry-I', alignment: 'start' },
+              { text: 'All+Retake', alignment: 'center' },
+              { text: '10:00 AM - 1:00 PM', rowSpan: 2, alignment: 'center' }],
+
+              [{ text: '', alignment: 'center' },
+              { text: 'CHEM 101/AS 109', alignment: 'center' },
+              { text: 'Chemistry-I', alignment: 'start' },
+              { text: 'Retake (All)', alignment: 'center' },
+              { text: '', alignment: 'center' },],
+
+
+
+              [{ rowSpan: 3, text: '11/02/2025\nTuesday', alignment: 'center' },
+              { text: 'ENG 101-0231', alignment: 'center' },
+              { text: 'Business and Communicative English', alignment: 'start' },
+              { text: 'YE+FE+WPE\n+TEM+TFD+DCE\n+ESE+Retake', alignment: 'center' },
+              { text: '10:00 AM - 12:00 Noon', rowSpan: 1, alignment: 'center' }],
+
+              [{ text: '', alignment: 'center' },
+              { text: 'IPE 101-0788', alignment: 'center' },
+              { text: 'Engineering Materials', alignment: 'start' },
+              { text: 'IPE+Retake', alignment: 'center' },
+              { text: '10:00 AM - 1:00 PM', rowSpan: 2, alignment: 'center' },],
+
+              [{ text: '', alignment: 'center' },
+              { text: 'TEX 185-0723', alignment: 'center' },
+              { text: 'Fiber Science', alignment: 'start' },
+              { text: 'TMDM+Retake', alignment: 'center' },
+              { text: '', alignment: 'center' },],
+
+
+
+
+
+              [{ rowSpan: 5, text: '16/02/2025\nSunday', alignment: 'center' },
+              { text: 'WPE 101-0531', alignment: 'center' },
+              { text: 'Polymers Science and Engineering', alignment: 'start' },
+              { text: 'WPE+AE+Retake', alignment: 'center' },
+              { text: '10:00 AM - 1:00 PM', rowSpan: 5, alignment: 'center' }],
+
+              [{ text: '', alignment: 'center' },
+              { text: 'TEX 183-0723', alignment: 'center' },
+              { text: 'Polymers and Composites', alignment: 'start' },
+              { text: 'TMDM+Retake', alignment: 'center' },
+              { text: '', alignment: 'center' },],
+
+              [{ text: '', alignment: 'center' },
+              { text: 'DCE 101-0711', alignment: 'center' },
+              { text: 'Fundamentals of Dyes and Chemical Engineering', alignment: 'start' },
+              { text: 'DCE+Retake', alignment: 'center' },
+              { text: '', alignment: 'center' },],
+
+              [{ text: '', alignment: 'center' },
+              { text: 'TEX 107-0531', alignment: 'center' },
+              { text: 'Polymer Chemistry', alignment: 'start' },
+              { text: 'ESE+Retake', alignment: 'center' },
+              { text: '', alignment: 'center' },],
+
+              [{ text: '', alignment: 'center' },
+              { text: 'TEM 101-0413', alignment: 'center' },
+              { text: 'Principles of Management', alignment: 'start' },
+              { text: 'TEM+Retake', alignment: 'center' },
+              { text: '', alignment: 'center' },],
+
+
+
+
+
+
+              [{ rowSpan: 8, text: '20/02/2025\nThursday', alignment: 'center' },
+              { text: 'YE 101-0723', alignment: 'center' },
+              { text: 'Natural Textile Fibers', alignment: 'start', rowSpan: 2 },
+              { text: 'YE+FE+AE\n+TEM+Retake', alignment: 'center' },
+              { text: '10:00 AM - 1:00 PM', rowSpan: 2, alignment: 'center' }],
+
+              [{ text: '', alignment: 'center' },
+              { text: 'TEX 119-0723', alignment: 'center' },
+              { text: '', alignment: 'start' },
+              { text: 'IPE+Retake', alignment: 'center' },
+              { text: '', alignment: 'center' },],
+
+              [{ text: '', alignment: 'center' },
+              { text: 'TFD 101-0212', alignment: 'center' },
+              { text: 'Basic Fashion Studies', alignment: 'start' },
+              { text: 'TFD+Retake', alignment: 'center' },
+              { text: '10:00 AM-12:00 Noon', alignment: 'center' },],
+
+              [{ text: '', alignment: 'center' },
+              { text: 'TFD 101', alignment: 'center' },
+              { text: 'Basic Fashion Studies', alignment: 'start' },
+              { text: 'Retake', alignment: 'center' },
+              { text: '10:00 AM-1:00 PM', alignment: 'center', rowSpan: 5 },],
+
+              [{ text: '', alignment: 'center' },
+              { text: 'TEX 181-0723', alignment: 'center' },
+              { text: 'Textil Process and Machinery', alignment: 'start' },
+              { text: 'TMDM+Retake', alignment: 'center' },
+              { text: '', alignment: 'center' },],
+
+              [{ text: '', alignment: 'center' },
+              { text: 'MDM 103', alignment: 'center' },
+              { text: 'Textil Process and Machinery', alignment: 'start' },
+              { text: 'Retake', alignment: 'center' },
+              { text: '', alignment: 'center' },],
+
+              [{ text: '', alignment: 'center' },
+              { text: 'ESE 101-0712', alignment: 'center' },
+              { text: 'Introduction to Environmental Science and Engineering', alignment: 'start' },
+              { text: 'ESE+Retake', alignment: 'center' },
+              { text: '', alignment: 'center' },],
+
+              [{ text: '', alignment: 'center' },
+              { text: 'ESE 101', alignment: 'center' },
+              { text: 'Introduction to Environmental Engineering', alignment: 'start' },
+              { text: 'Retake', alignment: 'center' },
+              { text: '', alignment: 'center' },],
+
+
+
+              [{ text: '25/02/2025\nTuesday', alignment: 'center' },
+              { text: 'CSE 101-0613', alignment: 'center' },
+              { text: 'Computer Programming', alignment: 'start' },
+              { text: 'YE+FE+WPE+\nTFD+Retake', alignment: 'center' },
+              { text: '10:00 AM - 1:00 PM', alignment: 'center' }],
+
+              [{ text: '02/03/2025\nSunday', alignment: 'center' },
+              { text: 'SOC 101-0314', alignment: 'center' },
+              { text: 'Bangladesh Studies', alignment: 'start' },
+              { text: 'AE+TFD+IPE+\nRetake', alignment: 'center' },
+              { text: '10:00 AM - 12:00 Noon', alignment: 'center' },],
+
+
+            ]
+          }
+        },
+        {
+          fontSize: 10,
+          margin: [400, 20, 0, 0],
+          stack: [
+            { text: 'উপাচার্য মহোদয়ের অনুমোদনক্রমে-', alignment: 'center' },
+            { text: '\nস্বাঃ/-', alignment: 'center' },
+            { text: '(মোঃ রেজাউল হক)', alignment: 'center' },
+            { text: 'পরীক্ষা নিয়ন্ত্রক (চলতি দায়িত্ব)', alignment: 'center' },
+            { text: 'বাংলাদেশ টেক্সটাইল বিশ্ববিদ্যালয়', alignment: 'center' },
+          ],
+        },
+      ],
+      styles: {
+        header: {
+          fontSize: 18,
+          bold: true,
+          margin: [0, 0, 0, 10]
+        },
+        subheader: {
+          fontSize: 16,
+          bold: true,
+          margin: [0, 10, 0, 5]
+        },
+        tableExample: {
+          margin: [0, 5, 0, 15]
+        },
+        tableHeader: {
+          bold: true,
+          fontSize: 12.5,
+          color: 'black'
+        }
+      },
+
+      defaultStyle: {
+        font: 'NotoSerifBengali',
+        fontSize: 8,
+      }
+    };
+
+    try {
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+
+
+      console.log('[pdfMake] PDF generated successfully.');
+    } catch (e) {
+      console.error('[pdfMake] Error generating PDF:', e);
+    }
+  };
+
+  public bc7(): void {
+    const docDefinition: any = {
+
+      pageSize: 'A4',
+      pageOrientation: 'portrait',
+      pageMargins: [20, 100, 20, 60],
+      header: () => {
+        return [
+          // this.pdfHeaderControllerOffice(),
+        ]
+
+      },
+
+      content: [
+        {
+          columns: [
+            { text: 'স্মারক নং- বুটেক্স/পঃনিঃ/১২০/২০২৪/৮৫-১/২১', alignment: 'left' },
+            { text: 'তারিখ ঃ ০৮/০৫/২০২৪', alignment: 'right' }
+          ],
+        },
+        '\n',
+        {
+          columns: [
+            { text: 'প্রাপক :', width: 'auto' },
+            {
+              margin: [10, 0, 0, 0],
+              stack: [
+                'জনাব আল মুনতাসির',
+                'প্রভাষক, ইন্ডাস্ট্রিয়াল এন্ড প্রোডাকশন ইঞ্জিনিয়ারিং বিভাগ',
+                'বাংলাদেশ টেক্সটাইল বিশ্ববিদ্যালয়',
+                'বাংলাদেশ টেক্সটাইল বিশ্ববিদ্যালয়',
+                'তেজগাঁও, ঢাকা-১২০৮।\n\n'
+              ],
+
+            }
+          ]
+        },
+        {
+
+          alignment: 'justify',
+
+          text: [
+            'মে-জুন, ২০২৪ এ অনুষ্ঠিতব্য বি. এসসি. ইন টেক্সটাইল ইঞ্জিনিয়ারিং ',
+            '(OBE কারিকুলামের অধীনে পরিচালিত ৪৯তম ব্যাচ), লেভেল-১ টার্ম-১, চূড়ান্ত পরীক্ষা-2023 এর ',
+            { text: 'IPE 102-0788: Engeineering Drawing and CAD Lab', bold: 'true', decoration: 'underline' },
+            ' বিষয়ের IPE বিভাগের জন্য কর্তৃপক্ষের অনুমোদনক্রমে এতদ্বারা আপনাকে পরীক্ষক (অভ্যন্তরীণ) নিয়োগ করা হ\'ল ।',
+          ]
+        },
+        {
+
+          margin: [370, 20, 0, 0],
+          stack: [
+            { text: '', alignment: 'center' },
+            { text: '\n', alignment: 'center' },
+            { text: '', alignment: 'center' },
+            { text: 'পরীক্ষা নিয়ন্ত্রক ', alignment: 'center' },
+            { text: '', alignment: 'center' },
+          ],
+        },
+
+      ],
+      styles: {
+        header: {
+          fontSize: 18,
+          bold: true,
+          margin: [0, 0, 0, 10]
+        },
+        subheader: {
+          fontSize: 16,
+          bold: true,
+          margin: [0, 10, 0, 5]
+        },
+        tableExample: {
+          margin: [40, 5, 40, 15]
+        },
+        tableHeader: {
+          bold: true,
+          fontSize: 12.5,
+          color: 'black'
+        }
+      },
+
+      defaultStyle: {
+        font: 'NotoSerifBengali',
+        fontSize: 10,
+      }
+    };
+
+    try {
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+
+
+      console.log('[pdfMake] PDF generated successfully.');
+    } catch (e) {
+      console.error('[pdfMake] Error generating PDF:', e);
+    }
+  };
+
+  public bc8(): void {
+    const docDefinition: any = {
+
+      pageSize: 'A4',
+      pageOrientation: 'portrait',
+      pageMargins: [20, 100, 20, 60],
+      header: () => {
+        return [
+          // this.pdfHeaderControllerOffice(),
+        ]
+
+      },
+
+      content: [
+        {
+          columns: [
+            { text: 'স্মারক নং-বটেক্সবি/পরীক্ষা/১২০/২০২৪/৮২-২/৩৩', alignment: 'left' },
+            { text: 'তারিখ ঃ ০৫/০৫/২০২৪', alignment: 'right' }
+          ],
+        },
+        '\n',
+        {
+          columns: [
+            { text: 'প্রাপক :', width: 'auto' },
+            {
+              margin: [10, 0, 0, 0],
+              stack: [
+                'ডঃ মোঃ ফকরুজ্জামান',
+                'সহযোগী অধ্যাপক, গণিত ও পরিসংখ্যান বিভাগ',
+                'বাংলাদেশ টেক্সটাইল বিশ্ববিদ্যালয়',
+                'তেজগাঁও, ঢাকা-১২০৮।\n\n'
+              ],
+
+            }
+          ]
+        },
+        {
+
+          alignment: 'justify',
+
+          text: [
+            'মে-জুন, ২০২৪ এ অনুষ্ঠিতব্য বি. এসসি. ইন টেক্সটাইল ইঞ্জিনিয়ারিং ',
+            '(OBE কারিকুলামের অধীনে পরিচালিত ৪৯তম ব্যাচ), লেভেল-১ টার্ম-১, চূড়ান্ত পরীক্ষা-2023 এর ',
+            { text: 'MATH 101-0541: Mathematics-I (Theory)', bold: 'true', decoration: 'underline' },
+            ' বিষয়টির প্রশ্নপত্রের খসড়া অনুমোদনের জন্য আপনাকে পরীক্ষক',
+            { text: '[Part-A (DCE, YE, AE) & Part-B (WPE, IPE)]', bold: 'true', },
+            ' উত্তরপত্রের জন্য] নিয়োগ করা হ\'ল ।',
+          ]
+        },
+        { text: '\nবিশেষ নির্দেশনাবলীঃ-\n\n', decoration: 'underline' },
+        {
+          text: [
+            'আপনার কোন নিকট আত্লীয়, যেমনঃ ১ । ভাই ২ । বোন ৩ | স্রীর/স্বামীর (ক) ভাই (খ) বোন ৪ । ছেলে ' +
+            '৫ | মেয়ে ৬ । ভাতৃবধু ৭ । ভম্নিপতি ৮ । স্ত্রী ৯ । স্বামী ১০ । ভাই ও বোনের সম্ভান ১১ । পুত্রবধু ১২ । জামাতা ' +
+            '১৩। আপন চাচা/চাচী ১৪ । আপন মামা/মামী ১৫ । আপন ফুফা/ফুফু এবং ১৬ । আপন খালা/খালু এই পরীক্ষায় যদি পরীক্ষার্থী/পরীক্ষার্থীনি ' +
+            'থাকে তবে তাহা নিয়োগপত্র গ্রহণের পূর্বে অত্র অফিসে জানানোর জন্য অনুরোধ করছি।\n\n'
+          ],
+        },
+        {
+          text: 'আপনি যদি শিক্ষা প্রতিষ্ঠান/বিভাগ ছাড়া অন্য কোন সরকারী দণ্ডরের কর্মচারী হন,' +
+            ' তবে আপনাকে এই কাজের পারিশ্রমিক গ্রহণের জন্য সরকারী অনুমোদনপত্র বিলের সাথে গ্রথিত করে দিতে হবে ৷' +
+            ' সরকারী কর্মচারীদেরকে নিযুক্তিগ্রহণের পূর্বে অবশ্যই কর্তৃপক্ষের অনুমতি নিতে হবে।\n\n'
+        },
+        {
+          text: 'উক্ত বিষয়ে আপনার সম্মতি যথাশীঘ্র জানাবার জন্য অনুরোধ করছি।'
+        },
+
+        {
+
+          margin: [370, 20, 0, 0],
+          stack: [
+            { text: '', alignment: 'center' },
+            { text: '\n', alignment: 'center' },
+            { text: '', alignment: 'center' },
+            { text: 'পরীক্ষা নিয়ন্ত্রক ', alignment: 'center' },
+            { text: '', alignment: 'center' },
+          ],
+        },
+
+      ],
+      styles: {
+        header: {
+          fontSize: 18,
+          bold: true,
+          margin: [0, 0, 0, 10]
+        },
+        subheader: {
+          fontSize: 16,
+          bold: true,
+          margin: [0, 10, 0, 5]
+        },
+        tableExample: {
+          margin: [40, 5, 40, 15]
+        },
+        tableHeader: {
+          bold: true,
+          fontSize: 12.5,
+          color: 'black'
+        }
+      },
+
+      defaultStyle: {
+        font: 'NotoSerifBengali',
+        fontSize: 10,
+      }
+    };
+
+    try {
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+
+
+      console.log('[pdfMake] PDF generated successfully.');
+    } catch (e) {
+      console.error('[pdfMake] Error generating PDF:', e);
+    }
+  };
+
+  public bc9(): void {
+    const docDefinition: any = {
+
+      pageSize: 'A4',
+      pageOrientation: 'portrait',
+      pageMargins: [20, 100, 20, 60],
+      header: () => {
+        return [
+          // this.pdfHeaderControllerOffice(),
+        ]
+
+      },
+
+      content: [
+        {
+          columns: [
+            { text: 'স্মারক নং-বটেক্সবি/পরীক্ষা/১২০/২০২৪/৮২-১/৩৩', alignment: 'left' },
+            { text: 'তারিখ ঃ ০৫/০৫/২০২৪', alignment: 'right' }
+          ],
+        },
+        '\n',
+        {
+          columns: [
+            { text: 'প্রাপক :', width: 'auto' },
+            {
+              margin: [10, 0, 0, 0],
+              stack: [
+                'জনাব মারজিয়া ইয়াসমিন',
+                'সহকারী অধ্যাপক, গণিত ও পরিসংখ্যান বিভাগ',
+                'বাংলাদেশ টেক্সটাইল বিশ্ববিদ্যালয়',
+                'তেজগাঁও, ঢাকা-১২০৮।\n\n'
+              ],
+
+            }
+          ]
+        },
+
+        {
+
+          alignment: 'justify',
+
+          text: [
+            'মে-জুন, ২০২৪ এ অনুষ্ঠিতব্য বি. এসসি. ইন টেক্সটাইল ইঞ্জিনিয়ারিং ',
+            '(OBE কারিকুলামের অধীনে পরিচালিত ৪৯তম ব্যাচ), লেভেল-১ টার্ম-১, চূড়ান্ত পরীক্ষা-2023 এর ',
+            { text: 'MATH 101-0541: Mathematics-I (Theory)', bold: 'true', decoration: 'underline' },
+            ' বিষয়ের জন্য কর্তৃপক্ষের অনুমোদনক্রমে আপনাকে এতদ্বারা প্রশ্নপত্র প্রণেতা ও পরীক্ষক ',
+            { text: '[Part-A (TEM, TMDM) & Part-B (FE, TFD, DCE)]', bold: 'true', },
+            ' উত্তরপত্রের জন্য] নিয়োগ করা হ\'ল ।',
+          ]
+        },
+
+        { text: '\nবিশেষ নির্দেশনাবলীঃ-\n\n', decoration: 'underline' },
+
+        {
+          text: [
+            'ইংরেজী ভাষায় OBE কারিকুলাম অনুযায়ী প্রশ্নপত্র প্রণয়ন করতে হবে।' +
+            ' MATH 101-0541; Mathematics- I (Theory) বিষয়ে ৩ ঘণ্টার পরীক্ষার জন্য আপনার প্রণীত' +
+            ' প্রশ্নপত্রে Part-A এবং Part-B নামে দু\'টি অংশ থাকবে। দু\'টি অংশের প্রতিটিতে ৫টি করে' +
+            ' মোট ১০টি প্রশ্ন থাকবে এবং পরীক্ষার্থীদেরকে প্রত্যেকটি প্রশ্নের উত্তর করতে হবে। প্রতিটি প্রশ্নের মান হবে ৯ এবং বিষয়ের পূর্ণমান হবে ৯০ ।\n\n'
+          ], decoration: 'underline'
+        },
+
+        {
+          text: [
+            'প্রণীত প্রশ্নপত্র গ্রথিত খামে সিলমোহরপূর্বক বীমাকৃত ডাকে অথবা ব্যক্তিগতভাবে ০৮/০৫/২০২৪ তারিখের মধ্যে ' +
+            'অবশ্যই সংশ্লিষ্ট পরীক্ষা কমিটির সভাপতি ড. অনুপ কুমার দত্ত (মোবাইল নং- ০১৭৩০৬২৪৩৮৭), ' +
+            'সহযোগী অধ্যাপক ও বিভাগীয় প্রধান, গণিত ও পরিসংখ্যান বিভাগ, বুটেক্স। এর নিকট জমা ' +
+            'দেওয়ার জন্য আপনাকে সবিনয় অনুরোধ করছি।\n\n'
+          ], decoration: 'underline'
+        },
+
+        {
+          text: 'আপনার প্রণীত প্রশ্নপত্র নির্ধারিত তারিখের মধ্যে পাওয়া না গেলে বিশ্ববিদ্যালয়' +
+            ' কর্তৃপক্ষ বিকল্প ব্যবস্থা গ্রহণ করতে বাধ্য হবে। নিযুক্তিপত্র গ্রহণে অপারগ হলে অবশ্যই' +
+            ' উহার কারণ জানিয়ে সংগে সংগে এতদসংগে কাগজপত্রাদিও ফেরত পাঠানোর জন্য অনুরোধ করছি।\n\n'
+        },
+        {
+          text: 'প্রণয়নকৃত প্রশ্নপত্রের পান্ডুলিপি পরিস্কার পরিচ্ছন্ন ও সুস্পষ্ট হওয়া একান্ত বাঞ্ছনীয় ।' +
+            ' কোন ছক বা অন্যকোন তথ্যাদি প্রশ্নপত্রের সংগে সরবরাহ করার প্রয়োজন হলে তাহা পৃথকভাবে ' +
+            'সংশ্লিষ্ট সভাপতিকে সঠিক নির্দেশিকা প্রদান করতে অনুরোধ করছি ।\n\n'
+        },
+        {
+          text: 'আপনার কোন নিকট আত্নীয়, যেমনঃ ১ । ভাই ২ । বোন ৩ । স্ত্রীর/স্বামীর (ক) ভাই (খ) বোন ৪ । ছেলে ৫। মেয়ে ' +
+            '৬। ভাতৃবধু ৭। ভগ্নিপতি ৮। স্ত্রী ৯। স্বামী ১০। ভাই ও বোনের সন্তান ১১। পুত্রবধু ১২। জামাতা ১৩। আপন চাচা/চাচী ' +
+            '১৪। আপন মামা/মামী ১৫। আপন ফুফা/ফুফু এবং ১৬। আপন খালা/খালু এই পরীক্ষায় যদি পরীক্ষার্থী/পরীক্ষার্থীনি থাকে' +
+            ' তবে তাহা নিয়োগপত্র গ্রহণের পূর্বে অত্র অফিসে জানানোর জন্য অনুরোধ করছি।\n\n'
+        },
+        {
+          text: 'আপনি যদি শিক্ষা প্রতিষ্ঠান/বিভাগ ছাড়া অন্য কোন সরকারী দপ্তরের কর্মচারী হন,' +
+            ' তবে আপনাকে এই কাজের পারিশ্রমিক গ্রহণের জন্য সরকারী অনুমোদনপত্র বিলের সাথে' +
+            ' গ্রথিত করে দিতে হবে। সরকারী কর্মচারীদেরকে নিযুক্তি গ্রহণের পূর্বে অবশ্যই কর্তৃপক্ষের অনুমতি নিতে হবে।\n\n'
+        },
+        {
+          text: 'উক্ত বিষয়ে আপনার সম্মতি যথাশীঘ্র জানাবার জন্য অনুরোধ করছি।'
+        },
+
+        {
+
+          margin: [370, 20, 0, 0],
+          stack: [
+            { text: '', alignment: 'center' },
+            { text: '\n', alignment: 'center' },
+            { text: '', alignment: 'center' },
+            { text: 'পরীক্ষা নিয়ন্ত্রক ', alignment: 'center' },
+            { text: '', alignment: 'center' },
+          ],
+        },
+
+      ],
+      styles: {
+        header: {
+          fontSize: 18,
+          bold: true,
+          margin: [0, 0, 0, 10]
+        },
+        subheader: {
+          fontSize: 16,
+          bold: true,
+          margin: [0, 10, 0, 5]
+        },
+        tableExample: {
+          margin: [40, 5, 40, 15]
+        },
+        tableHeader: {
+          bold: true,
+          fontSize: 12.5,
+          color: 'black'
+        }
+      },
+
+      defaultStyle: {
+        font: 'NotoSerifBengali',
+        fontSize: 10,
+      }
+    };
+
+    try {
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+
+
+      console.log('[pdfMake] PDF generated successfully.');
+    } catch (e) {
+      console.error('[pdfMake] Error generating PDF:', e);
+    }
+  };
+
+  public bc11(): void {
+    const docDefinition: any = {
+
+      pageSize: 'A4',
+      pageOrientation: 'portrait',
+      pageMargins: [20, 100, 20, 100],
+      header: () => {
+        return [
+          // this.pdfHeaderControllerOffice(),
+        ]
+
+      },
+
+      content: [
+        {
+          columns: [
+            { text: 'স্মারক নং-বুটেক্স/পঃনিঃ/১২৮/২০২৪/৯৪-১/৭', alignment: 'left' },
+            { text: 'তারিখ : ০৫/০৩/২০২৫', alignment: 'right' }
+          ],
+        },
+
+        '\n',
+        {
+          columns: [
+            { text: 'প্রাপক :', width: 'auto' },
+            {
+              margin: [10, 0, 0, 0],
+              stack: [
+                'জনাব ফারজানা শাকিলা',
+                'সহকারী অধ্যাপক, গণিত ও পরিসংখ্যান বিভাগ',
+                'বাংলাদেশ টেক্সটাইল বিশ্ববিদ্যালয়',
+                'তেজগাঁও, ঢাকা-১২০৮।\n\n'
+              ],
+
+            }
+          ]
+        },
+        {
+          columns: [
+            { text: 'বিষয় :', width: 'auto' },
+            {
+              margin: [10, 0, 0, 0],
+              text: 'স্কুটিনাইজার ও নম্বরপত্র প্রস্তুতকারী হিসেবে নিয়োগ পত্র ।\n\n'
+            }
+          ]
+        },
+
+        {
+          alignment: 'justify',
+          text: [
+            'উপর্যুক্ত বিষয়ের আলোকে অত্র বিশ্ববিদ্যালয়ের বি. এসসি. ইন ' +
+            'টেক্সটাইল ইঞ্জিনিয়ারিং, লেভেল-১ টার্ম-১, পরীক্ষা- ২০২৪ এর নিম্ন-বর্ণিত বিষয়ের ' +
+            'মূল্যায়িত উত্তরপত্র স্ক্রুটিনি ও নম্বরপত্র প্রস্তত করার জন্য এতদ্বারা আপনাকে স্ক্রুটিনাইজার ও নম্বরপত্র প্রস্তুতকারী হিসেবে নিয়োগ করা হ\'ল ।'
+          ]
+        },
+
+        {
+          style: 'tableExample',
+
+          table: {
+            widths: [20, '*', '*', 80,],
+            headerRows: 0,
+            // keepWithHeaderRows: 1,
+            body: [
+
+
+              [{ text: 'ক্রম', alignment: 'center' },
+              { text: 'পরীক্ষার নাম', alignment: 'center' },
+              { text: 'বিষয়ের নাম', alignment: 'center' },
+              { text: 'উত্তরপত্রের সংখ্যা', alignment: 'center' },
+              ],
+
+              [{ text: '১.', alignment: 'center' },
+              { text: 'লেভেল-১ টার্ম-১, পরীক্ষা-২০২৪', alignment: 'center' },
+              { text: 'Business and Communicative English (ENG 101-0231)', alignment: 'center' },
+              { text: '৭৭', alignment: 'center' },
+              ],
+
+            ]
+          }
+        },
+        {
+
+          alignment: 'justify',
+          text: [
+            '২। উত্তরপত্র প্রাপ্তির পরবর্তী ০২ (দুই) দিনের মধ্যে উক্ত কাজ সংশ্লিষ্ট বিভাগে সম্পন্ন করার জন্য আপনাকে অনুরোধ জানানো হ\'ল ।',
+          ]
+        },
+        {
+
+          margin: [400, 20, 0, 0],
+          stack: [
+            { text: 'ভাইস চ্যান্সেলর মহোদয়ের অনুমোদনক্রমে-', alignment: 'center' },
+            { text: '\n', alignment: 'center' },
+            { text: '(মোঃ রেজাউল হক)', alignment: 'center' },
+            { text: 'পরীক্ষা নিয়ন্ত্রক (চলতি দায়িত্ব)', alignment: 'center' },
+          ],
+        },
+
+        { text: '\nসদয় অবগতির জন্য অনুলিপি প্রেরণঃ', bold: 'true', decoration: 'underline' },
+        {
+          ol: [
+            'ড. মোঃ নুরুন্নবী, সভাপতি, সংশ্লিষ্ট পরীক্ষা কমিটি, বুটেক্স।',
+            'পিএস টু ভিসি, ভিসি অফিস (ভিসি মহোদয়ের সদয় অবগতির জন্য), বুটেক্স ।',
+            'সংশ্লিষ্ট নথি ।',
+          ],
+
+          margin: [15, 5, 0, 0],
+        },
+
+      ],
+      styles: {
+        header: {
+          fontSize: 18,
+          bold: true,
+          margin: [0, 0, 0, 10]
+        },
+        subheader: {
+          fontSize: 16,
+          bold: true,
+          margin: [0, 10, 0, 5]
+        },
+        tableExample: {
+          margin: [20, 5, 20, 15]
+        },
+        tableHeader: {
+          bold: true,
+          fontSize: 12.5,
+          color: 'black'
+        }
+      },
+
+      defaultStyle: {
+        font: 'NotoSerifBengali',
+        fontSize: 10,
+      }
+    };
+
+    try {
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+
+
+      console.log('[pdfMake] PDF generated successfully.');
+    } catch (e) {
+      console.error('[pdfMake] Error generating PDF:', e);
+    }
+  };
+
+  public bc12(): void {
+    const docDefinition: any = {
+
+      pageSize: 'A4',
+      pageOrientation: 'portrait',
+      pageMargins: [20, 100, 20, 100],
+      header: () => {
+        return [
+          // this.pdfHeaderControllerOffice(),
+        ]
+
+      },
+
+      content: [
+        {
+          columns: [
+            { text: 'স্মারক নং-বুটেক্স/পঃনিঃ/১৫(১ম খন্ড)/২০২৩/২৫১', alignment: 'left' },
+            { text: 'তারিখ ঃ ২১/০৭/২০২৫', alignment: 'right' }
+          ],
+        },
+
+        '\n',
+        {
+          stack: [{
+            ol: [
+              {
+                stack: [
+                  { text: 'ড. এ. টি. এম. ফয়েজ আহমেদ' },
+                  { text: 'সহযোগী অধ্যাপক, ফেব্রিক ইঞ্জিনিয়ারিং বিভাগ' },
+                  { text: 'বাংলাদেশ টেক্সটাইল বিশ্ববিদ্যালয়।' }
+                ], margin: [0, 0, 0, 15],
+              },
+
+              {
+                stack: [
+                  { text: 'ড. মোঃ সুলতান মাহমুদ' },
+                  { text: 'সহযোগী অধ্যাপক, ইয়ার্ণ ইঞ্জিনিয়ারিং বিভাগ' },
+                  { text: 'বাংলাদেশ টেক্সটাইল বিশ্ববিদ্যালয়।' }
+                ], margin: [0, 0, 0, 15],
+              }
+            ]
+          }]
+        },
+
+        {
+          columns: [
+            { text: 'বিষয় :', width: 'auto' },
+            {
+              margin: [10, 0, 0, 0],
+              text: 'ফলবিন্যাসক নিয়োগ ।\n\n'
+            }
+          ]
+        },
+
+        {
+          alignment: 'justify',
+          text: [
+
+            'উপর্যুক্ত বিষয়ের আলোকে অত্র বিশ্ববিদ্যালয়ের বি. এসসি. ইন ' +
+            'টেক্সটাইল ইঞ্জিনিয়ারিং, লেভেল-৪ টার্ম-২ (সেশন ঃ ২০২২- ২০২৩), পরীক্ষা-২০২৩ এর ফলাফল বিন্যাসকরণের নিমিত্ত ' +
+            'ড. এ. টি. এম. ফয়েজ আহমেদ, সহযোগী অধ্যাপক, ফেব্রিক ইঞ্জিনিয়ারিং বিভাগ এবং ' +
+            'ড. মোঃ সুলতান মাহমুদ, সহযোগী অধ্যাপক, ইয়ার্ণ ইঞ্জিনিয়ারিং বিভাগ, অত্র বিশ্ববিদ্যালয়-কে এতদ্বারা ফলবিন্যাসক নিয়োগ করা হ\'ল।\n\n' +
+
+            'ফলবিন্যাসকগণ সংশ্লিষ্ট বিধির আলোকে উক্ত পরীক্ষার ফলাফল বিন্যাসকরনের কাজ নম্বরপত্র গ্রহণের পর দ্রুততম সময়ের মধ্যে সম্পন্ন করবেন।'
+          ]
+        },
+
+
+        {
+
+          margin: [370, 40, 0, 0],
+          stack: [
+            { text: 'ভাইস চ্যান্সেলর মহোদয়ের অনুমোদনক্রমে-', alignment: 'center' },
+            { text: '\n', alignment: 'center' },
+            { text: '(মোঃ রেজাউল হক)', alignment: 'center' },
+            { text: 'পরীক্ষা নিয়ন্ত্রক (চলতি দায়িত্ব)', alignment: 'center' },
+            { text: 'বাংলাদেশ টেক্সটাইল বিশ্ববিদ্যালয়', alignment: 'center' },
+          ],
+        },
+
+        { text: '\nসদয় অবগতির জন্য অনুলিপি প্রেরণঃ', bold: 'true', decoration: 'underline' },
+        {
+          ol: [
+            'অধ্যাপক শিল্পী আক্তার, ডীন, ফ্যাকাল্টি অব টেক্সটাইল ইঞ্জিনিয়ারিং, বুটেক্স ও সভাপতি সংশ্লিষ্ট পরীক্ষা কমিটি, বুটেক্স ।',
+            'পিএস টু ভিসি, ভিসি অফিস (ভিসি মহোদয়ের সদয় অবগতির জন্য), বুটেক্স ।',
+            'সংশ্লিষ্ট নথি ।',
+          ],
+
+          margin: [15, 5, 0, 0],
+        },
+
+      ],
+      styles: {
+        header: {
+          fontSize: 18,
+          bold: true,
+          margin: [0, 0, 0, 10]
+        },
+        subheader: {
+          fontSize: 16,
+          bold: true,
+          margin: [0, 10, 0, 5]
+        },
+        tableExample: {
+          margin: [20, 5, 20, 15]
+        },
+        tableHeader: {
+          bold: true,
+          fontSize: 12.5,
+          color: 'black'
+        }
+      },
+
+      defaultStyle: {
+        font: 'NotoSerifBengali',
+        fontSize: 10,
+      }
+    };
+
+    try {
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+
+
+      console.log('[pdfMake] PDF generated successfully.');
+    } catch (e) {
+      console.error('[pdfMake] Error generating PDF:', e);
+    }
+  };
+
+  public bc13(): void {
+    const docDefinition: any = {
+
+      pageSize: 'A4',
+      pageOrientation: 'portrait',
+      pageMargins: [20, 100, 20, 60],
+      header: () => {
+        return [
+          // this.pdfHeaderControllerOffice(),
+        ]
+
+      },
+
+      content: [
+        {
+          columns: [
+            { text: 'স্মারক নং-বুটেক্স/পঃনিঃ/১২৬/২০২৪/২৩১-১/১০', alignment: 'left' },
+            { text: 'তারিখ : ৩০/০৬/২০২৫', alignment: 'right' }
+          ],
+        },
+
+        { text: 'অফিস আদেশ', alignment: 'center', style: 'header', decoration: 'underline' },
+
+        {
+          alignment: 'justify',
+          text: [
+            'বাংলাদেশ টেক্সটাইল বিশ্ববিদ্যালয়ের বি. এসসি. ইন টেক্সটাইল ইঞ্জিনিয়ারিং,' +
+            ' লেভেল-৪ টার্ম-২ (সেশনঃ ২০২২-২০২৩), চূড়ান্ত পরীক্ষা-২০২৩ এর ইয়ার্ণ ইঞ্জিনিয়ারিং' +
+            ' বিভাগের পরীক্ষার্থীদের কম্প্রিহেনসিভ ভাইভা গ্রহণের নিমিত্ত এতদ্বারা নিম্ন-বর্ণিত উপায়ে বোর্ড গঠন করা হল :'
+          ]
+        },
+
+        {
+          style: 'tableExample',
+
+          table: {
+            widths: [30, '*', 60,],
+            headerRows: 0,
+            // keepWithHeaderRows: 1,
+            body: [
+
+
+              [{ text: 'ক্রম', alignment: 'center' },
+              { text: 'নাম ও পদবী', alignment: 'center' },
+              { text: '', alignment: 'center' },
+              ],
+
+              [{ text: '১.', alignment: 'center' },
+              { text: 'ডীন\nফ্যাকাল্টি অব টেক্সটাইল ইঞ্জিনিয়ারিং, বুটেক্স।', },
+              { text: 'সভাপতি', alignment: 'center' },
+              ],
+
+              [{ text: '2.', alignment: 'center' },
+              { text: 'বিভাগীয় প্রধান\nইয়ার্ণ ইঞ্জিনিয়ারিং বিভাগ, বুটেক্স ।', },
+              { text: 'সদস্য', alignment: 'center' },
+              ],
+
+              [{ text: '৩.', alignment: 'center' },
+              { text: 'ড. হোসনে আরা বেগম\nঅধ্যাপক, ইয়ার্ণ ইঞ্জিনিয়ারিং বিভাগ, বুটেক্স।', },
+              { text: 'সদস্য', alignment: 'center' },
+              ],
+
+              [{ text: '8.', alignment: 'center' },
+              { text: 'ড. কানিজ ফারহানা\nঅধ্যাপক, এ্যাপারেল ইঞ্জিনিয়ারিং বিভাগ, বুটেক্স ।', },
+              { text: 'সদস্য', alignment: 'center' },
+              ],
+
+              [{ text: '৫.', alignment: 'center' },
+              { text: 'ড. মোঃ রুকনুজ্জামান\nসহযোগী অধ্যাপক ও বিভাগীয় প্রধান, গণিত ও পরিসংখ্যান বিভাগ, বুটেক্স ।', },
+              { text: 'সদস্য', alignment: 'center' },
+              ],
+
+            ]
+          }
+        },
+        {
+
+          alignment: 'justify',
+          text: [
+            '২। আহ্বায়ক বোর্ডের সদস্যগণের প্রদত্ত নম্বর সমন্বয় করে “কম্প্রিহেনসিভ ভাইভা” বিষয়ের জন্য একটি চূড়ান্ত নম্বরপত্র জমা দিবেন ।',
+          ]
+        },
+        {
+
+          margin: [340, 20, 0, 0],
+          stack: [
+            { text: 'ভাইস চ্যান্সেলর মহোদয় অনুমোদনক্রমে-', alignment: 'center' },
+            { text: '\n', alignment: 'center' },
+            { text: '(মোঃ রেজাউল হক)', alignment: 'center' },
+            { text: 'পরীক্ষা নিয়ন্ত্রক (চলতি দায়িত্ব)', alignment: 'center' },
+            { text: 'বাংলাদেশ টেক্সটাইল বিশ্ববিদ্যালয়', alignment: 'center' },
+          ],
+        },
+
+        { text: '\nবিতরণ (জ্যেষ্ঠতার ভিত্তিতে নয়) :', bold: 'true', decoration: 'underline' },
+        {
+          ol: [
+            'ডীন, ফ্যাকাল্টি অব টেক্সটাইল ইঞ্জিনিয়ারিং, বুটেক্স। ',
+            'বিভাগীয় প্রধান, ইয়ার্ণ ইঞ্জিনিয়ারিং বিভাগ, বুটেক্স । ',
+            'ড. হোসনে আরা বেগম, অধ্যাপক, ইয়ার্ণ ইঞ্জিনিয়ারিং বিভাগ, বুটেক্স।',
+            'ড. কানিজ ফারহানা, অধ্যাপক, এ্যাপারেল ইঞ্জিনিয়ারিং বিভাগ, বুটেক্স ।',
+            'ড. মোঃ রুকনুজ্জামান, সহযোগী অধ্যাপক ও বিভাগীয় প্রধান, গণিত ও পরিসংখ্যান বিভাগ, বুটেক্স। \n\n',
+          ],
+
+          margin: [15, 5, 0, 0],
+        },
+
+        {
+          columns: [
+            { text: 'স্মারক নং-বুটেক্স/পঃনিঃ/১২৬/২০২৪/২৩১-১/১০', alignment: 'left' },
+            { text: 'তারিখ : ৩০/০৬/২০২৫', alignment: 'right' }
+          ],
+        },
+
+        { text: '\nসদয় অবগতির জন্য অনুলিপি প্রেরণ:', bold: 'true', decoration: 'underline' },
+        {
+          ol: [
+            'ডীন, ফ্যাকাল্টি অব টেক্সটাইল ইঞ্জিনিয়ারিং, বুটেক্স এবং সভাপতি, সংশ্লিষ্ট পরীক্ষা কমিটি ।',
+            'পিএস টু ভিসি, ভিসি অফিস (ভিসি মহোদয়ের সদয় অবগতির জন্য), বুটেক্স।  ',
+            'সংশ্লিষ্ট নথি । ',
+          ],
+
+          margin: [15, 5, 0, 0],
+        },
+
+
+        {
+
+          margin: [340, 20, 0, 0],
+          stack: [
+            { text: '(মারজানী তুবন নাহার)', alignment: 'center' },
+            { text: 'সহকারী-পরীক্ষা নিয়ন্ত্রক', alignment: 'center' },
+            { text: 'বাংলাদেশ টেক্সটাইল বিশ্ববিদ্যালয়', alignment: 'center' },
+          ],
+        },
+
+      ],
+      styles: {
+        header: {
+          fontSize: 16,
+          bold: true,
+          margin: [0, 0, 0, 10]
+        },
+        subheader: {
+          fontSize: 16,
+          bold: true,
+          margin: [0, 10, 0, 5]
+        },
+        tableExample: {
+          margin: [40, 5, 40, 15]
+        },
+        tableHeader: {
+          bold: true,
+          fontSize: 12.5,
+          color: 'black'
+        }
+      },
+
+      defaultStyle: {
+        font: 'NotoSerifBengali',
+        fontSize: 10,
+      }
+    };
+
+    try {
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+
+
+      console.log('[pdfMake] PDF generated successfully.');
+    } catch (e) {
+      console.error('[pdfMake] Error generating PDF:', e);
+    }
+  };
+
+  public bc14(): void {
+    const docDefinition: any = {
+
+      pageSize: 'A4',
+      pageOrientation: 'portrait',
+      pageMargins: [20, 100, 20, 60],
+      header: () => {
+        return [
+          // this.pdfHeaderControllerOffice(),
+        ]
+
+      },
+
+      content: [
+        {
+          columns: [
+            { text: 'স্মারক নং-বুটেক্স/পঃনিঃ/১২৬/২০২৪/২৫২-১/২', alignment: 'left' },
+            { text: 'তারিখ : ২৩/০৭/২০২৫', alignment: 'right' }
+          ],
+        },
+
+        { text: 'অফিস আদেশ', alignment: 'center', style: 'header', decoration: 'underline' },
+
+        {
+          alignment: 'justify',
+          text: [
+            'বাংলাদেশ টেক্সটাইল বিশ্ববিদ্যালয়ের বি. এসসি. ইন টেক্সটাইল ইঞ্জিনিয়ারিং,' +
+            ' লেভেল-৪ টার্ম-২ (সেশনঃ ২০২২-২০২৩), চূড়ান্ত পরীক্ষা-২০২৩ এর ওয়েট প্রসেস ইঞ্জিনিয়ারিং' +
+            ' প্রজেক্ট ওয়ার্ক বিষয়ের চূড়ান্ত মূল্যায়ন করার নিমিত্ত এতদ্বারা নিম্ন-বর্ণিত বোর্ড গঠন করা হল ঃ'
+          ]
+        },
+
+        {
+          style: 'tableExample',
+
+          table: {
+            widths: [30, '*', 60,],
+            headerRows: 0,
+            // keepWithHeaderRows: 1,
+            body: [
+
+
+              [{ text: 'ক্রম', alignment: 'center' },
+              { text: 'নাম ও পদবী', alignment: 'center' },
+              { text: 'কমিটির পদবী', alignment: 'center' },
+              ],
+
+              [{ text: '১.', alignment: 'center' },
+              { text: 'ডীন\nফ্যাকাল্টি অব টেক্সটাইল ইঞ্জিনিয়ারিং, বুটেক্স।', },
+              { text: 'সভাপতি', alignment: 'center' },
+              ],
+
+              [{ text: '2.', alignment: 'center' },
+              { text: 'বিভাগীয় প্রধান\nওয়েট প্রসেস ইঞ্জিনিয়ারিং বিভাগ, বুটেক্স ।', },
+              { text: 'সদস্য', alignment: 'center' },
+              ],
+
+              [{ text: '৩.', alignment: 'center' },
+              { text: 'সংশ্লিষ্ট সুপারভাইজার *\nওয়েট প্রসেস ইঞ্জিনিয়ারিং বিভাগ, বুটেক্স ।', },
+              { text: 'সদস্য', alignment: 'center' },
+              ],
+
+              [{ text: '8.', alignment: 'center' },
+              { text: 'ড. মোঃ সাইদুজ্জামান\nঅধ্যাপক, টেক্সটাইল ইঞ্জিনিয়ারিং ম্যানেজমেন্ট বিভাগ, বুটেক্স।', },
+              { text: 'সদস্য', alignment: 'center' },
+              ],
+
+              [{ text: '৫.', alignment: 'center' },
+              { text: 'Engr. Md. Salahuddin Repon\nGeneral Manager (Sales & Technical), Auxicolor Bangladesh Ltd.', },
+              { text: 'সদস্য', alignment: 'center' },
+              ],
+
+            ]
+          }
+        },
+
+        {
+          text: '* সংশ্লিষ্ট সুপারভাইজার বলতে যে পরীক্ষার্থীর প্রজেক্ট ওয়ার্ক মূল্যায়ন করা হবে তার সুপারভাইজারকে বুঝানো হয়েছে ।\n',
+        },
+        {
+          text: '২। প্রজেক্ট ওয়ার্ক মূল্যায়ন পদ্ধতি :',
+        },
+        {
+          margin: [10, 5, 0, 0],
+          stack: [
+            {
+              ul: [
+                { text: 'উক্ত কমিটি প্রজেক্ট ওয়ার্ক বিষয়ের মোট নম্বরের ৫০% (৫০ নম্বর) এর উপর চূড়ান্ত মূল্যায়ন করবেন ।' },
+                { text: 'Report এর Presentation এবং সদস্যগণের প্রশ্ন-উত্তরের মাধ্যমে কমিটি পরীক্ষার্থীর প্রজেক্ট ওয়ার্ক মূল্যায়ন করবেন ।' }
+              ]
+            },
+            {
+              text: 'উল্লেখ্য, ৫০% নম্বর (৫০ নম্বর) কন্টিনিউয়াস এ্যাসেসমেন্ট হিসেবে সংশ্লিষ্ট সুপারভাইজার মূল্যায়ন করবেন ।',
+              
+            }
+          ]
+        },
+
+        { text: '৩। আহ্বায়ক “ প্রজেক্ট ওয়ার্ক” বিষয়ের জন্য বিভাগ ভিত্তিক আলাদা চূড়ান্ত নম্বরপত্র জমা দিবেন ।', },
+
+        {
+
+          margin: [340, 20, 0, 0],
+          stack: [
+            { text: 'ভাইস চ্যান্সেলর মহোদয় অনুমোদনক্রমে-', alignment: 'center' },
+            { text: '\n', alignment: 'center' },
+            { text: '(মোঃ রেজাউল হক)', alignment: 'center' },
+            { text: 'পরীক্ষা নিয়ন্ত্রক (চলতি দায়িত্ব)', alignment: 'center' },
+            { text: 'বাংলাদেশ টেক্সটাইল বিশ্ববিদ্যালয়', alignment: 'center' },
+          ],
+        },
+
+        { text: '\nবিতরণ (জ্যেষ্ঠতার ভিত্তিতে নয়) :',  decoration: 'underline' },
+        {
+          ol: [
+            {text:'ডীন, ফ্যাকাল্টি অব টেক্সটাইল কেমিক্যাল ইঞ্জিনিয়ারিং, বুটেক্স । '},
+            {text:['বিভাগীয় প্রধান ',
+              {text:'(সংশ্লিষ্ট সকল সুপারভাইজারকে অবহিত করার অনুরোধ সহ),', bold:'true'},
+              ' ওয়েট প্রসেস ইঞ্জিনিয়ারিং বিভাগ, বুটেক্স।']},
+            {text:['সংশ্লিষ্ট সুপারভাইজার ',
+              {text:'(প্রজেক্ট ওয়ার্ক বিষয়ের চূড়ান্ত মূল্যায়ন পরীক্ষা অনুষ্ঠিত হওয়ার পূর্বে কন্টিনিউয়াস এ্যাসেসমেন্টের নম্বরপত্র জমা দেয়ার অনুরোধ জানানো হ\'ল),', bold:'true'},
+              ' ওয়েট প্রসেস ইঞ্জিনিয়ারিং বিভাগ, বুটেক্স।']},
+            {text:'ড. মোঃ সাইদুজ্জামান, অধ্যাপক, টেক্সটাইল ইঞ্জিনিয়ারিং ম্যানেজমেন্ট বিভাগ, বুটেক্স।'},
+            {text:'Engr. Md. Salahuddin Repon, General Manager (Sales & Technical), Auxicolor Bangladesh Ltd. \n\n'},
+          ],
+
+          margin: [15, 5, 0, 0],
+        },
+
+        {
+          columns: [
+            { text: 'স্মারক নং-বুটেক্স/পঃনিঃ/১২৬/২০২৪/২৫২-১/২', alignment: 'left' },
+            { text: 'তারিখ : ২৩/০৭/২০২৫', alignment: 'right' }
+          ],
+        },
+
+        { text: '\nসদয় অবগতির জন্য অনুলিপি প্রেরণ:', bold: 'true', decoration: 'underline' },
+        {
+          ol: [
+            'ডীন, ফ্যাকাল্টি অব টেক্সটাইল ইঞ্জিনিয়ারিং, বুটেক্স ও সভাপতি, সংশ্লিষ্ট পরীক্ষা কমিটি, বুটেক্স।',
+            'পিএস টু ভিসি, ভিসি অফিস (ভিসি মহোদয়ের সদয় অবগতির জন্য), বুটেক্স।  ',
+            'সংশ্লিষ্ট নথি । ',
+          ],
+
+          margin: [15, 5, 0, 0],
+        },
+
+
+        {
+
+          margin: [340, 20, 0, 0],
+          stack: [
+            { text: '(মারজানী তুবন নাহার)', alignment: 'center' },
+            { text: 'উপ-পরীক্ষা নিয়ন্ত্রক', alignment: 'center' },
+            { text: 'বাংলাদেশ টেক্সটাইল বিশ্ববিদ্যালয়', alignment: 'center' },
+          ],
+        },
+
+      ],
+      styles: {
+        header: {
+          fontSize: 16,
+          bold: true,
+          margin: [0, 0, 0, 10]
+        },
+        subheader: {
+          fontSize: 16,
+          bold: true,
+          margin: [0, 10, 0, 5]
+        },
+        tableExample: {
+          margin: [40, 5, 40, 15]
+        },
+        tableHeader: {
+          bold: true,
+          fontSize: 12.5,
+          color: 'black'
+        }
+      },
+
+      defaultStyle: {
+        font: 'NotoSerifBengali',
+        fontSize: 10,
+      }
+    };
+
+    try {
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+
+
+      console.log('[pdfMake] PDF generated successfully.');
+    } catch (e) {
+      console.error('[pdfMake] Error generating PDF:', e);
+    }
+  };
 }
