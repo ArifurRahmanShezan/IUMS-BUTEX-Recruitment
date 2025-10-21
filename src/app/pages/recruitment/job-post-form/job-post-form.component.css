@@ -33,7 +33,7 @@ button {
 }
 
 .btn-draft {
-    background: #9E9E9E;
+    background: #ff5100;
     color: #fff;
 }
 
@@ -130,4 +130,13 @@ th {
     gap: 10px;
     flex-wrap: wrap;
     margin-bottom: 10px;
+}
+.close-btn {
+  background-color: #e53935;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  float: right;
 }

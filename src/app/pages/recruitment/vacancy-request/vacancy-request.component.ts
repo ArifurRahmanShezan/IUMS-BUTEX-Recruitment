@@ -36,8 +36,8 @@ export class VacancyRequestComponent {
   vacancyData: any[] = [];
 
   openModal() {
-    //  this.modalOpen = true; 
-    this.PdfService.generatePdf('Ryan', 'Fakkeenya Seervisii PDF Angular 16');
+    this.modalOpen = true; 
+    //this.PdfService.generatePdf('Ryan', 'Fakkeenya Seervisii PDF Angular 16');
 
   }
   closeModal() {

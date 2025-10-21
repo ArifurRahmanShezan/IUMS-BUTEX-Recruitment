@@ -42,7 +42,7 @@ th {
 }
 
 button {
-  background: #007b55;
+  background: #00587b;
   color: white;
   border: none;
   padding: 8px 12px;
@@ -51,7 +51,7 @@ button {
 }
 
 button:hover {
-  background: #005e40;
+  background: #00405e;
 }
 
 form label {
@@ -63,4 +63,9 @@ input, select, textarea {
   width: 100%;
   padding: 6px;
   margin-top: 4px;
+  border-width: 1px;      
+  border-style: solid;        
+  border-color: #0299f1;     
+  border-radius: 4px;
+  box-sizing: border-box;
 }

@@ -62,6 +62,7 @@
       <p><strong>Salary:</strong> {{currentJob.salary}}</p>
       <p><strong>Application Start:</strong> {{currentJob.start | date:'short'}}</p>
       <p><strong>Application End:</strong> {{currentJob.end | date:'short'}}</p>
+      <button class="close-btn" (click)="closeDetailsModal()">Close</button>
     </div>
   </div>
 </div>
@@ -92,6 +93,7 @@
       <textarea rows="4" [(ngModel)]="appCover" name="appCover"></textarea>
     </div>
     <button class="btn-apply" (click)="submitApplication()">Submit Application</button>
+    <button class="close-btn" (click)="closeApplyModal()">Close</button>
   </div>
 </div>
 </div>

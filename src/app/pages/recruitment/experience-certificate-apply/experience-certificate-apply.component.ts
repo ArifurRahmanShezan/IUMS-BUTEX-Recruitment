@@ -86,6 +86,7 @@ export class ExperienceCertificateApplyComponent {
   }
 
   deleteEmployee(index: number) {
+    if (confirm('Are you sure you want to delete this employee?'))
     this.employees.splice(index, 1);
   }
 }

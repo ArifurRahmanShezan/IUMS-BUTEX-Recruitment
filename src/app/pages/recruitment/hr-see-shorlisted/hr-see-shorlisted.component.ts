@@ -54,6 +54,17 @@ export class HRSeeShorlistedComponent {
       cover: 'Entry-level web developer looking for opportunities.',
       resume: 'Basic knowledge in JS, HTML, CSS.',
     },
+      {
+      id: 'APP-001',
+      name: 'Rahim Uddin',
+      phone: '+8801900000000',
+      email: 'rahim@example.com',
+      score: 100,
+      status: 'pending',
+      submitted: '2025-10-10, 10:37 AM',
+      cover: 'Dear team, I am excited to apply for this position.',
+      resume: 'Experience: 3 years in frontend dev with Angular & React.',
+    }
   ];
   
 

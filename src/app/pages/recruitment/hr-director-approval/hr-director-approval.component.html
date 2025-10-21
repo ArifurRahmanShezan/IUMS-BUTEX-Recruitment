@@ -79,6 +79,7 @@
       <label>Approval Date</label>
       <input type="text" [value]="approvalData[currentIndex].approvalDate" readonly>
     </div>
+    <button class="close-btn" (click)="closeModal()">Close</button>
     <button class="btn-approve" *ngIf="currentMode!=='View'" (click)="submitModal()">Submit</button>
   </div>
 </div>

@@ -1,24 +1,30 @@
+
+<div class="tw-p-10">
 <div class="page-container">
   <div class="form-section">
     <h3>Schedule Interview</h3>
+    <div class="container">
     <form (ngSubmit)="sendInvite()">
       <label>Candidate Name*</label>
       <input type="text" [(ngModel)]="candidateName" name="candidateName" required />
 
 <label>Assigned Interviewer(s)*</label>
 <div class="checkbox-group">
-  <label *ngFor="let interviewer of allInterviewers">
-  <input 
-    type="checkbox" 
-    [(ngModel)]="assignedInterviewersMap[interviewer]"
-    name="assignedInterviewers_{{interviewer}}" 
-  />
-  {{interviewer}}
-</label>
+  <div class="checkbox-items">
+    <label *ngFor="let interviewer of allInterviewers" class="checkbox-item">
+      <input
+        type="checkbox"
+        [(ngModel)]="assignedInterviewersMap[interviewer]"
+        name="assignedInterviewers_{{interviewer}}"
+      />
+      {{ interviewer }}
+    </label>
+  </div>
 </div>
 
+
       <label>Date & Time*</label>
-      <input type="datetime-local" [(ngModel)]="dateTime" name="dateTime" required />
+      <input type="datetime-local" [(ngModel)]="dateTime" name="dateTime" required/>
 
       <label>Mode*</label>
       <div class="radio-group">
@@ -50,7 +56,6 @@
             <th>Candidate</th>
             <th>Date</th>
             <th>Mode</th>
-            <th>Status</th>
           </tr>
         </thead>
         <tbody>
@@ -86,4 +91,5 @@
       </table>
     </div>
   </div>
+</div>
 </div>

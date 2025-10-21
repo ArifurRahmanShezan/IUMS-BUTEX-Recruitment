@@ -33,16 +33,19 @@ button {
 .btn-edit {
     background: #2196F3;
     color: #fff;
+    font-size: 17px;
 }
 
 .btn-delete {
     background: #f44336;
     color: #fff;
+    font-size: 17px;
 }
 
 .btn-view {
     background: #ff9800;
     color: #fff;
+    font-size: 17px;
 }
 
 table {

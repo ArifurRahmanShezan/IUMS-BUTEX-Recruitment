@@ -55,3 +55,16 @@ thead {
 .status.absent { background-color: #c0392b; }
 .status.late { background-color: #e67e22; }
 .status.leave { background-color: #9b59b6; }
+.search-box {
+    border: 2px solid #007bff; /* Blue border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 8px; /* Inner padding */
+    width: 30%; /* Full width */
+    box-sizing: border-box; /* Include padding in width */
+  }
+
+  .search-box:focus {
+    outline: none; /* Remove default outline */
+    border-color: #0056b3; /* Darker blue on focus */
+    box-shadow: 0 0 2px rgba(0, 123, 255, 0.5); /* Add glow effect */
+  }

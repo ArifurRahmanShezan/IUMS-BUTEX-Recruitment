@@ -22,11 +22,12 @@ td {
     padding: 10px;
     border-bottom: 1px solid #ddd;
     text-align: left;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 th {
     background: #f0f0f0;
+    font-size: 17px;
 }
 
 button {
@@ -44,6 +45,10 @@ button {
 
 .btn-apply {
     background: #4CAF50;
+    color: #fff;
+}
+.close-btn{
+    background:red;
     color: #fff;
 }
 

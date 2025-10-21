@@ -20,11 +20,13 @@ button {
 .btn-approve {
     background: #4CAF50;
     color: #fff;
+    font-size: 17px;
 }
 
 .btn-review {
     background: #FF9800;
     color: #fff;
+    font-size: 17px;
 }
 
 table {
@@ -99,6 +101,20 @@ th {
     cursor: pointer;
     color: #555;
 }
+.close-btn {
+  background-color: #e53935;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  float: right;
+}
+
+.close-btn:hover {
+  background-color: #c62828;
+}
+
 
 .form-group {
     margin-bottom: 12px;

@@ -88,10 +88,11 @@
       </select>
 
       <div class="btn-group">
+        <button type="button" class="cancel-btn" (click)="closeForm()">Cancel</button>
         <button type="submit" class="submit-btn">
           {{ editIndex !== null ? 'Update' : 'Submit' }}
         </button>
-        <button type="button" class="cancel-btn" (click)="closeForm()">Cancel</button>
+        
       </div>
     </form>
   </div>

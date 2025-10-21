@@ -21,7 +21,7 @@
     "useDefineForClassFields": false,
     "lib": ["ES2022", "dom"]
   },
-  "files": ["src/pdfmake.d.ts"],
+  "files": ["src/app/types/pdfmake.d.ts"],
   "include": ["src/**/*.ts"],
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
