@@ -15,6 +15,12 @@ import { DhEmployeeAttendenceComponent } from './pages/recruitment/dh-employee-a
 import { EmployeeServiceBookComponent } from './pages/recruitment/employee-service-book/employee-service-book.component';
 import { HrDashboardComponent } from './pages/recruitment/hr-dashboard/hr-dashboard.component';
 import { PdfTrialComponent } from './pages/recruitment/pdf-trial/pdf-trial.component';
+import { LeaveApprovalComponent } from './pages/bina/leave-approval/leave-approval.component';
+import { AuditorLeaveApprovalComponent } from './pages/bina/auditor-leave-approval/auditor-leave-approval.component';
+import { DepartmentHeadLeaveApprovalComponent } from './pages/bina/department-head-leave-approval/department-head-leave-approval.component';
+import { DeparmentHeadLeaveManagementComponent } from './pages/bina/deparment-head-leave-management/deparment-head-leave-management.component';
+import { DepartmentHeadTourApprovalComponent } from './pages/bina/department-head-tour-approval/department-head-tour-approval.component';
+// import { LeaveApprovalComponent } from './pages/bina/leave-approval/leave-approval.component';
 
 const routes: Routes = [
 
@@ -84,7 +90,35 @@ const routes: Routes = [
   {
     path: 'hr-dashboard',
     component: HrDashboardComponent
+  },
+
+  {
+    path:'bina',
+    children:[
+      {
+    path: 'leave-approval',
+    component:LeaveApprovalComponent
+  },
+  {
+    path: 'auditor-leave-approval',
+    component:AuditorLeaveApprovalComponent
+  },
+  {
+    path: 'department-head-leave-approval',
+    component:DepartmentHeadLeaveApprovalComponent
+  },
+  {
+    path: 'deparment-head-leave-management',
+    component:DeparmentHeadLeaveManagementComponent
+  },
+  {
+    path:'depatment-head-tour-approval',
+    component:DepartmentHeadTourApprovalComponent
   }
+    ]
+  },
+
+  
 ];
 
 @NgModule({

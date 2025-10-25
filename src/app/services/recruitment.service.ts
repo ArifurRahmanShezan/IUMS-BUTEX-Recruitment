@@ -45,5 +45,10 @@ export class RecruitmentService {
     return this.http.get(`${url}/hr/vacancy-request/${id}`);
   }
 
+//http://localhost:8080/api/v1/hr/vacancy-request/add
+  addVacancyRequest(data: any): Observable<any> {
+    return this.http.post(`${url}/hr/vacancy-request-add`, data);
+  }
+
 
 }

@@ -1,0 +1,65 @@
+<div class="tw-p-10">
+<div class="leave-approval-container">
+  <h2>Leave Approval</h2>
+
+  <div class="filters">
+    <input type="text" placeholder="Search Employee" [(ngModel)]="searchTerm">
+
+    <select [(ngModel)]="selectedLeaveType">
+      <option value="All">All Leave Types</option>
+      <option value="Casual">Casual</option>
+      <option value="Earned">Earned</option>
+      <option value="Maternity">Maternity</option>
+    </select>
+
+    <select [(ngModel)]="selectedStatus">
+      <option value="All">All Status</option>
+      <option value="Approved">Approved</option>
+      <option value="Pending">Pending</option>
+      <option value="Rejected">Rejected</option>
+    </select>
+  </div>
+
+  <table class="leave-table">
+    <thead>
+      <tr>
+        <th>Employee Name</th>
+        <th>Leave Type</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Reason</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let req of filteredRequests">
+        <td>{{ req.employeeName }}</td>
+        <td>{{ req.leaveType }}</td>
+        <td>{{ req.from }}</td>
+        <td>{{ req.to }}</td>
+        <td>{{ req.reason }}</td>
+        <td [ngClass]="req.status.toLowerCase()">{{ req.status }}</td>
+        <td>
+          <button class="approve" (click)="approve(req)">Approve</button>
+          <button class="reject" (click)="reject(req)">Reject</button>
+          <button class="review" (click)="openReview(req)">Review</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Popup -->
+  <div class="popup-overlay" *ngIf="showPopup">
+    <div class="popup">
+      <h3>Review for {{ popupEmployee }}</h3>
+      <textarea [(ngModel)]="popupReason" placeholder="Enter your review reason..."></textarea>
+      <div class="popup-actions">
+        <button (click)="submitReview()">Submit</button>
+        <button class="cancel" (click)="cancelReview()">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+

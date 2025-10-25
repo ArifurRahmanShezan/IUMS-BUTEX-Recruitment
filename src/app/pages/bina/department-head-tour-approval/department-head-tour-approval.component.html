@@ -1,0 +1,84 @@
+<div class="container">
+  <div class="header">
+    <h2>Tour Approval</h2>
+    <button class="export-btn" (click)="exportReport()">📊 Export Report</button>
+  </div>
+
+  <!-- Table -->
+  <table id="tourTable" class="tour-table">
+    <thead>
+      <tr>
+        <th>Tour ID</th><th>Employee</th><th>Dept</th><th>Type</th>
+        <th>Destination</th><th>Dates</th><th>Cost</th><th>Status</th><th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let t of tours">
+        <td>{{t.tourId}}</td>
+        <td>{{t.employee}}</td>
+        <td>{{t.dept}}</td>
+        <td>{{t.type}}</td>
+        <td>{{t.destination}}</td>
+        <td>{{t.from}} → {{t.to}}</td>
+        <td>৳{{t.cost}}</td>
+        <td [ngClass]="t.status.toLowerCase()">{{t.status}}</td>
+        <td>
+          <button class="approve" (click)="approve(t)">Approve</button>
+          <button class="reject" (click)="reject(t)">Reject</button>
+          <button class="edit" (click)="openEdit(t)">Edit</button>
+          <button class="sanction" (click)="sanction(t)">Sanction</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Edit Popup -->
+  <div class="popup-overlay" *ngIf="showPopup">
+    <div class="popup">
+      <h3>Edit Tour – {{editedTour.tourId}}</h3>
+      <div class="form-group">
+        <label>Employee:</label>
+        <input [(ngModel)]="editedTour.employee" />
+      </div>
+      <div class="form-group">
+        <label>Dept:</label>
+        <input [(ngModel)]="editedTour.dept" />
+      </div>
+      <div class="form-group">
+        <label>Type:</label>
+        <input [(ngModel)]="editedTour.type" />
+      </div>
+      <div class="form-group">
+        <label>Destination:</label>
+        <input [(ngModel)]="editedTour.destination" />
+      </div>
+      <div class="form-group">
+        <label>From:</label>
+        <input type="date" [(ngModel)]="editedTour.from" />
+      </div>
+      <div class="form-group">
+        <label>To:</label>
+        <input type="date" [(ngModel)]="editedTour.to" />
+      </div>
+      <div class="form-group">
+        <label>Cost:</label>
+        <input type="number" [(ngModel)]="editedTour.cost" />
+      </div>
+
+      <div class="popup-actions">
+        <button class="update" (click)="updateTour()">Update</button>
+        <button class="cancel" (click)="cancelEdit()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Logs -->
+  <div class="logs">
+  <h3>Approval Logs</h3>
+  <div *ngFor="let log of logs" class="log-item">
+    <span class="log-time">{{ log.split('–')[0] }}</span> –
+    <span class="log-message">{{ log.split('–')[1] }}</span>
+  </div>
+</div>
+</div>
+

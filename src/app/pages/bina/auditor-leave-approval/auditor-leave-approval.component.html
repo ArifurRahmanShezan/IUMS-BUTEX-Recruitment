@@ -1,0 +1,100 @@
+<div class="tw-p-10">
+    <div class="container">
+
+  <table class="leave-table">
+    <thead>
+      <tr>
+        <th>Leave Type</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Days</th>
+        <th>Recommender</th>
+        <th>Reason</th>
+        <th>Auditor</th>
+        <th>Salary Adjustment</th>
+        <th>Comments</th>
+        <th>Branch</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let leave of filteredLeaves">
+        <td>{{ leave.leaveType }}</td>
+        <td>{{ leave.startDate }}</td>
+        <td>{{ leave.endDate }}</td>
+        <td>{{ leave.days }}</td>
+        <td>{{ leave.recommender }}</td>
+        <td>{{ leave.reason }}</td>
+        <td>{{ leave.auditor || '-' }}</td>
+        <td>{{ leave.salaryAdjustment || '-' }}</td>
+        <td>{{ leave.comments || '-' }}</td>
+        <td>{{ leave.branch }}</td>
+        <td>
+          <button class="btn btn-success btn-sm" (click)="editLeave(leave)">Edit</button>
+          <button class="btn btn-danger btn-sm" (click)="deleteLeave(leave)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Modal -->
+  <div class="modal-overlay" *ngIf="showPopup">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3>{{ isEditMode ? 'Edit Leave Request' : 'New Leave Request' }}</h3>
+        <button class="close-button" (click)="showPopup = false">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Leave Type</label>
+          <input type="text" class="form-control" [(ngModel)]="leaveForm.leaveType">
+        </div>
+        <div class="form-row">
+          <div class="form-group half">
+            <label>Start Date</label>
+            <input type="date" class="form-control" [(ngModel)]="leaveForm.startDate">
+          </div>
+          <div class="form-group half">
+            <label>End Date</label>
+            <input type="date" class="form-control" [(ngModel)]="leaveForm.endDate">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Days</label>
+          <input type="number" class="form-control" [(ngModel)]="leaveForm.days">
+        </div>
+        <div class="form-group">
+          <label>Recommender</label>
+          <input type="text" class="form-control" [(ngModel)]="leaveForm.recommender">
+        </div>
+        <div class="form-group">
+          <label>Reason</label>
+          <input type="text" class="form-control" [(ngModel)]="leaveForm.reason">
+        </div>
+        <div class="form-group">
+          <label>Auditor</label>
+          <input type="text" class="form-control" [(ngModel)]="leaveForm.auditor">
+        </div>
+        <div class="form-group">
+          <label>Salary Adjustment</label>
+          <input type="text" class="form-control" [(ngModel)]="leaveForm.salaryAdjustment">
+        </div>
+        <div class="form-group">
+          <label>Comments</label>
+          <input type="text" class="form-control" [(ngModel)]="leaveForm.comments">
+        </div>
+        <div class="form-group">
+          <label>Branch</label>
+          <input type="text" class="form-control" [(ngModel)]="leaveForm.branch">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" (click)="showPopup = false">Cancel</button>
+        <button class="btn btn-success" (click)="submitLeave()">{{ isEditMode ? 'Update' : 'Submit' }}</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+

@@ -3,6 +3,7 @@ import { FacultyService } from './../../../services/faculty.service';
 import { ToastrService } from 'ngx-toastr';
 import { PdfService } from './../../../services/pdf-service.service';
 import { Component } from '@angular/core';
+import { RecruitmentService } from 'src/app/services/recruitment.service';
 
 @Component({
   selector: 'app-vacancy-request',
@@ -13,13 +14,14 @@ export class VacancyRequestComponent {
   modalOpen = false;
   editIndex = -1;
 
-  constructor(private PdfService: PdfService, private toast: ToastrService, private facultyService: FacultyService, private hrService: HrService) {
+  constructor(private PdfService: PdfService, private toast: ToastrService, private facultyService: FacultyService, private hrService: HrService, private recruitmentService: RecruitmentService) { 
 
   }
 
 
   ngOnInit() {
     this.getAllDepartment();
+    
   }
 
 
@@ -105,6 +107,18 @@ export class VacancyRequestComponent {
       designationId: this.selecteDesignation,
       attachment: this.attachment
     };
+    this.recruitmentService.addVacancyRequest(newVacancy).subscribe(
+    (res: any) => {
+      if (res.errors) {
+        this.toast.error(res.errors);
+      } else {
+        this.toast.success("Vacancy Request Submitted Successfully");
+        this.vacancyData.push(res.payload); 
+        this.closeModal();
+      }
+    },
+    () => this.toast.error("Failed to submit vacancy")
+  );
 
     // if (this.editIndex > -1) {
 
@@ -226,6 +240,8 @@ export class VacancyRequestComponent {
       }
     })
   }
+
+
 
 
 }

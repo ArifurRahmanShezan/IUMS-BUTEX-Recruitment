@@ -1,0 +1,97 @@
+<div class="tw-p-10">
+  <div class="leave-header">
+    <button class="btn btn-primary" (click)="openNewLeave()">New Leave</button>
+
+    <input
+      type="text"
+      placeholder="Filter by leave type or reason..."
+      [(ngModel)]="searchTerm"
+      (input)="filterData()"
+      class="form-control search-input"
+    />
+  </div>
+
+  <!-- Leave Table -->
+  <table class="table table-bordered mt-3">
+    <thead>
+      <tr>
+        <th>Leave Type</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Days</th>
+        <th>Recommender</th>
+        <th>Reason</th>
+        <th>Branch</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let leave of filteredLeaves">
+        <td>{{ leave.leaveType }}</td>
+        <td>{{ leave.startDate }}</td>
+        <td>{{ leave.endDate }}</td>
+        <td>{{ leave.days }}</td>
+        <td>{{ leave.recommender }}</td>
+        <td>{{ leave.reason }}</td>
+        <td>{{ leave.branch }}</td>
+        <td class="actions">
+          <button class="btn btn-success btn-sm" (click)="editLeave(leave)">Edit</button>
+          <button class="btn btn-danger btn-sm" (click)="deleteLeave(leave)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Modal -->
+  <div class="modal-overlay" *ngIf="showPopup">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3>{{ isEditMode ? 'Edit Leave Request' : 'New Leave Request' }}</h3>
+        <button class="close-button" (click)="showPopup = false">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Leave Type</label>
+          <select class="form-control" [(ngModel)]="leaveForm.leaveType">
+            <option value="">-- Select Leave Type --</option>
+            <option>Casual</option>
+            <option>Earned</option>
+            <option>Maternity</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group half">
+            <label>Start Date</label>
+            <input type="date" class="form-control" [(ngModel)]="leaveForm.startDate">
+          </div>
+          <div class="form-group half">
+            <label>End Date</label>
+            <input type="date" class="form-control" [(ngModel)]="leaveForm.endDate">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Responsible (Optional)</label>
+          <input type="text" class="form-control" placeholder="Search employee" [(ngModel)]="leaveForm.recommender">
+        </div>
+
+        <div class="form-group">
+          <label>Reason</label>
+          <textarea rows="3" class="form-control" placeholder="Enter reason" [(ngModel)]="leaveForm.reason"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Branch</label>
+          <input type="text" class="form-control" [(ngModel)]="leaveForm.branch">
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" (click)="showPopup = false">Cancel</button>
+        <button class="btn btn-success" (click)="submitLeave()">{{ isEditMode ? 'Update' : 'Submit' }}</button>
+      </div>
+    </div>
+  </div>
+</div>
