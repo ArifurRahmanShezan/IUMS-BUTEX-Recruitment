@@ -1,3 +1,6 @@
+import { HrService } from './../../../services/hr.service';
+import { FacultyService } from './../../../services/faculty.service';
+import { ToastrService } from 'ngx-toastr';
 import { PdfService } from './../../../services/pdf-service.service';
 import { Component } from '@angular/core';
 
@@ -10,9 +13,20 @@ export class VacancyRequestComponent {
   modalOpen = false;
   editIndex = -1;
 
-  constructor(private PdfService: PdfService) {
+  constructor(private PdfService: PdfService, private toast: ToastrService, private facultyService: FacultyService, private hrService: HrService) {
 
   }
+
+
+  ngOnInit() {
+    this.getAllDepartment();
+  }
+
+
+
+
+
+
 
   departmentOrgData: { [key: string]: { position: string; total: number; booked: number; }[] } = {
     "HR & Admin": [
@@ -34,9 +48,33 @@ export class VacancyRequestComponent {
   remarks = '';
   requestedDate = '';
   vacancyData: any[] = [];
+  jobType: any = '';
+
+  attachment: any = '';
+  selecteDesignation: any = '';
+
+
+
+
+  //   payload = {
+  //   reason: "Expansion of AI program",
+  //   jobType: "full-time",
+  //   numberOfPositions: 1,
+  //   departmentId: 1,
+  //   designationId: 1,
+  //   attachment :"awshdh"
+  // }
+
+
+
+
+
+
+
+
 
   openModal() {
-    this.modalOpen = true; 
+    this.modalOpen = true;
     //this.PdfService.generatePdf('Ryan', 'Fakkeenya Seervisii PDF Angular 16');
 
   }
@@ -57,28 +95,30 @@ export class VacancyRequestComponent {
   }
 
   submitVacancy() {
-    if (!this.selectedOrg) return;
+    // if (!this.selectedOrg) return;
 
     const newVacancy = {
-      department: this.selectedDepartment,
-      position: this.selectedOrg.position,
-      total: this.selectedOrg.total,
-      booked: this.selectedOrg.booked,
-      vacancy: this.selectedOrg.total - this.selectedOrg.booked,
-      membersRequested: this.numMembers,
-      remarks: this.remarks,
-      requestedDate: this.requestedDate,
-      status: 'Submitted'
+      departmentId: this.selectedDepartment,
+      reason: this.remarks,
+      jobType: this.jobType,
+      numberOfPositions: this.numMembers,
+      designationId: this.selecteDesignation,
+      attachment: this.attachment
     };
 
-    if (this.editIndex > -1) {
+    // if (this.editIndex > -1) {
 
-      this.vacancyData[this.editIndex] = newVacancy;
-      this.editIndex = -1;
-    } else {
+    //   this.vacancyData[this.editIndex] = newVacancy;
+    //   this.editIndex = -1;
+    // } else {
 
-      this.vacancyData.push(newVacancy);
-    }
+    //   this.vacancyData.push(newVacancy);
+    // }
+
+
+
+    console.log(newVacancy, 'payload');
+
 
     this.closeModal();
   }
@@ -129,4 +169,63 @@ export class VacancyRequestComponent {
       this.vacancyData.splice(i, 1);
     }
   }
+
+
+
+  onFileSelected(event: any) {
+    const file = event.target.files[0];
+    if (file) {
+      const validTypes = ['image/jpeg', 'image/png', 'application/pdf'];
+      if (!validTypes.includes(file.type)) {
+        this.toast.warning("Only PNG or JPG files are allowed!");
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append("file", file);
+      formData.append("reportProgress", "true");
+
+      this.facultyService.uploadFile(formData).subscribe(
+        (response: any) => {
+          this.attachment = response.payload;
+        },
+        (error) => {
+          this.toast.warning("Select file again!");
+        }
+      );
+    }
+  }
+
+
+
+
+  department: any[] = [];
+  getAllDepartment() {
+    this.facultyService.getAllDepartment().subscribe((res: any) => {
+      if (res.errors != undefined) {
+        this.toast.error(res.payload);
+      } else {
+        this.department = res.payload
+        console.log(this.department, 'department');
+
+      }
+    })
+  }
+
+
+  allDesignations: any[] = [];
+
+  getAllJobPositions() {
+    this.hrService.getDesignations().subscribe((res: any) => {
+      if (res.errors != undefined) {
+        this.toast.error(res.payload);
+      } else {
+        this.allDesignations = res.payload
+        console.log(this.allDesignations, 'allDesignations');
+
+      }
+    })
+  }
+
+
 }

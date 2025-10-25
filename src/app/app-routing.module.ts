@@ -17,65 +17,73 @@ import { HrDashboardComponent } from './pages/recruitment/hr-dashboard/hr-dashbo
 import { PdfTrialComponent } from './pages/recruitment/pdf-trial/pdf-trial.component';
 
 const routes: Routes = [
+
   {
-    path:'pdf-trial',
-    component:PdfTrialComponent
+    path: '',
+    redirectTo: 'vacancy-request',
+    pathMatch: 'full'
+
+  },
+
+  {
+    path: 'pdf-trial',
+    component: PdfTrialComponent
   },
   {
-    path:'vacancy-request',
-    component:VacancyRequestComponent
+    path: 'vacancy-request',
+    component: VacancyRequestComponent
   },
   {
-    path:'job-post-form',
-    component:JobPostFormComponent
+    path: 'job-post-form',
+    component: JobPostFormComponent
   },
   {
-    path:'job-circular',
-    component:JobCircularComponent
+    path: 'job-circular',
+    component: JobCircularComponent
   },
   {
-    path:'hr-director-approval',
-    component:HrDirectorApprovalComponent
+    path: 'hr-director-approval',
+    component: HrDirectorApprovalComponent
   },
   {
-    path:'hr-see-shortlisted',
-    component:HRSeeShorlistedComponent
+    path: 'hr-see-shortlisted',
+    component: HRSeeShorlistedComponent
   },
   {
-    path:'hr-interview-schedule',
-    component:HRScheduleInterviewComponent
+    path: 'hr-interview-schedule',
+    component: HRScheduleInterviewComponent
   },
   {
-    path:'interview-approval',
+    path: 'interview-approval',
     component: InterviewApprovalComponent
   },
   {
-    path:'offer-management',
-    component:OfferManagementComponent
+    path: 'offer-management',
+    component: OfferManagementComponent
   },
   {
-    path:'experience-certificate-apply',
-    component:ExperienceCertificateApplyComponent
+    path: 'experience-certificate-apply',
+    component: ExperienceCertificateApplyComponent
   },
   {
-    path:'pending-application',
-    component:PendingApplicationComponent
+    path: 'pending-application',
+    component: PendingApplicationComponent
   },
   {
-    path:'hr-attendence-excel',
-    component:HRAttendenceExcelComponent
+    path: 'hr-attendence-excel',
+    component: HRAttendenceExcelComponent
   },
   {
-    path:'dh-employee-attendence',
-    component:DhEmployeeAttendenceComponent
+    path: 'dh-employee-attendence',
+    component: DhEmployeeAttendenceComponent
   },
   {
-    path:'employee-service-book',
-    component:EmployeeServiceBookComponent
+    path: 'employee-service-book',
+    component: EmployeeServiceBookComponent
   },
   {
-    path:'hr-dashboard',
-    component:HrDashboardComponent
+    path: 'hr-dashboard',
+    component: HrDashboardComponent
   }
 ];
 

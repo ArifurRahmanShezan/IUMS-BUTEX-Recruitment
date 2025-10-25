@@ -30,4 +30,20 @@ export class RecruitmentService {
   }
 
 
+
+
+
+  // Work from here
+
+  // http://163.47.37.51:8080/api/v1/hr/vacancy-request
+  getVacancyRequests(): Observable<any> {
+    return this.http.get(`${url}/hr/vacancy-request`);
+  }
+
+  // http://localhost:8080/api/v1/hr/vacancy-request/1
+  getVacancyRequest(id: any): Observable<any> {
+    return this.http.get(`${url}/hr/vacancy-request/${id}`);
+  }
+
+
 }

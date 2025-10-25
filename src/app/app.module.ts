@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +20,8 @@ import { DhEmployeeAttendenceComponent } from './pages/recruitment/dh-employee-a
 import { EmployeeServiceBookComponent } from './pages/recruitment/employee-service-book/employee-service-book.component';
 import { HrDashboardComponent } from './pages/recruitment/hr-dashboard/hr-dashboard.component';
 import { PdfTrialComponent } from './pages/recruitment/pdf-trial/pdf-trial.component';
+import { ToastrModule } from 'ngx-toastr';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -45,8 +47,9 @@ import { PdfTrialComponent } from './pages/recruitment/pdf-trial/pdf-trial.compo
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
-  
+    FormsModule,
+    ToastrModule.forRoot(),
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
