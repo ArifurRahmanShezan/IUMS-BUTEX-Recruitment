@@ -1,103 +1,179 @@
-<div class="tw-p-10">
-  <h2>BUTEX Vacancy Request Management</h2>
-  <button class="btn-create" (click)="openModal()">Create Vacancy Request</button>
+<div class="tw-w-full tw-h-auto tw-bg-gray-100 tw-p-4">
 
-  <!-- Modal -->
-  <div class="modal" [style.display]="modalOpen ? 'flex' : 'none'">
-    <div class="modal-content">
-      <span class="close" (click)="closeModal()">&times;</span>
-      <h3>Vacancy Request Form</h3>
+  <!-- RESPONSIVE GRID: STACK ON MOBILE -->
+  <div class="tw-grid tw-grid-cols-1 lg:tw-grid-cols-[40%_60%] tw-gap-4">
 
-      <div class="form-group">
-        <label>Department</label>
-        <select [(ngModel)]="selectedDepartment" (change)="getAllJobPositions()">
-          <option value="">Select Department</option>
-          <option *ngFor="let dept of department" [value]="dept.id">{{dept?.name}}</option>
-        </select>
+    <!-- LEFT PANEL -->
+    <div class="tw-bg-white tw-rounded-lg tw-shadow-md tw-p-6 tw-border tw-border-gray-200">
+
+      <h1 class="tw-text-xl tw-font-semibold tw-mb-6">Create Vacancy Request</h1>
+
+      <!-- Department Name -->
+      <div class="tw-mb-4 tw-flex tw-items-center">
+        <label class="tw-font-semibold tw-w-40">Department Name:</label>
+        <span class="tw-text-gray-700">{{ departmentName }}</span>
       </div>
 
-      <div class="form-group">
-        <label>Position</label>
-        <select [(ngModel)]="selecteDesignation" (change)="showOrgChart()">
-          <option value="">Select Position</option>
-          <option *ngFor="let pos of allDesignations; index as i" [value]="pos.id">{{pos.name}}</option>
-        </select>
+      <!-- Designation Selector -->
+      <div class="tw-mb-4">
+        <label class="tw-font-semibold">Designations <span class="tw-text-red-500">*</span></label>
+
+        <div class="tw-flex tw-items-center tw-gap-2 tw-mt-2">
+          <select [(ngModel)]="selectedDesignation"
+            class="tw-border tw-rounded tw-px-3 tw-py-2 tw-w-64 tw-bg-white tw-text-sm">
+            <option value="">Select Designation</option>
+            <option *ngFor="let d of allDesignations" [value]="d">{{ d }}</option>
+          </select>
+
+          <button (click)="addDesignation()"
+            class="tw-bg-blue-700 tw-text-white tw-text-sm tw-px-4 tw-py-2 tw-rounded hover:tw-bg-blue-800">
+            Add Selected Designation
+          </button>
+        </div>
+
+        <!-- Chips -->
+        <div class="tw-flex tw-flex-wrap tw-gap-2 tw-mt-3">
+          <div *ngFor="let d of selectedDesignations"
+            class="tw-flex tw-items-center tw-bg-gray-200 tw-px-3 tw-py-1 tw-rounded-full tw-text-sm">
+            {{ d }}
+            <button (click)="removeDesignation(d)" class="tw-ml-2 tw-text-red-600 tw-font-bold">×</button>
+          </div>
+        </div>
       </div>
 
-      <div class="org-chart-card" *ngIf="selectedOrg">
-        <p><strong>Total Positions:</strong> {{selectedOrg.total}}</p>
-        <p><strong>Booked Positions:</strong> {{selectedOrg.booked}}</p>
-        <p><strong>Vacancy:</strong> {{selectedOrg.total - selectedOrg.booked}}</p>
+      <hr class="tw-my-6">
+
+      <h2 class="tw-font-semibold tw-mb-3">Select Designation</h2>
+
+      <!-- SELECTION CARDS -->
+      <div *ngFor="let d of selectedDesignations"
+        class="tw-bg-gray-50 tw-rounded-lg tw-border tw-border-gray-300 tw-p-5 tw-mb-6">
+
+        <h3 class="tw-font-semibold tw-text-gray-800 tw-mb-4">{{ d }}</h3>
+
+        <div class="tw-flex tw-gap-4 tw-flex-wrap">
+
+          <!-- Proposed -->
+          <div class="tw-bg-orange-500 tw-text-white tw-px-4 tw-py-2 tw-rounded tw-font-semibold tw-text-sm">
+            Proposed: {{ mockData[d].proposed }}
+          </div>
+
+          <!-- Current -->
+          <div class="tw-bg-blue-600 tw-text-white tw-px-4 tw-py-2 tw-rounded tw-font-semibold tw-text-sm">
+            Current: {{ mockData[d].current }}
+          </div>
+
+          <!-- Approved -->
+          <div class="tw-bg-green-600 tw-text-white tw-px-4 tw-py-2 tw-rounded tw-font-semibold tw-text-sm">
+            UGC Approved: {{ mockData[d].ugc }}
+          </div>
+
+        </div>
+
+        <!-- Required -->
+        <div class="tw-mt-4">
+          <label class="tw-font-semibold">Required <span class="tw-text-red-500">*</span></label>
+          <input type="number" [(ngModel)]="mockData[d].required" (ngModelChange)="validateRequired(d)"
+            class="tw-border tw-rounded tw-px-3 tw-py-2 tw-w-full tw-mt-1" />
+          <p *ngIf="mockData[d].error" class="tw-text-red-600 tw-text-xs tw-mt-1">
+            Required cannot exceed UGC Approved staff!
+          </p>
+        </div>
+
       </div>
 
-      <div class="form-group">
-        <label>Job-Type</label>
-        <select [(ngModel)]="jobType">
-          <option value="full-time">Full-Time</option>
-          <option value="Temporary">Temporary</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Number of Members Requested</label>
-        <input type="number" [(ngModel)]="numMembers" min="1">
+      <!-- Date + Attachment -->
+      <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-2 tw-gap-4">
+
+        <div>
+          <label class="tw-font-semibold">Request Date <span class="tw-text-red-500">*</span></label>
+          <input type="date" [(ngModel)]="requestDate" class="tw-border tw-rounded tw-w-full tw-px-3 tw-py-2 tw-mt-1" />
+        </div>
+
+        <div>
+          <label class="tw-font-semibold">Attachment</label>
+          <input type="file" (change)="onFileChange($event)"
+            class="tw-border tw-rounded tw-w-full tw-px-3 tw-py-2 tw-mt-1" />
+        </div>
+
       </div>
 
-      <div class="form-group">
-        <label>Remarks</label>
-        <textarea [(ngModel)]="remarks"></textarea>
-      </div>
-      <div class="form-group">
-        <label>Attachment</label>
-        <input type="file" (change)="onFileSelected($event)">
+      <!-- Remarks -->
+      <div class="tw-mt-4">
+        <label class="tw-font-semibold">Justification / Remarks</label>
+        <textarea [(ngModel)]="remarks" rows="4" class="tw-border tw-rounded tw-w-full tw-px-3 tw-py-2 tw-mt-2"
+          placeholder="Justification / Remarks..."></textarea>
       </div>
 
-      <!-- <div class="form-group">
-      <label>Requested Date</label>
-      <input type="date" [(ngModel)]="requestedDate">
-    </div> -->
+      <!-- Submit -->
+      <div class="tw-mt-6 tw-text-center">
+        <button (click)="submit()"
+          class="tw-bg-blue-700 tw-text-white tw-font-semibold tw-px-10 tw-py-2 tw-rounded hover:tw-bg-blue-800 tw-text-sm">
+          Submit
+        </button>
+      </div>
 
-      <div class="form-buttons">
-        <button class="btn-delete" (click)="cancelEdit()">Cancel</button>
-        <button class="btn-create" (click)="submitVacancy()">Submit</button>
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="tw-bg-white tw-rounded-lg tw-shadow-md tw-p-6 tw-border tw-border-gray-200 tw-overflow-hidden">
+
+      <h1 class="tw-text-xl tw-font-semibold tw-mb-6">Vacancy Request Lists</h1>
+
+      <input [(ngModel)]="search" placeholder="Search.."
+        class="tw-border tw-rounded tw-px-3 tw-py-2 tw-w-64 tw-mb-4 tw-text-sm" />
+
+      <!-- ⚡ FIXED: responsive table container -->
+      <div class="tw-overflow-x-auto tw-w-full tw-max-w-full tw-block">
+
+        <table class="tw-w-full tw-min-w-max tw-text-sm tw-border-collapse">
+
+          <thead>
+            <tr class="tw-bg-gray-200 tw-text-gray-700">
+              <th class="tw-px-3 tw-py-2"><input type="checkbox" /></th>
+              <th class="tw-px-3 tw-py-2">Designation</th>
+              <th class="tw-px-3 tw-py-2">Proposed</th>
+              <th class="tw-px-3 tw-py-2">Current</th>
+              <th class="tw-px-3 tw-py-2">UGC Approved</th>
+              <th class="tw-px-3 tw-py-2">Required</th>
+              <th class="tw-px-3 tw-py-2">HR Director</th>
+              <th class="tw-px-3 tw-py-2">Registrar</th>
+              <th class="tw-px-3 tw-py-2">VC</th>
+              <th class="tw-px-3 tw-py-2">Attachment</th>
+              <th class="tw-px-3 tw-py-2">Action</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr class="tw-border-b" *ngFor="let row of vacancyList">
+              <td class="tw-px-3 tw-py-2"><input type="checkbox" /></td>
+              <td class="tw-px-3 tw-py-2">{{ row.designation }}</td>
+              <td class="tw-px-3 tw-py-2">{{ row.proposed }}</td>
+              <td class="tw-px-3 tw-py-2">{{ row.current }}</td>
+              <td class="tw-px-3 tw-py-2">{{ row.ugc }}</td>
+              <td class="tw-px-3 tw-py-2">{{ row.required }}</td>
+
+              <td class="tw-px-3 tw-py-2 tw-text-red-500">Pending</td>
+              <td class="tw-px-3 tw-py-2 tw-text-red-500">Pending</td>
+              <td class="tw-px-3 tw-py-2 tw-text-red-500">Pending</td>
+
+              <td class="tw-px-3 tw-py-2">
+                <a class="tw-text-blue-700 hover:tw-underline">{{ row.attachment }}</a>
+              </td>
+
+              <td class="tw-px-3 tw-py-2 tw-flex tw-gap-2">
+                <button class="tw-text-green-600" (click)="viewDetails(row)">👁️</button>
+                <button class="tw-text-yellow-600" (click)="editRow(row)">✏️</button>
+                <button class="tw-text-red-600" (click)="deleteRow(row)">🗑️</button>
+              </td>
+            </tr>
+          </tbody>
+
+        </table>
 
       </div>
     </div>
+
   </div>
 
-  <!-- Table -->
-  <h3>Submitted Vacancy Requests</h3>
-  <table>
-    <thead>
-      <tr>
-        <th>Department</th>
-        <th>Position</th>
-        <th>Total</th>
-        <th>Booked</th>
-        <th>Vacancy</th>
-        <th>Members Requested</th>
-        <th>Remarks</th>
-        <th>Requested Date</th>
-        <th>Status</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let d of vacancyData; let i = index">
-        <td>{{d.department}}</td>
-        <td>{{d.position}}</td>
-        <td>{{d.total}}</td>
-        <td>{{d.booked}}</td>
-        <td>{{d.vacancy}}</td>
-        <td>{{d.membersRequested}}</td>
-        <td>{{d.remarks}}</td>
-        <td>{{d.requestedDate}}</td>
-        <td [ngClass]="'status-' + d.status">{{d.status}}</td>
-        <td>
-          <button class="btn-view" (click)="viewVacancy(d)">View</button>
-          <button class="btn-edit" (click)="editVacancy(i)">Edit</button>
-          <button class="btn-delete" (click)="deleteVacancy(i)">Delete</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
 </div>
