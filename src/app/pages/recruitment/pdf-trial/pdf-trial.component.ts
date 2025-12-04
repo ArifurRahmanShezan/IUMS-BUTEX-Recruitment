@@ -10,8 +10,6 @@ export class PdfTrialComponent {
 
   constructor(private pdfService: PdfService) { }
 
- 
-
   pdftrial1() {
     this.pdfService.bc1();
   };
@@ -76,4 +74,51 @@ export class PdfTrialComponent {
     this.pdfService.bc16();
   };
 
+  pdftrialS1() {
+    this.pdfService.S1();
+  };
+
+  pdftrialT17() {
+    this.pdfService.T17();
+  };
+
+  pdftrialBT1() {
+    this.pdfService.BT1();
+  };
+
+  pdftrialBT2() {
+    this.pdfService.BT2();
+  };
+
+  pdftrialBT3() {
+    this.pdfService.BT3();
+  };
+
+  pdftrialT1() {
+    this.pdfService.T1();
+  };
+  
+  pdftrialUT() {
+    this.pdfService.UT();
+  };
+
+  pdftrialBINA1() {
+    this.pdfService.BINA1();
+  };
+
+  pdftrialBINA2() {
+    this.pdfService.BINA2();
+  };
+
+  pdftrialBINA3() {
+    this.pdfService.BINA3();
+  };
+
+  pdftrialBINA4() {
+    this.pdfService.BINA4();
+  };
+
+  pdftrialBINA5() {
+    this.pdfService.BINA5();
+  };
 }

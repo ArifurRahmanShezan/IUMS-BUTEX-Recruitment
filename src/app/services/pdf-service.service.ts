@@ -469,6 +469,7 @@ export class PdfService {
 
     try {
       (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).download('BC-1.pdf');
 
 
       console.log('[pdfMake] PDF generated successfully.');
@@ -643,6 +644,7 @@ export class PdfService {
 
     try {
       (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).download('BC-2.pdf');
 
 
       console.log('[pdfMake] PDF generated successfully.');
@@ -813,6 +815,7 @@ export class PdfService {
 
     try {
       (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).download('BC-3.pdf');
 
 
       console.log('[pdfMake] PDF generated successfully.');
@@ -953,6 +956,7 @@ export class PdfService {
 
     try {
       (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).download('BC-4.pdf');
 
 
       console.log('[pdfMake] PDF generated successfully.');
@@ -1270,6 +1274,7 @@ export class PdfService {
 
     try {
       (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).download('BC-5.pdf');
 
 
       console.log('[pdfMake] PDF generated successfully.');
@@ -1368,6 +1373,7 @@ export class PdfService {
 
     try {
       (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).download('BC-6.pdf');
 
 
       console.log('[pdfMake] PDF generated successfully.');
@@ -1466,6 +1472,7 @@ export class PdfService {
 
     try {
       (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).download('BC-7.pdf');
 
 
       console.log('[pdfMake] PDF generated successfully.');
@@ -1583,6 +1590,7 @@ export class PdfService {
 
     try {
       (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).download('BC-8.pdf');
 
 
       console.log('[pdfMake] PDF generated successfully.');
@@ -1729,6 +1737,7 @@ export class PdfService {
 
     try {
       (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).download('BC-9.pdf');
 
 
       console.log('[pdfMake] PDF generated successfully.');
@@ -1875,6 +1884,7 @@ export class PdfService {
 
     try {
       (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).download('BC-10.pdf');
 
 
       console.log('[pdfMake] PDF generated successfully.');
@@ -2023,6 +2033,7 @@ export class PdfService {
 
     try {
       (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).download('BC-11.pdf');
 
 
       console.log('[pdfMake] PDF generated successfully.');
@@ -2152,6 +2163,7 @@ export class PdfService {
 
     try {
       (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).download('BC-12.pdf');
 
 
       console.log('[pdfMake] PDF generated successfully.');
@@ -2326,6 +2338,7 @@ export class PdfService {
 
     try {
       (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).download('BC-13.pdf');
 
 
       console.log('[pdfMake] PDF generated successfully.');
@@ -2526,6 +2539,7 @@ export class PdfService {
 
     try {
       (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).download('BC-14.pdf');
 
 
       console.log('[pdfMake] PDF generated successfully.');
@@ -2726,7 +2740,7 @@ export class PdfService {
 
     try {
       (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
-
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).download('BC-15.pdf');
 
       console.log('[pdfMake] PDF generated successfully.');
     } catch (e) {
@@ -2866,7 +2880,7 @@ export class PdfService {
                 ' এ্যাপারেল ইঞ্জিনিয়ারিং বিভাগ, বুটেক্স।']
             },
             { text: 'ড. মোঃ রিয়াজুল ইসলাম, অধ্যাপক, ইয়ার্ণ ইঞ্জিনিয়ারিং বিভাগ, বুটেক্স।' },
-            {text:'জনাব নাজমুত তারেক, চীফ অপারেটিং অফিসার, নাহী ফ্যাশন লিমিটেড।'},
+            { text: 'জনাব নাজমুত তারেক, চীফ অপারেটিং অফিসার, নাহী ফ্যাশন লিমিটেড।' },
             { text: 'জনাব আইরিন আক্তার, ফরমার গ্লোবাল টেকনিক্যাল ম্যানেজার, ম্যাটেরিয়াল এন্ড টেস্টং, জি-স্টার। \n\n' },
           ],
 
@@ -2932,6 +2946,7 @@ export class PdfService {
 
     try {
       (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).download('BC-16.pdf');
 
 
       console.log('[pdfMake] PDF generated successfully.');
@@ -2939,4 +2954,2600 @@ export class PdfService {
       console.error('[pdfMake] Error generating PDF:', e);
     }
   };
+
+  public S1(): void {
+    const docDefinition: any = {
+
+      pageSize: 'A4',
+      pageOrientation: 'portrait',
+      pageMargins: [20, 100, 20, 60],
+      header: () => {
+        return [
+          // this.pdfHeaderControllerOffice(),
+        ]
+
+      },
+
+      content: [
+        {
+          stack: [
+            { text: '৩১১১১০১ - শিক্ষকদের বেতন', style: 'subheader', alignment: 'center' },
+            { text: '২০২৩-২৪', style: 'subheader', alignment: 'center' },
+
+          ],
+        },
+        {
+          style: 'tableExample',
+
+          table: {
+            widths: [40, 60, '*', '*', '*'],
+            headerRows: 2,
+            // keepWithHeaderRows: 1,
+            body: [
+
+
+              [{ text: 'বিল নং', style: 'tableHeader', alignment: 'center' },
+              { text: 'তারিখ', style: 'tableHeader', alignment: 'center' },
+              { text: 'বিবরণ', style: 'tableHeader', alignment: 'center' },
+              { text: 'টাকার পরিমাণ', style: 'tableHeader', alignment: 'center' },
+              { text: 'ক্রমপুঞ্জিভূত খরচ', style: 'tableHeader', alignment: 'center' }
+              ],
+
+              [{ text: '১৮', alignment: 'center' },
+              { text: '২৩/০৭/২০২৩', alignment: 'center' },
+              { text: 'জুলাই - ২০২৩', alignment: 'left' },
+              { text: '৬২,৬৫,১০০.০০', alignment: 'right' },
+              { text: '৬২,৬৫,১০০.০০', alignment: 'right' }],
+
+              [{ text: '৭৪', alignment: 'center' },
+              { text: '২৮/০৮/২০২৩', alignment: 'center' },
+              { text: 'আগস্ট - ২০২৩', alignment: 'left' },
+              { text: '৬১,৯৪,৩৫২.০০', alignment: 'right' },
+              { text: '১,২৪,৬০,০৫২.০০', alignment: 'right' }],
+
+              [{ text: '২৯', alignment: 'center' },
+              { text: '০৭/০৮/২০১৩', alignment: 'center' },
+              { text: 'নতুন নিয়োগপ্রাপ্ত ০৪ জনের বকেয়া বিল', alignment: 'left' },
+              { text: '৬২,৫১৮.০০', alignment: 'right' },
+              { text: '১,২৫,২২,৫৭০.০০', alignment: 'right' }],
+
+              [{ text: '১২৬', alignment: 'center' },
+              { text: '০১/১০/২০২৩', alignment: 'center' },
+              { text: 'সেপ্টেম্বর - ২০২৩', alignment: 'left' },
+              { text: '৬০,৮৪,৬৫০.০০', alignment: 'right' },
+              { text: '১,৮৬,০৭,১৯০.০০', alignment: 'right' }],
+
+              [{ text: '১৯৬', alignment: 'center' },
+              { text: '৩০/১০/২০২৩', alignment: 'center' },
+              { text: 'অক্টোবর - ২০২৩', alignment: 'left' },
+              { text: '৬১,১২,৬৬০.০০', alignment: 'right' },
+              { text: '২,৪৭,১৯,৮৫০.০০', alignment: 'right' }],
+
+              [{ text: '২৫৪', alignment: 'center' },
+              { text: '২৮/১১/২০২৩', alignment: 'center' },
+              { text: 'নভেম্বর - ২০২৩', alignment: 'left' },
+              { text: '৬১,৩২,২৩০.০০', alignment: 'right' },
+              { text: '৩,০৮,৫২,০৮০.০০', alignment: 'right' }],
+
+              [{ text: '২৮৮', alignment: 'center', },
+              { text: '০৭/১২/২০১৩', alignment: 'center' },
+              { text: 'গ্রেড-১ এবং শিক্ষাছুটি শেষে যোগদান করায় এবং অব্যাহতির কারণে বকেয়া', alignment: 'center' },
+              { text: '১১,১০,৬৪৪.০০', alignment: 'right' },
+              { text: '৩,১৯,৬২,৭২৪.০০', alignment: 'right' }],
+
+              [{ text: '৩৩৮', alignment: 'center' },
+              { text: '২১/১২/২০১৩', alignment: 'center' },
+              { text: 'ডিসেম্বর - ২০২৩', alignment: 'left' },
+              { text: '৬১,৩২,২৩০.০০', alignment: 'right' },
+              { text: '৩,৮০,৯৪,৯৫৪.০০', alignment: 'right' }],
+
+              [{ text: '৪০২', alignment: 'center' },
+              { text: '৩০/০১/২০২৪', alignment: 'center' },
+              { text: 'জানুয়ারি - ২০২৪', alignment: 'left' },
+              { text: '৬০,৩২,৭০০.০০', alignment: 'right' },
+              { text: '৪,৪১,২৭,৬৫৪.০০', alignment: 'right' }],
+
+
+              [{ text: '৪৫৬', alignment: 'center' },
+              { text: '২৭/০২/২০২৪', alignment: 'center' },
+              { text: 'ফেব্রুয়ারি - ২০২৪', alignment: 'left' },
+              { text: '৬০,২৭,১৭৪.০০', alignment: 'right' },
+              { text: '৫,০১,৫৪,৮২৮.০০', alignment: 'right' }],
+
+              [{ text: '৫২২', alignment: 'center' },
+              { text: '২৮/০৩/২০২৪', alignment: 'center' },
+              { text: 'মার্চ - ২০২৪', alignment: 'left' },
+              { text: '৬১,৯৯,৪১০.০০', alignment: 'right' },
+              { text: '৫,৬৩,৫৪,২৩৮.০০', alignment: 'right' }],
+
+              [{ text: '৫৭৮', alignment: 'center' },
+              { text: '২৮/০৪/২০২৪', alignment: 'center' },
+              { text: 'এপ্রিল - ২০২৪', alignment: 'left' },
+              { text: '৬১,৯৯,৪১০.০০', alignment: 'right' },
+              { text: '৬,২৫,৫৩,৬৪৮.০০', alignment: 'right' }],
+
+              [{ text: '৮০৮', alignment: 'center' },
+              { text: '১৩/০২/২০২৪', alignment: 'center' },
+              { text: 'পদোন্নতি প্রাপ্তিতে বকেয়া বিল', alignment: 'left' },
+              { text: '২৪,১৬০.০০', alignment: 'right' },
+              { text: '৬,২৫,৭৭,৮০৮.০০', alignment: 'right' }],
+
+              [{ text: '৫৪২', alignment: 'center' },
+              { text: '০২/০৪/২০২৪', alignment: 'center' },
+              { text: 'পদোন্নতি প্রাপ্তিতে বকেয়া বিল', alignment: 'left' },
+              { text: '৩৮,২২৩.০০', alignment: 'right' },
+              { text: '৬,২৬,১৬,০৩১.০০', alignment: 'right' }],
+
+              [{ text: '৬৩৯', alignment: 'center' },
+              { text: '২৮/০৫/২০২৪', alignment: 'center' },
+              { text: 'মে - ২০২৪', alignment: 'left' },
+              { text: '৬১,৯৯,৪১০.০০', alignment: 'right' },
+              { text: '৬,৮৮,১৫,৪৪১.০০', alignment: 'right' }],
+
+              [{ text: '৭২৯', alignment: 'center' },
+              { text: '২৬/০৬/২০২৪', alignment: 'center' },
+              { text: 'জুন - ২০২৪', alignment: 'left' },
+              { text: '৬১,৯৯,৪১০.০০', alignment: 'right' },
+              { text: '৭,৫০,১৪,৮৫১.০০', alignment: 'right' }],
+
+              [{ text: '', alignment: 'center', },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'left' },
+              { text: '৭,৫০,১৪,৮৫১.০০', alignment: 'right' },
+              { text: '', alignment: 'right' }],
+
+
+
+
+            ]
+          }
+        },
+
+
+      ],
+
+
+      styles: {
+        header: {
+          fontSize: 16,
+          bold: true,
+          margin: [0, 0, 0, 10]
+        },
+        subheader: {
+          fontSize: 14,
+          bold: true,
+          // margin: [0, 10, 0, 5]
+        },
+        tableExample: {
+          margin: [15, 5, 15, 15]
+        },
+        tableHeader: {
+          bold: true,
+          fontSize: 10,
+          color: 'black'
+        }
+      },
+
+      defaultStyle: {
+        font: 'NotoSerifBengali',
+        fontSize: 8,
+      }
+    };
+
+    try {
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).download('teachers_salary_2023_24.pdf');
+
+
+      console.log('[pdfMake] PDF generated successfully.');
+    } catch (e) {
+      console.error('[pdfMake] Error generating PDF:', e);
+    }
+  };
+
+  public T17(): void {
+    const docDefinition: any = {
+
+      pageSize: 'A4',
+      pageOrientation: 'portrait',
+      pageMargins: [20, 100, 20, 60],
+      header: () => {
+        return [
+          // this.pdfHeaderControllerOffice(),
+        ]
+
+      },
+
+      content: [
+
+        {
+          style: 'tableExample',
+
+          table: {
+            widths: [40, 140, '*', '*', '*'],
+            headerRows: 2,
+            // keepWithHeaderRows: 1,
+            body: [
+
+
+              [{ text: 'কোড', style: 'tableHeader', alignment: 'center', rowSpan: 2, margin: [0, 15, 0, 0] },
+              { text: 'বিবরণ', style: 'tableHeader', alignment: 'center', rowSpan: 2, margin: [0, 15, 0, 0] },
+              { text: 'বাজেট \n ২০২৪-২৫', style: 'tableHeader', alignment: 'center', rowSpan: 2, margin: [0, 10, 0, 0] },
+              { text: 'অর্জিত রাজস্ব', style: 'tableHeader', alignment: 'center', colSpan: 2 },
+              { text: '', style: 'tableHeader', alignment: 'center' },
+              ],
+
+              [{}, {}, {},
+              { text: '............\'২৪ মাসের প্রকৃত আয়', style: 'tableHeader', alignment: 'center' },
+              { text: 'জুলাই\'২৪ থেকে........... মাস পর্যন্ত ক্রমপুঞ্জিত আয়', style: 'tableHeader', alignment: 'center' },
+              ],
+
+              [{ text: '১', alignment: 'center' },
+              { text: '২', alignment: 'center' },
+              { text: '৩', alignment: 'center' },
+              { text: '৪', alignment: 'center' },
+              { text: '৫', alignment: 'center' }],
+
+
+              // (ক)
+              [{ text: '১০১-২০০', alignment: 'center' },
+              { text: '(ক) ছাত্র/ছাত্রীদের নিকট থেকে অর্জিত রাজস্বঃ', alignment: 'left' },
+              { text: '', alignment: 'center', fillColor: 'gray' },
+              { text: '', alignment: 'center', fillColor: 'gray' },
+              { text: '', alignment: 'center', fillColor: 'gray' }],
+
+              [{ text: '১০১', alignment: 'center' },
+              { text: 'ভর্তি/পুনঃ ভর্তি/সেশন ফি ইত্যাদি', alignment: 'left' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' }],
+
+              [{ text: '১০২', alignment: 'center' },
+              { text: 'টিউশন ফিস (বেতন)', alignment: 'left' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' }],
+
+              [{ text: '১০৩', alignment: 'center' },
+              { text: 'রেজিস্ট্রেশন ফিস', alignment: 'left' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' }],
+
+              [{ text: '১০৪', alignment: 'center' },
+              { text: 'পরীক্ষা ফিস', alignment: 'left' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' }],
+
+              [{ text: '১০৫', alignment: 'center' },
+              { text: 'জরিমানা ও দন্ড', alignment: 'left' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' }],
+
+              [{ text: '১০৬', alignment: 'center' },
+              { text: 'মার্কসিট/সার্টিফিকেট ফিস', alignment: 'left' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' }],
+
+              [{ text: '১০৭', alignment: 'center' },
+              { text: 'হল/হোষ্টেল', alignment: 'left' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' }],
+
+              [{ text: '১০৮', alignment: 'center' },
+              { text: 'অন্যান্য', alignment: 'left' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' }],
+
+              [{ text: '', alignment: 'center' },
+              { text: 'উপ-মোট (ক):', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' }],
+
+              // (খ)
+              [{ text: '২০১-৩০০', alignment: 'center' },
+              { text: '(খ) ভর্তি ফর্ম বিক্রি থেকে অর্জিত রাজস্বঃ', alignment: 'left' },
+              { text: '', alignment: 'center', fillColor: 'gray' },
+              { text: '', alignment: 'center', fillColor: 'gray' },
+              { text: '', alignment: 'center', fillColor: 'gray' }],
+
+              [{ text: '২০১', alignment: 'center' },
+              { text: '১ম বর্ষ স্নাতক (সম্মান)/ আন্ডার গ্রাজুয়েটস', alignment: 'left' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' }],
+
+              [{ text: '২০২', alignment: 'center' },
+              { text: 'শেষ বর্ষ স্নাতকোত্তর', alignment: 'left' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' }],
+
+              [{ text: '২০৩', alignment: 'center' },
+              { text: 'এম এস/এম ফিল (যদি থাকে)', alignment: 'left' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' }],
+
+              [{ text: '২০৪', alignment: 'center' },
+              { text: 'পিএইচডি', alignment: 'left' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' }],
+
+              [{ text: '২০৫', alignment: 'center' },
+              { text: 'সান্ধ্যকালীন কোর্স (এমবিএ ও অন্যান্য)', alignment: 'left' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' }],
+
+              [{ text: '২০৬', alignment: 'center' },
+              { text: 'অধিভূক্ত স্কুল/কলেজ/ইনস্টিটিউট/ হাসপাতাল হতে আয়', alignment: 'left' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' }],
+
+              [{ text: '', alignment: 'center' },
+              { text: 'উপ-মোট (খ):', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' }],
+
+              // (গ)
+              [{ text: '৩০১-৪০০', alignment: 'center' },
+              { text: '(গ) বেতন ভাতাদি থেকে কর্তনাদিঃ', alignment: 'left' },
+              { text: '', alignment: 'center', fillColor: 'gray' },
+              { text: '', alignment: 'center', fillColor: 'gray' },
+              { text: '', alignment: 'center', fillColor: 'gray' }],
+
+              [{ text: '৩০১', alignment: 'center' },
+              { text: 'যানবাহন ব্যবহার', alignment: 'left' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' }],
+
+              [{ text: '৩০২', alignment: 'center' },
+              { text: 'বাড়ী ভাড়া', alignment: 'left' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' }],
+
+              [{ text: '৩০৩', alignment: 'center' },
+              { text: 'বিদ্যুৎ ব্যবহার', alignment: 'left' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' }],
+
+              [{ text: '৩০৪', alignment: 'center' },
+              { text: 'গ্যাস ব্যবহার', alignment: 'left' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' }],
+
+              [{ text: '৩০৫', alignment: 'center' },
+              { text: 'অন্যান্য কর্তনাদি', alignment: 'left' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' }],
+
+              [{ text: '', alignment: 'center' },
+              { text: 'উপ-মোট (গ):', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' }],
+
+              // (ঘ)
+              [{ text: '৪০১-৫০০', alignment: 'center' },
+              { text: '(ঘ) সম্পত্তি থেকে অর্জিত রাজস্বঃ', alignment: 'left' },
+              { text: '', alignment: 'center', fillColor: 'gray' },
+              { text: '', alignment: 'center', fillColor: 'gray' },
+              { text: '', alignment: 'center', fillColor: 'gray' }],
+
+              [{ text: '৪০১', alignment: 'center' },
+              { text: 'বাড়ী/ফ্লাট/অতিথি ভবন', alignment: 'left' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' }],
+
+              [{ text: '৪০২', alignment: 'center' },
+              { text: 'জমাজমি', alignment: 'left' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' }],
+
+              [{ text: '৪০৩', alignment: 'center' },
+              { text: 'খামারসমূহ', alignment: 'left' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' }],
+
+              [{ text: '৪০৪', alignment: 'center' },
+              { text: 'মার্কেট/ দোকান ভাড়া', alignment: 'left' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' }],
+
+              [{ text: '৪০৫', alignment: 'center' },
+              { text: 'বিনিয়োগ/ এফডিআর/ সঞ্চয়পত্র', alignment: 'left' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' }],
+
+              [{ text: '', alignment: 'center' },
+              { text: 'উপ-মোট (ঘ):', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' }],
+
+              // (ঙ)
+              [{ text: '৫০১-৬০০', alignment: 'center' },
+              { text: '(ঙ) বিবিধ অর্জিত রাজস্বঃ', alignment: 'left' },
+              { text: '', alignment: 'center', fillColor: 'gray' },
+              { text: '', alignment: 'center', fillColor: 'gray' },
+              { text: '', alignment: 'center', fillColor: 'gray' }],
+
+              [{ text: '৫০১', alignment: 'center' },
+              { text: 'প্রকাশনা', alignment: 'left' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' }],
+
+              [{ text: '৫০২', alignment: 'center' },
+              { text: 'বিআরটিসি/ কনসালটেন্সি', alignment: 'left' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' }],
+
+              [{ text: '৫০৩', alignment: 'center' },
+              { text: 'চিকিৎসা কেন্দ্র', alignment: 'left' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' }],
+
+              [{ text: '৫০৪', alignment: 'center' },
+              { text: 'টেন্ডার সিডিউল বিক্রি', alignment: 'left' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' }],
+
+              [{ text: '৫০৫', alignment: 'center' },
+              { text: 'অব্যবহৃত দ্রব্যাদি বিক্রি', alignment: 'left' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' }],
+
+              [{ text: '৫০৬', alignment: 'center' },
+              { text: 'নিয়োগ পরীক্ষার ফি', alignment: 'left' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' }],
+
+              [{ text: '৫০৭', alignment: 'center' },
+              { text: 'ব্যাংক সুদ', alignment: 'left' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' }],
+
+              [{ text: '৫০৮', alignment: 'center' },
+              { text: 'অন্যান্য', alignment: 'left' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' },
+              { text: '', alignment: 'center' }],
+
+              [{ text: '', alignment: 'center' },
+              { text: 'উপ-মোট (ঙ):', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' }],
+
+              // মোট
+              [{ text: '', alignment: 'center' },
+              { text: 'সর্বমোট রাজস্ব প্রাপ্তি (ক থেকে ঙ):', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' }],
+
+
+            ]
+          }
+        },
+
+
+      ],
+
+
+      styles: {
+        header: {
+          fontSize: 16,
+          bold: true,
+          margin: [0, 0, 0, 10]
+        },
+        subheader: {
+          fontSize: 14,
+          bold: true,
+          // margin: [0, 10, 0, 5]
+        },
+        tableExample: {
+          margin: [15, 5, 15, 15]
+        },
+        tableHeader: {
+          bold: true,
+          fontSize: 10,
+          color: 'black'
+        }
+      },
+
+      defaultStyle: {
+        font: 'NotoSerifBengali',
+        fontSize: 8,
+      }
+    };
+
+    try {
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).download('T-17.pdf');
+
+
+      console.log('[pdfMake] PDF generated successfully.');
+    } catch (e) {
+      console.error('[pdfMake] Error generating PDF:', e);
+    }
+  };
+
+  public BT1(): void {
+    const docDefinition: any = {
+
+      pageSize: 'A4',
+      pageOrientation: 'landscape',
+      pageMargins: [40, 50, 30, 40],
+      header: () => {
+        return [
+          // this.pdfHeaderControllerOffice(),
+        ]
+
+      },
+
+      content: [
+
+        {
+          style: 'tableExample',
+
+          table: {
+            widths: [30, 100, '*', '*', 40, '*', 30, 60, 70, 70, 50, 42, 43],
+            headerRows: 1,
+            // keepWithHeaderRows: 1,
+            body: [
+
+
+              [{ text: 'ক্রমিক নং', style: 'tableHeader', alignment: 'center', },
+              { text: 'নাম', style: 'tableHeader', alignment: 'center', },
+              { text: 'পদবী', style: 'tableHeader', alignment: 'center', },
+              { text: 'জন্ম তারিখ', style: 'tableHeader', alignment: 'center', },
+              { text: 'পুরুষ/মহিলা', style: 'tableHeader', alignment: 'center' },
+              { text: 'প্রথম যোগদানের তারিখ', style: 'tableHeader', alignment: 'center', },
+              { text: 'দক্ষ/অদক্ষ', style: 'tableHeader', alignment: 'center', },
+              { text: '২০১৮-১৯ অর্থবছরের জন্য মোট পরিশোধিত অর্থের পরিমান', style: 'tableHeader', alignment: 'center', },
+              { text: '২০২৩-২৪ অর্থবছরের জন্য মোট পরিশোধিত অর্থের পরিমান', style: 'tableHeader', alignment: 'center', },
+              { text: '০১ জুলাই ২০২৪ তারিখে দৈনিক মজুরী হার', style: 'tableHeader', alignment: 'center' },
+              { text: 'জুলাই ২০২৪ মাসে প্রদত্ত মজুরী', style: 'tableHeader', alignment: 'center', },
+              { text: 'বছরের জন্য মোট মজুরী (২০২৪-২৫)', style: 'tableHeader', alignment: 'center', },
+              { text: 'বছরের জন্য মোট মজুরী (২০২৫-২৬)', style: 'tableHeader', alignment: 'center' },
+              ],
+
+              [{ text: '১', alignment: 'center' },
+              { text: '২', alignment: 'center' },
+              { text: '৩', alignment: 'center' },
+              { text: '৪', alignment: 'center' },
+              { text: '৫', alignment: 'center' },
+              { text: '৬', alignment: 'center' },
+              { text: '৭', alignment: 'center' },
+              { text: '৮', alignment: 'center' },
+              { text: '৯', alignment: 'center' },
+              { text: '১০', alignment: 'center' },
+              { text: '১১', alignment: 'center' },
+              { text: '১২', alignment: 'center' },
+              { text: '১৩', alignment: 'center' },
+              ],
+
+              [{ text: ' ', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              ],
+
+              [{ text: ' ', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              ],
+
+              [{ text: 'মোট :', alignment: 'right', colSpan: 2 },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              ],
+
+
+
+            ]
+          }
+        },
+
+
+      ],
+
+
+      styles: {
+        header: {
+          fontSize: 16,
+          bold: true,
+          margin: [0, 0, 0, 10]
+        },
+        subheader: {
+          fontSize: 14,
+          bold: true,
+          // margin: [0, 10, 0, 5]
+        },
+        tableExample: {
+          margin: [0, 5, 0, 15]
+        },
+        tableHeader: {
+          bold: true,
+          fontSize: 9,
+          color: 'black'
+        }
+      },
+
+      defaultStyle: {
+        font: 'NotoSerifBengali',
+        fontSize: 8,
+      }
+    };
+
+    try {
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).download('BT-1.pdf');
+
+
+      console.log('[pdfMake] PDF generated successfully.');
+    } catch (e) {
+      console.error('[pdfMake] Error generating PDF:', e);
+    }
+  };
+
+  public BT2(): void {
+    const docDefinition: any = {
+
+      pageSize: 'A4',
+      pageOrientation: 'landscape',
+      pageMargins: [40, 50, 30, 40],
+      header: () => {
+        return [
+          // this.pdfHeaderControllerOffice(),
+        ]
+
+      },
+
+      content: [
+
+        {
+          style: 'tableExample',
+
+          table: {
+            widths: [30, 100, '*', '*', 40, '*', 30, 60, 140, 50, 42, 43],
+            headerRows: 1,
+            // keepWithHeaderRows: 1,
+            body: [
+
+
+              [{ text: 'ক্রমিক নং', style: 'tableHeader', alignment: 'center', },
+              { text: 'নাম', style: 'tableHeader', alignment: 'center', },
+              { text: 'পদবী', style: 'tableHeader', alignment: 'center', },
+              { text: 'জন্ম তারিখ', style: 'tableHeader', alignment: 'center', },
+              { text: 'পুরুষ/মহিলা', style: 'tableHeader', alignment: 'center' },
+              { text: 'যোগদানের তারিখ', style: 'tableHeader', alignment: 'center', },
+              { text: 'শ্ৰেণী', style: 'tableHeader', alignment: 'center', },
+              { text: '২০২৩-২৪ অর্থবছরের প্রদত্ত বেতন', style: 'tableHeader', alignment: 'center', },
+              { text: 'কমিশনের হতে অনুমোদনের তারিখ ও পত্র স্মারক নং', style: 'tableHeader', alignment: 'center', },
+
+              { text: 'জুলাই ২০২৪ মাসে প্রদত্ত বেতন', style: 'tableHeader', alignment: 'center', },
+              { text: 'বছরের জন্য মোট বেতন (২০২৪-২৫)', style: 'tableHeader', alignment: 'center', },
+              { text: 'বছরের জন্য মোট বেতন (২০২৫-২৬)', style: 'tableHeader', alignment: 'center' },
+              ],
+
+              [{ text: '১', alignment: 'center' },
+              { text: '২', alignment: 'center' },
+              { text: '৩', alignment: 'center' },
+              { text: '৪', alignment: 'center' },
+              { text: '৫', alignment: 'center' },
+              { text: '৬', alignment: 'center' },
+              { text: '৭', alignment: 'center' },
+              { text: '৮', alignment: 'center' },
+              { text: '৯', alignment: 'center' },
+              { text: '১০', alignment: 'center' },
+              { text: '১১', alignment: 'center' },
+              { text: '১২', alignment: 'center' },
+
+              ],
+
+              [{ text: '১.', alignment: 'right' },
+              { text: 'নিরাপত্তা প্রহরী/গার্ড', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+
+              ],
+
+              [{ text: '২.', alignment: 'right' },
+              { text: 'পরিচ্ছন্নতা কর্মী', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+
+              ],
+
+              [{ text: '৩.', alignment: 'right' },
+              { text: 'মালা', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+
+              ],
+
+
+              [{ text: '৪.', alignment: 'right' },
+              { text: 'অন্যান্য (যদি থাকে, ক্রমানুযায়ী উল্লেখ করুন)', alignment: '', colSpan: 2 },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+
+              ],
+
+              [{ text: 'মোট :', alignment: 'right', colSpan: 2 },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+
+              ],
+
+
+
+            ]
+          }
+        },
+
+
+      ],
+
+
+      styles: {
+        header: {
+          fontSize: 16,
+          bold: true,
+          margin: [0, 0, 0, 10]
+        },
+        subheader: {
+          fontSize: 14,
+          bold: true,
+          // margin: [0, 10, 0, 5]
+        },
+        tableExample: {
+          margin: [0, 5, 0, 15]
+        },
+        tableHeader: {
+          bold: true,
+          fontSize: 9,
+          color: 'black'
+        }
+      },
+
+      defaultStyle: {
+        font: 'NotoSerifBengali',
+        fontSize: 8,
+      }
+    };
+
+    try {
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).download('BT-2.pdf');
+
+
+      console.log('[pdfMake] PDF generated successfully.');
+    } catch (e) {
+      console.error('[pdfMake] Error generating PDF:', e);
+    }
+  };
+
+  public BT3(): void {
+    const docDefinition: any = {
+
+      pageSize: 'A4',
+      pageOrientation: 'landscape',
+      pageMargins: [40, 50, 30, 40],
+      header: () => {
+        return [
+          // this.pdfHeaderControllerOffice(),
+        ]
+
+      },
+
+      content: [
+
+        {
+          style: 'tableExample',
+
+          table: {
+            widths: [30, 100, '*', '*', 40, '*', 50, 140, 50, 42, 43],
+            headerRows: 1,
+            // keepWithHeaderRows: 1,
+            body: [
+
+
+              [{ text: 'ক্রমিক নং', style: 'tableHeader', alignment: 'center', },
+              { text: 'নাম', style: 'tableHeader', alignment: 'center', },
+              { text: 'পদবী', style: 'tableHeader', alignment: 'center', },
+              { text: 'জন্ম তারিখ', style: 'tableHeader', alignment: 'center', },
+              { text: 'পুরুষ/মহিলা', style: 'tableHeader', alignment: 'center' },
+              { text: 'যোগদানের তারিখ', style: 'tableHeader', alignment: 'center', },
+
+              { text: '২০২৩-২৪ অর্থবছরের প্রদত্ত বেতন', style: 'tableHeader', alignment: 'center', },
+              { text: 'কমিশনের হতে অনুমোদনের তারিখ ও পত্র স্মারক নং', style: 'tableHeader', alignment: 'center', },
+
+              { text: 'জুলাই ২০২৪ মাসে প্রদত্ত বেতন', style: 'tableHeader', alignment: 'center', },
+              { text: 'বছরের জন্য মোট বেতন (২০২৪-২৫)', style: 'tableHeader', alignment: 'center', },
+              { text: 'বছরের জন্য মোট বেতন (২০২৫-২৬)', style: 'tableHeader', alignment: 'center' },
+              ],
+
+              [{ text: '১', alignment: 'center' },
+              { text: '২', alignment: 'center' },
+              { text: '৩', alignment: 'center' },
+              { text: '৪', alignment: 'center' },
+              { text: '৫', alignment: 'center' },
+              { text: '৬', alignment: 'center' },
+              { text: '৭', alignment: 'center' },
+              { text: '৮', alignment: 'center' },
+              { text: '৯', alignment: 'center' },
+              { text: '১০', alignment: 'center' },
+              { text: '১১', alignment: 'center' },
+
+
+              ],
+
+              [{ text: '১.', alignment: 'right' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+
+
+              ],
+
+              [{ text: '২.', alignment: 'right' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+
+
+              ],
+
+
+              [{ text: 'মোট :', alignment: 'right', colSpan: 2 },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+
+
+              ],
+
+
+
+            ]
+          }
+        },
+
+
+      ],
+
+
+      styles: {
+        header: {
+          fontSize: 16,
+          bold: true,
+          margin: [0, 0, 0, 10]
+        },
+        subheader: {
+          fontSize: 14,
+          bold: true,
+          // margin: [0, 10, 0, 5]
+        },
+        tableExample: {
+          margin: [0, 5, 0, 15]
+        },
+        tableHeader: {
+          bold: true,
+          fontSize: 9,
+          color: 'black'
+        }
+      },
+
+      defaultStyle: {
+        font: 'NotoSerifBengali',
+        fontSize: 8,
+      }
+    };
+
+    try {
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).download('BT-3.pdf');
+
+
+      console.log('[pdfMake] PDF generated successfully.');
+    } catch (e) {
+      console.error('[pdfMake] Error generating PDF:', e);
+    }
+  };
+
+  public T1(): void {
+    const docDefinition: any = {
+
+      pageSize: 'A4',
+      pageOrientation: 'landscape',
+      pageMargins: [40, 50, 30, 40],
+      header: () => {
+        return [
+          // this.pdfHeaderControllerOffice(),
+        ]
+
+      },
+
+      content: [
+
+        {
+          style: 'tableExample',
+
+          table: {
+            widths: ['*', 100, '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', 60],
+            headerRows: 2,
+            // keepWithHeaderRows: 1,
+            body: [
+
+
+
+
+              [{ text: 'অর্থনৈতিক কোড', alignment: 'center', rowSpan: 2 },
+              { text: 'বিবরণ', alignment: 'center', rowSpan: 2 },
+              { text: 'প্রকৃত ব্যয়', alignment: 'center', colSpan: 3, },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '২০২৩-২৪ সংশোধিত বরাদ্দ', alignment: 'center', rowSpan: 2 },
+              { text: '২০২৪-২৫ মূল বাজেট', alignment: 'center', rowSpan: 2 },
+              { text: '২০২৪-২৫ ১ম ৩ মাস প্রকৃত খরচ', alignment: 'center', rowSpan: 2 },
+              { text: '২০২৪-২৫ অর্থবছরের সংশোধিত বাজেট', alignment: 'center', colSpan: 2 },
+              { text: '', alignment: '' },
+              { text: '২০২৫-২৬ অর্থবছরের মূল বাজেট', alignment: 'center', colSpan: 2 },
+              { text: '', alignment: '' },
+              { text: 'প্রক্ষেপণ', alignment: 'center', colSpan: 2 },
+              { text: '', alignment: '' },
+              { text: 'ব্যাখ্যামূলক মন্তব্য', alignment: 'center', rowSpan: 2 }
+              ],
+
+              [{ text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '২০২২-২৩', alignment: 'center' },
+              { text: '২০২৩-২৪', alignment: 'center' },
+              { text: '১ম ৬ মাস ২০২৩-২৪', alignment: 'center' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '* ক', alignment: 'center' },
+              { text: '** খ', alignment: 'center' },
+              { text: '* ক', alignment: 'center' },
+              { text: '** খ', alignment: 'center' },
+              { text: '২০২৬-২৭', alignment: 'center' },
+              { text: '২০২৭-২৮', alignment: 'center' },
+              { text: '', alignment: '' }
+              ],
+
+              [{ text: '১', alignment: 'center' },
+              { text: '২', alignment: 'center' },
+              { text: '৩', alignment: 'center' },
+              { text: '৪', alignment: 'center' },
+              { text: '৫', alignment: 'center' },
+              { text: '৬', alignment: 'center' },
+              { text: '৭', alignment: 'center' },
+              { text: '৮', alignment: 'center' },
+              { text: '৯', alignment: 'center' },
+              { text: '১০', alignment: 'center' },
+              { text: '১১', alignment: 'center' },
+              { text: '১২', alignment: 'center' },
+              { text: '১৩', alignment: 'center' },
+              { text: '১৪', alignment: 'center' },
+              { text: '১৫', alignment: 'center' }
+              ],
+
+              [{ text: '৩৬৩১', alignment: 'center' },
+              { text: 'আবর্তক অনুদান', alignment: 'center' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: '' }
+              ],
+
+              [{ text: '৩৬৩১১০১', alignment: 'center' },
+              { text: 'বেতন বাবদ সহায়তা', alignment: '' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '', alignment: '' }
+              ],
+
+              [{ text: '৩৬৩১১০২', alignment: 'center' },
+              { text: 'ভাতাদি বাবদ সহায়তা', alignment: '' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '', alignment: '' }
+              ],
+
+              [{ text: '৩৬৩১১০৩', alignment: 'center' },
+              { text: 'পণ্য ও সেবা বাবাদ সহায়তা', alignment: '' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '', alignment: '' }
+              ],
+
+              [{ text: '৩৬৩১১০৪', alignment: 'center' },
+              { text: 'পেনশন স্কিম বাবদ সহায়ত', alignment: '' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '', alignment: '' }
+              ],
+
+              [{ text: '৩৬৩১১০৮', alignment: 'center' },
+              { text: 'গবেষণা অনুদান', alignment: '' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '', alignment: '' }
+              ],
+
+              [{ text: '৩৬৩১১০৯', alignment: 'center' },
+              { text: 'প্রাথমিক স্বাস্থ্যসেবা বাবদ সহায়তা', alignment: '' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '', alignment: '' }
+              ],
+
+              [{ text: '৩৬৩১১৯৯', alignment: 'center' },
+              { text: 'অন্যান্য অনুদান', alignment: '' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '', alignment: '' }
+              ],
+
+              [{ text: '', alignment: 'center' },
+              { text: 'মোট আবর্তক অনুদান (৩৬৩১) :', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '', alignment: '' }
+              ],
+
+
+              [{ text: '৩৬৩২', alignment: 'center' },
+              { text: 'মূলধন অনুদান', alignment: 'center' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: '' }
+              ],
+
+              [{ text: '৩৬৩২১০২', alignment: 'center' },
+              { text: 'যন্ত্রপাতি অনুদান', alignment: 'left' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '', alignment: '' }
+              ],
+
+              [{ text: '৩৬৩২১০৩', alignment: 'center' },
+              { text: 'যানবাহন বাবদ অনুদান', alignment: 'left' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '', alignment: '' }
+              ],
+
+              [{ text: '৩৬৩২১০৫', alignment: 'center' },
+              { text: 'তথ্য যোগাযোগ প্রযুক্তি অনুদান', alignment: 'left' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '', alignment: '' }
+              ],
+
+              [{ text: '৩৬৩২১০৬', alignment: 'center' },
+              { text: 'অন্যান্য মূলধন অনুদান', alignment: 'left' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '', alignment: '' }
+              ],
+
+              [{ text: '', alignment: 'center' },
+              { text: 'মোট আবর্তক অনুদান (৩৬৩২) :', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '', alignment: '' }
+              ],
+
+              [{ text: '', alignment: 'center' },
+              { text: 'মোট আবর্তক অনুদান (৩৬৩২) :', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '', alignment: '' }
+              ],
+
+              [{ text: '', alignment: 'center' },
+              { text: 'মোট অনুদান (৩৬৩১+৩৬৩২) :', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '', alignment: '' }
+              ],
+
+              [{ text: '', alignment: 'center' },
+              { text: 'বাদ (-) বিশ্ববিদ্যালয়ের মাধ্যমে অর্জিত রাজ্য:', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '', alignment: '' }
+              ],
+
+              [{ text: '', alignment: 'center' },
+              { text: 'বাদ (-) সমাপনী স্থিতিঃ', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '', alignment: '' }
+              ],
+
+              [{ text: '', alignment: 'center' },
+              { text: 'নীট বাজেট/ব্যয় :', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '', alignment: '' }
+              ],
+
+              [{ text: '', alignment: 'center' },
+              { text: 'বিশেষ বরাদ্দ (পরীক্ষা পারিতোষিক)', alignment: 'left' },
+              { text: '', alignment: 'right', rowSpan: 2, border: [true, true, true, false] },
+              { text: '০.০০', alignment: 'right' },
+              { text: '', alignment: 'right', rowSpan: 2, border: [true, true, true, false] },
+              { text: '০.০০', alignment: 'right' },
+              { text: '', alignment: 'right', colSpan: 3, rowSpan: 2, border: [true, true, true, false] },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '', alignment: 'right', colSpan: 5, rowSpan: 2, border: [true, true, false, false] },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '', alignment: '' }
+              ],
+
+              [{ text: '', alignment: 'center' },
+              { text: 'বিশেষ বরাদ্দসহ নীট বাজেট/ব্যয় :', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '০.০০', alignment: 'right' },
+              { text: '', alignment: '' }
+              ],
+
+
+
+
+
+
+
+
+
+            ]
+          }
+        },
+
+
+      ],
+
+
+      styles: {
+        header: {
+          fontSize: 16,
+          bold: true,
+          margin: [0, 0, 0, 10]
+        },
+        subheader: {
+          fontSize: 14,
+          bold: true,
+          // margin: [0, 10, 0, 5]
+        },
+        tableExample: {
+          margin: [0, 5, 0, 15]
+        },
+        tableHeader: {
+          bold: true,
+          fontSize: 9,
+          color: 'black'
+        }
+      },
+
+      defaultStyle: {
+        font: 'NotoSerifBengali',
+        fontSize: 7,
+      }
+    };
+
+    try {
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).download('T-1.pdf');
+
+
+      console.log('[pdfMake] PDF generated successfully.');
+    } catch (e) {
+      console.error('[pdfMake] Error generating PDF:', e);
+    }
+  };
+
+  public UT(): void {
+    const docDefinition: any = {
+
+      pageSize: 'A4',
+      pageOrientation: 'landscape',
+      pageMargins: [40, 50, 30, 40],
+      header: () => {
+        return [
+          // this.pdfHeaderControllerOffice(),
+        ]
+
+      },
+
+      content: [
+
+        {
+          style: 'tableExample',
+
+          table: {
+            widths: ['*', 100, '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', 60],
+            headerRows: 2,
+            // keepWithHeaderRows: 1,
+            body: [
+
+
+
+
+              [{ text: 'কোড', alignment: 'center', rowSpan: 2 },
+              { text: 'বিবরণ', alignment: 'center', rowSpan: 2 },
+              { text: 'প্রকৃত রাজস্ব', alignment: 'center', colSpan: 3, },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '২০২৩-২৪ সংশোধিত', alignment: 'center', rowSpan: 2 },
+              { text: '২০২৪-২৫ মূল', alignment: 'center', rowSpan: 2 },
+              { text: '২০২৪-২৫ ১ম ৩ মাস প্রকৃত খরচ', alignment: 'center', rowSpan: 2 },
+              { text: '২০২৪-২৫ অর্থবছরের সংশোধিত', alignment: 'center', colSpan: 2 },
+              { text: '', alignment: '' },
+              { text: '২০২৫-২৬ অর্থবছরের মূল', alignment: 'center', colSpan: 2 },
+              { text: '', alignment: '' },
+              { text: 'প্রক্ষেপণ', alignment: 'center', colSpan: 2 },
+              { text: '', alignment: '' },
+              { text: 'ব্যাখ্যামূলক মন্তব্য', alignment: 'center', rowSpan: 2 }
+              ],
+
+              [{ text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '২০২২-২৩', alignment: 'center' },
+              { text: '২০২৩-২৪', alignment: 'center' },
+              { text: '১ম ৬ মাস ২০২৩-২৪', alignment: 'center' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '', alignment: '' },
+              { text: '* ক', alignment: 'center' },
+              { text: '** খ', alignment: 'center' },
+              { text: '* ক', alignment: 'center' },
+              { text: '** খ', alignment: 'center' },
+              { text: '২০২৬-২৭', alignment: 'center' },
+              { text: '২০২৭-২৮', alignment: 'center' },
+              { text: '', alignment: '' }
+              ],
+
+              [{ text: '১', alignment: 'center' },
+              { text: '২', alignment: 'center' },
+              { text: '৩', alignment: 'center' },
+              { text: '৪', alignment: 'center' },
+              { text: '৫', alignment: 'center' },
+              { text: '৬', alignment: 'center' },
+              { text: '৭', alignment: 'center' },
+              { text: '৮', alignment: 'center' },
+              { text: '৯', alignment: 'center' },
+              { text: '১০', alignment: 'center' },
+              { text: '১১', alignment: 'center' },
+              { text: '১২', alignment: 'center' },
+              { text: '১৩', alignment: 'center' },
+              { text: '১৪', alignment: 'center' },
+              { text: '১৫', alignment: 'center' }
+              ],
+
+              [{ text: '১০১-২০০', alignment: 'center', fontSize: 8 },
+              { text: '(ক) ছাত্র/ছাত্রীদের নিকট থেকে অর্জিত রাজস্ব:', alignment: '', bold: 'true' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: '' }
+              ],
+
+              [{ text: '১০১', alignment: 'center' },
+              { text: 'ভর্তি/পুনঃ ভর্তি/সেশন ফি ইত্যাদি', alignment: '' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: '' }
+              ],
+
+              [{ text: '১০২', alignment: 'center' },
+              { text: 'টিউশন ফিস (বেতন)', alignment: '' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: '' }
+              ],
+
+              [{ text: '১০৩', alignment: 'center' },
+              { text: 'রেজিস্ট্রেশন ফিস', alignment: '' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: '' }
+              ],
+
+              [{ text: '১০৪', alignment: 'center' },
+              { text: 'পরীক্ষা ফিস', alignment: '' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: '' }
+              ],
+
+              [{ text: '১০৫', alignment: 'center' },
+              { text: 'জরিমানা ও দন্ড', alignment: '' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: '' }
+              ],
+
+              [{ text: '১০৬', alignment: 'center' },
+              { text: 'মার্কসিট/সার্টিফিকেট ফিস', alignment: '' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: '' }
+              ],
+
+              [{ text: '১০৭', alignment: 'center' },
+              { text: 'হল/হোষ্টেল থেকে', alignment: '' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: '' }
+              ],
+
+              [{ text: '১০৮', alignment: 'center' },
+              { text: 'অন্যান্য', alignment: '' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: 'right' },
+              { text: '', alignment: '' }
+              ],
+
+
+              [{ text: '', alignment: 'center' },
+              { text: 'উপ-মোট (ক) :', alignment: 'right', bold: 'true' },
+              { text: '০', alignment: 'right' },
+              { text: '০', alignment: 'right' },
+              { text: '০', alignment: 'right' },
+              { text: '০', alignment: 'right' },
+              { text: '০', alignment: 'right' },
+              { text: '০', alignment: 'right' },
+              { text: '০', alignment: 'right' },
+              { text: '০', alignment: 'right' },
+              { text: '০', alignment: 'right' },
+              { text: '০', alignment: 'right' },
+              { text: '০', alignment: 'right' },
+              { text: '০', alignment: 'right' },
+              { text: '', alignment: '' }
+              ],
+
+
+              [{ text: '', alignment: 'center' },
+              { text: 'সর্বমোট অর্জিত রাজস্ব (ক থেকে ঙ):', alignment: 'right', bold: 'true' },
+              { text: '০', alignment: 'right' },
+              { text: '০', alignment: 'right' },
+              { text: '০', alignment: 'right' },
+              { text: '০', alignment: 'right' },
+              { text: '০', alignment: 'right' },
+              { text: '০', alignment: 'right' },
+              { text: '০', alignment: 'right' },
+              { text: '০', alignment: 'right' },
+              { text: '০', alignment: 'right' },
+              { text: '০', alignment: 'right' },
+              { text: '০', alignment: 'right' },
+              { text: '০', alignment: 'right' },
+              { text: '', alignment: '' }
+              ],
+
+
+
+
+
+
+
+
+
+
+
+
+            ]
+          }
+        },
+
+
+      ],
+
+
+      styles: {
+        header: {
+          fontSize: 16,
+          bold: true,
+          margin: [0, 0, 0, 10]
+        },
+        subheader: {
+          fontSize: 14,
+          bold: true,
+          // margin: [0, 10, 0, 5]
+        },
+        tableExample: {
+          margin: [0, 5, 0, 15]
+        },
+        tableHeader: {
+          bold: true,
+          fontSize: 9,
+          color: 'black'
+        }
+      },
+
+      defaultStyle: {
+        font: 'NotoSerifBengali',
+        fontSize: 7,
+      }
+    };
+
+    try {
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).download('UT.pdf');
+
+
+      console.log('[pdfMake] PDF generated successfully.');
+    } catch (e) {
+      console.error('[pdfMake] Error generating PDF:', e);
+    }
+  };
+
+  public BINA1(): void {
+    const docDefinition: any = {
+
+      pageSize: 'A4',
+      pageOrientation: 'portrait',
+      pageMargins: [50, 20, 50, 0],
+      header: () => {
+        return [
+          // this.pdfHeaderControllerOffice(),
+        ]
+
+      },
+
+
+      content: [
+
+        { text: 'দৈনিক/প্রত্যাহিক ছুটির জন্য আবেদন', style: 'header', alignment: 'center', margin: [0, 0, 0, 20] },
+
+        {
+          style: 'tableLayout',
+          table: {
+            alignment: 'justify',
+            widths: ['auto'],
+            body: [
+              ['১। নামঃ.................................................................................................................................'],
+              ['২। পদবীঃ................................................................................................................................'],
+              ['৩। বিভাগ/শাখাঃ.........................................................................................................................'],
+              ['৪। ছুটি/প্রত্যাহার চাওয়া কালঃ.............................হইতে ..................................... পর্যন্ত, মোট .................... দিন'],
+              ['৫। ছুটি/প্রত্যাহার চাওয়ার কারণঃ........................................................................................\n............................................................................................................................'],
+              [
+                { text: '৬। আবেদনকারীর ছুটিকালীন সময়ে দায়িত্ব পালনের কর্মচারী/কর্মকর্তার নামঃ.............................' },
+
+              ],
+              [{
+                style: 'listmargin',
+                stack: [
+                  {
+                    type: 'none',
+                    ul: [
+                      { text: 'পদবীঃ.............................................' },
+                      { text: 'আবেদনকারীর স্বাক্ষরঃ.......................' },
+                      { text: 'তারিখঃ ..................................' }
+                    ]
+                  },
+
+                ]
+              },],
+
+              [
+                { text: 'তাহার .................... দিনের দৈনিক/প্রত্যাহিক ছুটি প্রাপ্তির জন্য প্রার্থনা করা হলো।', },
+
+              ],
+              [{
+                style: 'listmargin',
+                stack: [
+                  {
+                    type: 'none',
+                    ul: [
+                      { text: 'বিভাগীয় প্রধানের স্বাক্ষরঃ......................' },
+                      { text: 'তারিখঃ ..................................' }
+                    ]
+                  },
+
+                ]
+              },],
+
+              ['সুপারিশকারীর মন্তব্যঃ....................................................................................................................'],
+              [{
+                style: 'listmargin',
+                stack: [
+                  {
+                    type: 'none',
+                    ul: [
+                      { text: 'সুপারিশকারীর স্বাক্ষরঃ.......................' },
+                      { text: 'তারিখঃ ..................................' }
+                    ]
+                  },
+
+                ]
+              },],
+              [
+                { text: '.................... দিনের ছুটি মঞ্জুর/অগ্রাহ্য করা হলো।' },
+
+              ]
+            ]
+          },
+          layout: 'noBorders'
+        },
+
+        {
+          text: 'প্রধান শিক্ষক/প্রধান কর্মচারী/প্রধান অফিসার (দপ্তর/প্রতিষ্ঠান/প্রকল্প/অফিসের নাম ও সিল)',
+          style: 'footer',
+          alignment: 'center',
+
+          decoration: 'underline'
+        }
+      ],
+
+      styles: {
+        header: {
+          fontSize: 14,
+          bold: true,
+          decoration: 'underline'
+        },
+        footer: {
+          fontSize: 10,
+          italics: true,
+          margin: [0, 100, 0, 0]
+        },
+        tableLayout: {
+          margin: [0, 0, 0, 0]
+        },
+        listmargin: {
+          margin: [300, 5, 0, 0]
+        },
+      },
+
+      defaultStyle: {
+        font: 'NotoSerifBengali',
+        fontSize: 11
+      }
+    };
+
+    try {
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).download('Bina-1.pdf');
+
+
+      console.log('[pdfMake] PDF generated successfully.');
+    } catch (e) {
+      console.error('[pdfMake] Error generating PDF:', e);
+    }
+  };
+
+  public BINA2(): void {
+    const docDefinition: any = {
+
+      pageSize: 'A4',
+      pageOrientation: 'portrait',
+      pageMargins: [50, 20, 50, 0],
+      header: () => {
+        return [
+          // this.pdfHeaderControllerOffice(),
+        ]
+
+      },
+
+
+      // content: [
+      //   { text: 'তারিখঃ ....................................', alignment: 'right', margin: [0, 0, 0, 10] },
+
+      //   { text: 'ছুটির জন্য আবেদনপত্র', style: 'header', alignment: 'center' },
+      //   { text: '(দ্বিতীয় শ্রেণির কর্মকর্তা ও কর্মচারী)', alignment: 'center', margin: [0, 0, 0, 15] },
+
+      //   { text: '১। নাম ও পদবীঃ ________________________________________________________________________________', margin: [0, 0, 0, 5] },
+      //   { text: '২। কর্মস্থল অফিসঃ _______________________________________________________________________________', margin: [0, 0, 0, 5] },
+      //   { text: '৩। আবেদনকৃত ছুটির সময়কালঃ __________________________ হতে ____________________________________ পর্যন্ত', margin: [0, 0, 0, 5] },
+      //   { text: '(........... মাস ........ দিন)', alignment: 'right', margin: [0, 0, 18, 0] },
+      //   { text: '৪। যে কারণে ছুটি প্রার্থনাঃ _______________________________________________________________________', margin: [0, 0, 0, 5] },
+      //   { text: '৫। ছুটিকালীন ঠিকানাঃ _______________________________________________________________________________', margin: [0, 0, 0, 5] },
+      //   { text: '_______________________________________________________________________________________________' },
+      //   { text: '৬। আবেদনকারীর ছুটিকালীন সময়ে দায়িত্ব পালনের কর্মচারী/কর্মকর্তার নামঃ _________________________________', margin: [0, 0, 0, 5] },
+      //   { text: 'পদবীঃ _______________________________________', margin: [0, 0, 0, 18], alignment: 'right' },
+      //   { text: 'আবেদনকারীর স্বাক্ষর ও তারিখ', margin: [0, 20, 0, 0], decoration: 'underline', alignment: 'right' },
+      //   { text: 'সুপারিশকারীর মন্তব্য.......................................', },
+      //   { text: 'কর্মকর্তা/প্রধানের মন্তব্য ও তারিখ', margin: [0, 20, 0, 0], decoration: 'underline', alignment: 'right' },
+      //   { text: 'সুপারিশকারীর মন্তব্য.......................................', },
+      //   { text: 'বিভাগীয় প্রধান/অধিকর্তার মন্তব্য ও তারিখ', margin: [0, 20, 0, 0], decoration: 'underline', alignment: 'right' },
+      //   { text: 'সুপারিশকারীর মন্তব্য.......................................', },
+      //   { text: 'পরিচালক (প্রশাসন) এর মন্তব্য ও তারিখ', margin: [0, 20, 0, 0], decoration: 'underline', alignment: 'right' },
+      //   { text: 'তাহার নিম্নবর্ণিত ছুটি পাওনা আছে.......... বৎসর, .মাস.. দিন।', margin: [0, 20, 0, 10] },
+      //   { text: ' নিরীক্ষাকারীর স্বাক্ষর', margin: [0, 10, 0, 5], decoration: 'underline', alignment: 'right' },
+      //   { text: ' সহকারী পরিচালক, সিনিয়র স্কেল/প্রশাসনিক কর্মকর্তা', margin: [0, 10, 0, 10], decoration: 'underline', alignment: 'right' },
+      //   { text: '..............মাস............দিন পূর্ণ গড় বেতনে/...........মাস...............দিন অর্ধ গড় বেতনে অর্জিত ছুটি মঞ্জুর।' },
+      //   { text: ' পরিচালক (প্রশাসন ও সাপোর্ট সার্ভিস)', margin: [0, 10, 0, 5], decoration: 'underline', alignment: 'right' },
+
+
+
+
+
+
+      // ],
+
+
+      content: [
+        { text: 'তারিখঃ ....................................', alignment: 'right', margin: [0, 0, 0, 10] },
+
+        { text: 'ছুটির জন্য আবেদনপত্র', style: 'header', alignment: 'center' },
+        { text: '(দ্বিতীয় শ্রেণির কর্মকর্তা ও কর্মচারী)', alignment: 'center', margin: [0, 0, 0, 15] },
+
+        { text: `১। নাম ও পদবীঃ ${'.'.repeat(127)}`, margin: [0, 0, 0, 5] },
+        { text: `২। কর্মস্থল অফিসঃ ${'.'.repeat(125)}`, margin: [0, 0, 0, 5] },
+        { text: `৩। আবেদনকৃত ছুটির সময়কালঃ ${'.'.repeat(50)} হতে ${'.'.repeat(45)} পর্যন্ত`, margin: [0, 0, 0, 5] },
+        { text: '(........... মাস ........ দিন)', alignment: 'right', margin: [0, 0, 10, 0] },
+        { text: `৪। যে কারণে ছুটি প্রার্থনাঃ ${'.'.repeat(116)}`, margin: [0, 0, 0, 5] },
+        { text: `৫। ছুটিকালীন ঠিকানাঃ ${'.'.repeat(121)}`, margin: [0, 0, 0, 5] },
+        { text: `${'.'.repeat(150)}` },
+        { text: `৬। ছুটিকালীন সময়ে দায়িত্ব পালনের কর্মচারী/কর্মকর্তার নামঃ ${'.'.repeat(78)}`, margin: [0, 0, 0, 5] },
+        { text: `পদবীঃ ${'.'.repeat(50)}`, margin: [0, 0, 0, 18], alignment: 'right' },
+
+        { text: 'আবেদনকারীর স্বাক্ষর ও তারিখ', margin: [0, 20, 0, 0], decoration: 'underline', alignment: 'right' },
+        { text: 'সুপারিশকারীর মন্তব্য.......................................' },
+        { text: 'কর্মকর্তা/প্রধানের মন্তব্য ও তারিখ', margin: [0, 20, 0, 0], decoration: 'underline', alignment: 'right' },
+        { text: 'সুপারিশকারীর মন্তব্য.......................................' },
+        { text: 'বিভাগীয় প্রধান/অধিকর্তার মন্তব্য ও তারিখ', margin: [0, 20, 0, 0], decoration: 'underline', alignment: 'right' },
+        { text: 'সুপারিশকারীর মন্তব্য.......................................' },
+        { text: 'পরিচালক (প্রশাসন) এর মন্তব্য ও তারিখ', margin: [0, 20, 0, 0], decoration: 'underline', alignment: 'right' },
+        { text: `তাহার নিম্নবর্ণিত ছুটি পাওনা আছে ${'.'.repeat(10)} বৎসর, ${'.'.repeat(10)} মাস ${'.'.repeat(10)} দিন।`, margin: [0, 20, 0, 10] },
+        { text: ' নিরীক্ষাকারীর স্বাক্ষর', margin: [0, 10, 0, 5], decoration: 'underline', alignment: 'right' },
+        { text: ' সহকারী পরিচালক, সিনিয়র স্কেল/প্রশাসনিক কর্মকর্তা', margin: [0, 10, 0, 10], decoration: 'underline', alignment: 'right' },
+        { text: ` ${'.'.repeat(10)} মাস ${'.'.repeat(10)} দিন পূর্ণ গড় বেতনে/${'.'.repeat(10)} মাস ${'.'.repeat(10)} দিন অর্ধ গড় বেতনে অর্জিত ছুটি মঞ্জুর।` },
+        { text: ' পরিচালক ', margin: [0, 10, 0, 5], decoration: 'underline', alignment: 'right' },
+      ],
+
+
+
+      styles: {
+        header: {
+          fontSize: 14,
+          bold: true,
+          decoration: 'underline'
+        },
+        footer: {
+          fontSize: 10,
+          italics: true,
+          margin: [0, 100, 0, 0]
+        },
+        tableLayout: {
+          margin: [0, 0, 0, 0]
+        },
+        listmargin: {
+          margin: [300, 5, 0, 0]
+        },
+      },
+
+      defaultStyle: {
+        font: 'NotoSerifBengali',
+        fontSize: 11
+      }
+    };
+
+    try {
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).download('Bina-2.pdf');
+
+
+      console.log('[pdfMake] PDF generated successfully.');
+    } catch (e) {
+      console.error('[pdfMake] Error generating PDF:', e);
+    }
+  };
+
+
+
+  public BINA3(): void {
+    const docDefinition: any = {
+
+      pageSize: 'A4',
+      pageOrientation: 'portrait',
+      pageMargins: [50, 20, 50, 0],
+      header: () => {
+        return [
+          // this.pdfHeaderControllerOffice(),
+        ]
+
+      },
+
+
+      content: [
+        {
+          stack: [
+            { text: 'বরাবর' },
+            { text: 'পরিচালক (প্রশিক্ষণ ও পরিকল্পনা)' },
+            { text: 'বাংলাদেশ পরমাণু কৃষি গবেষণা ইনস্টিটিউট' },
+            { text: 'ময়মনসিংহ।' }
+          ]
+        },
+        { text: 'জনাব,', margin: [0, 10, 0, 0] },
+        {
+          text: 'বিনীত নিবেদন এই যে, আমার একটি সম্ভাব্য ভ্রমণসূচী নিম্নে উল্লেখ করা হলো।',
+          margin: [0, 0, 0, 10],
+        },
+        {
+          type: 'none',
+          ol: [
+
+
+            { text: `(ক)  ভ্রমণ শুরুর তারিখঃ ${'.'.repeat(58)} সময়: ${'.'.repeat(41)}`, margin: [0, 0, 0, 10], },
+
+
+
+            { text: `(খ)  ভ্রমণ শুরুর স্থানঃ ${'.'.repeat(110)}`, margin: [0, 0, 0, 10], },
+
+
+            { text: `(গ)  গন্তব্য স্থানঃ (১)${'.'.repeat(35)} (২)${'.'.repeat(35)} (৩)${'.'.repeat(32)}`, margin: [0, 0, 0, 10], },
+
+            { text: `(ঘ)  পৌঁছানোর তারিখঃ ${'.'.repeat(58)} সময়: ${'.'.repeat(43)}`, margin: [0, 0, 0, 10], },
+
+            { text: `(ঙ) ভ্রমণ বিরতিঃ ${'.'.repeat(44)} ইং হইতে${'.'.repeat(43)}ইং তারিখ পর্যন্ত`, margin: [0, 0, 0, 10], },
+
+            { text: `(চ)  ভ্রমণের উদ্দেশ্যঃ ${'.'.repeat(111)}`, margin: [0, 0, 0, 10], },
+            { text: `${'.'.repeat(138)}`, margin: [0, 0, 0, 10], },
+            { text: `${'.'.repeat(138)}`, margin: [0, 0, 0, 10], },
+
+            { text: `(ছ)  স্থান ত্যাগের তারিখঃ ${'.'.repeat(57)} সময়: ${'.'.repeat(42)}`, margin: [0, 0, 0, 10], },
+
+
+            { text: `(জ)  প্রধান কার্যালয়ে পৌছানোর তারিখঃ ${'.'.repeat(45)} সময়: ${'.'.repeat(37)}`, margin: [0, 0, 0, 10], }
+
+          ]
+        },
+
+
+        {
+          text: 'অতএব, অনুগ্রহপূর্বক উপরোক্ত ভ্রমণসূচী সদয় অনুমোদনের জন্য অনুরোধ জানানো হলো।', margin: [0, 10, 0, 20],
+        },
+
+
+        {
+          alignment: 'right',
+          stack: [
+            { text: `স্বাক্ষর: ${'.'.repeat(40)}`, margin: [0, 0, 30, 5] },
+            { text: `নাম: ${'.'.repeat(40)}`, margin: [0, 0, 30, 5] },
+            { text: `পদবি: ${'.'.repeat(40)}`, margin: [0, 0, 30, 5] },
+            { text: `বিভাগ/শাখা: ${'.'.repeat(40)}`, margin: [0, 0, 30, 10] },
+          ],
+        },
+
+
+
+
+
+
+        { text: `${'.'.repeat(36)}` },
+        { text: 'বিভাগীয়/শাখা প্রধানের স্বাক্ষর' },
+
+
+
+        {
+          alignment: 'right',
+          stack: [
+            {
+              text: 'অনুমোদিত/অনুমোদিত নহে',
+              margin: [0, 20, 50, 15],
+            },
+            { text: `${'.'.repeat(46)}`, margin: [0, 0, 30, 0] },
+            {
+              text: 'পরিচালক (প্রশিক্ষণ ও পরিকল্পনা)',
+              margin: [0, 0, 40, 0],
+            },
+          ]
+        },
+
+
+        {
+          fontSize: 9,
+          margin: [0, 15, 0, 5],
+          table: {
+            widths: [30, '*',],
+            body: [
+              [
+                { text: 'বিঃ দ্রঃ', },
+                { text: 'ডেলিগেশণ অব পাওয়ার অনুযায়ী মহাপরিচালক কর্তৃক পরিচালকগণ ও নিজস্ব দপ্তরের জনবল,' },
+
+              ],
+              [
+                {},
+                { text: 'পরিচালক (প্রশাঃ ও সাঃ সাঃ) তাঁর অধিনস্ত সকল সেকশন ও নিজস্ব দপ্তরের জনবল,', },
+
+              ],
+              [
+                {}, { text: 'পরিচালক (প্রশিঃ ও পরিঃ) তাঁর অধিনস্ত সকল সেকশন ও নিজস্ব দপ্তরের জনবল,' }
+              ],
+              [{}, { text: 'পরিচালক (গবেষণা) কর্তৃক সকল গবেষণা বিভাগ, উপকেন্দ্র ও নিজস্ব দপ্তরের জনবলের ভ্রমণসূচী ও বিল অনুমোদন করবেন।' }]
+
+            ]
+          },
+          layout: 'noBorders' // optional: remove borders
+        },
+      ],
+
+
+
+      styles: {
+        header: {
+          fontSize: 14,
+          bold: true,
+          decoration: 'underline'
+        },
+        footer: {
+          fontSize: 10,
+          italics: true,
+          margin: [0, 100, 0, 0]
+        },
+        tableLayout: {
+          margin: [0, 0, 0, 0]
+        },
+
+      },
+
+      defaultStyle: {
+        font: 'NotoSerifBengali',
+        fontSize: 11
+      }
+    };
+
+    try {
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).download('Bina-5.pdf');
+
+
+      console.log('[pdfMake] PDF generated successfully.');
+    } catch (e) {
+      console.error('[pdfMake] Error generating PDF:', e);
+    }
+  };
+
+  public BINA4(): void {
+    const docDefinition: any = {
+
+      pageSize: 'A4',
+      pageOrientation: 'portrait',
+      pageMargins: [50, 20, 50, 0],
+      header: () => {
+        return [
+          // this.pdfHeaderControllerOffice(),
+        ]
+
+      },
+
+
+      content: [
+        { text: 'গাড়ির চালানপত্রঃ', style: 'header', margin: [0, 0, 0, 10] },
+
+        {
+          style: 'tableExample',
+          layout: 'noBorders',
+          table: {
+            widths: [20, 120, 20, '*', '*'],
+            headerRows: 0,
+            // keepWithHeaderRows: 1,
+            body: [
+
+
+              [{ text: '১।', },
+              { text: 'কি রকম গাড়ির প্রয়োজন' },
+              { text: ':' },
+              { text: 'গাড়ির প্রকৃতি:', },
+              { text: 'গাড়ি নং -' }
+              ],
+
+              [{ text: '২।', },
+              { text: 'কোথায় রিপোর্ট করিতে হইবে' },
+              { text: ':' },
+              { text: ` ${'.'.repeat(80)}`, colSpan: 2 },
+              { text: '' }
+              ],
+
+              [{ text: '৩।', },
+              { text: 'যাত্রার তারিখ ও সময়' },
+              { text: ':' },
+              { text: `তারিখঃ${'.'.repeat(30)}`, },
+              { text: `সময়ঃ${'.'.repeat(25)}` }
+              ],
+
+              [{ text: '8।', },
+              { text: 'গন্তব্যস্থল' },
+              { text: ':' },
+              { text: ` ${'.'.repeat(80)}`, colSpan: 2 },
+              { text: '' }
+              ],
+
+              [{ text: '৫।', },
+              { text: 'গন্তব্যস্থলের আনুমানিক দূরত্ব' },
+              { text: ':' },
+              { text: 'কিঃ মিঃ', alignment: 'right', },
+              { text: '' }
+              ],
+
+
+              [{ text: '৬।', },
+              { text: 'মোট কত কিলো মিটার চালনার জন্য গাড়ী ব্যবহার করা হইবে' },
+              { text: ':' },
+              { text: 'কিঃ মিঃ', alignment: 'right' },
+              { text: '' }
+              ],
+
+
+              [{ text: '৭।', },
+              { text: 'গন্তব্যস্থলে যাওয়ার পথে কাঁচা বা ভাঙ্গা রাস্তা আছে কি না?' },
+              { text: ':' },
+              { text: '', },
+              { text: '' }
+              ],
+
+              [{ text: '৮।', },
+              { text: 'ভ্রমণের প্রকার' },
+              { text: ':' },
+              { text: '()  সরকারী', },
+              { text: '()  ব্যক্তিগত' }
+              ],
+
+              [{ text: '৯।', },
+              { text: 'ভ্রমণের উদ্দেশ্য' },
+              { text: ':' },
+              { text: ` ${'.'.repeat(80)}\n${'.'.repeat(80)}\n${'.'.repeat(80)}`, colSpan: 2 },
+              { text: '' }
+              ],
+
+              [{ text: '১০।', },
+              { text: 'গাড়ি ছাড়িবার তারিখ ও আনুমানিক সময়' },
+              { text: ':' },
+              { text: `তারিখঃ${'.'.repeat(30)}`, },
+              { text: `সময়ঃ${'.'.repeat(25)}` }
+              ],
+
+              [{ text: '১১।', },
+              { text: 'ব্যক্তিগত ব্যবহারের সময়ে গাড়ির কোনরূপ ক্ষতি হলে ক্ষতিপুরণ প্রদান করতে সম্মত আছেন কি না' },
+              { text: ':' },
+              { text: '', },
+              { text: '' }
+              ],
+            ]
+          }
+        },
+
+
+        {
+          stack: [
+            { text: 'আবেদনকারীর স্বাক্ষর-', margin: [0, 10, 0, 5] },
+            { text: 'নামঃ' },
+            { text: 'পদবী:' },
+            { text: 'বিভাগ/শাখা:' },
+            { text: 'তারিখঃ' }
+          ]
+        },
+
+        { text: 'আবেদনকারীর বিভাগীয়/শাখা প্রধানের সুপারিশ', alignment: 'right' },
+        { text: `${'.'.repeat(150)}` },
+        { text: 'প্রশাসনিক অংশ', alignment: 'center' },
+        { text: 'নিয়ন্ত্রনকারীর স্বাক্ষর:' },
+        {
+          margin: [0, 10, 0, 5],
+          table: {
+            widths: [200, '*', '*'],
+            body: [
+              [
+                {}, // first empty cell
+                { text: '()  অনুমোদিত' },
+                { text: '()  অননুমোদিত' }
+              ],
+              [
+                {},
+                { text: 'অনুমোদনকারীর স্বাক্ষর:', colSpan: 2, alignment: 'center', margin: [0, 10, 35, 0] },
+                {},
+              ]
+            ]
+          },
+          layout: 'noBorders' // optional: remove borders
+        },
+
+
+
+
+
+      ],
+
+
+
+      styles: {
+        header: {
+          fontSize: 14,
+          bold: true,
+          decoration: 'underline'
+        },
+        footer: {
+          fontSize: 10,
+          italics: true,
+          margin: [0, 100, 0, 0]
+        },
+
+        tableLayout: {
+          margin: [0, 0, 0, 0]
+        },
+
+      },
+
+      defaultStyle: {
+        font: 'NotoSerifBengali',
+        fontSize: 11
+      }
+    };
+
+    try {
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).open();
+      (pdfMake as any).createPdf(docDefinition, undefined, FONT_DEFINITIONS, (pdfMake as any).vfs).download('Bina-3.pdf');
+
+
+      console.log('[pdfMake] PDF generated successfully.');
+    } catch (e) {
+      console.error('[pdfMake] Error generating PDF:', e);
+    }
+  };
+
+  public BINA5(): void {
+    const docDefinition: any = {
+
+      pageSize: 'A4',
+      pageOrientation: 'portrait',
+      pageMargins: [50, 20, 50, 0],
+      header: () => {
+        return [
+          // this.pdfHeaderControllerOffice(),
+        ]
+
+      },
+
+
+      content: [
+        {
+          stack: [
+            { text: 'বরাবর' },
+            { text: 'পরিচালক (প্রশিক্ষণ ও পরিকল্পনা)' },
+            { text: 'বাংলাদেশ পরমাণু কৃষি গবেষণা ইনস্টিটিউট' },
+            { text: 'ময়মনসিংহ।' }
+          ]
+        },
+        { text: 'জনাব,', margin: [0, 10, 0, 0] },
+        {
+          text: 'বিনীত নিবেদন এই যে, আমার একটি সম্ভাব্য ভ্রমণসূচী নিম্নে উল্লেখ করা হলো।',
+          margin: [0, 0, 0, 10],
+        },
+        {
+          type: 'none',
+          ol: [
+
+
+            { text: `(ক)  ভ্রমণ শুরুর তারিখঃ ${'.'.repeat(58)} সময়: ${'.'.repeat(41)}`, margin: [0, 0, 0, 10], },
+
+
+
+            { text: `(খ)  ভ্রমণ শুরুর স্থানঃ ${'.'.repeat(110)}`, margin: [0, 0, 0, 10], },
+
+
+            { text: `(গ)  গন্তব্য স্থানঃ (১)${'.'.repeat(35)} (২)${'.'.repeat(35)} (৩)${'.'.repeat(32)}`, margin: [0, 0, 0, 10], },
+
+            { text: `(ঘ)  পৌঁছানোর তারিখঃ ${'.'.repeat(58)} সময়: ${'.'.repeat(43)}`, margin: [0, 0, 0, 10], },
+
+
+
+            { text: `(ঙ)  ভ্রমণের উদ্দেশ্যঃ ${'.'.repeat(111)}`, margin: [0, 0, 0, 10], },
+            { text: `${'.'.repeat(138)}`, margin: [0, 0, 0, 10], },
+            { text: `${'.'.repeat(138)}`, margin: [0, 0, 0, 10], },
+
+            { text: `(চ)  স্থান ত্যাগের তারিখঃ ${'.'.repeat(57)} সময়: ${'.'.repeat(42)}`, margin: [0, 0, 0, 10], },
+
+
+            { text: `(ছ)  প্রধান কার্যালয়ে পৌছানোর তারিখঃ ${'.'.repeat(45)} সময়: ${'.'.repeat(37)}`, margin: [0, 0, 0, 10], }
+
+          ]
+        },
+
+
+        {
+          text: 'অতএব, অনুগ্রহপূর্বক উপরোক্ত ভ্রমণসূচী সদয় অনুমোদনের জন্য অনুরোধ জানানো হলো।', margin: [0, 10, 0, 20],
+        },
+
+
+        {
+          alignment: 'right',
+          stack: [
+            { text: `স্বাক্ষর: ${'.'.repeat(40)}`, margin: [0, 0, 30, 5] },
+            { text: `নাম: ${'.'.repeat(40)}`, margin: [0, 0, 30, 5] },
+            { text: `পদবি: ${'.'.repeat(40)}`, margin: [0, 0, 30, 5] },
+            { text: `বিভাগ/শাখা: ${'.'.repeat(40)}`, margin: [0, 0, 30, 10] },
+          ],
+        },
+
+
+
+
+
+
+        { text: `${'.'.repeat(36)}` },
+        { text: 'বিভাগীয়/শাখা প্রধানের স্বাক্ষর' },
+
+
+
+        {
+          alignment: 'right',
+          stack: [
+            {
+              text: 'অনুমোদিত/অনুমোদিত নহে',
+              margin: [0, 20, 50, 15],
+            },
+            { text: `${'.'.repeat(46)}`, margin: [0, 0, 30, 0] },
+            {
+              text: 'পরিচালক (প্রশিক্ষণ ও পরিকল্পনা)',
+              margin: [0, 0, 40, 0],
+            },
+          ]
+        },
+
+
+        {}
+      ],
+
+
+
+      styles: {
+        header: {
+          fontSize: 14,
+          bold: true,
+          decoration: 'underline'
+        },
+        footer: {
+          fontSize: 10,
+          italics: true,
+          margin: [0, 100, 0, 0]
+        },
+        tableLayout: {
+          margin: [0, 0, 0, 0]
+        },
+
+      },
+
+      defaultStyle: {
+        font: 'NotoSerifBengali',
+        fontSize: 11
+      }
+    };
+
+    try {
+      (pdfMake as any).createPdf(docDefinition, undefined,  (pdfMake as any).vfs).open();
+      (pdfMake as any).createPdf(docDefinition, undefined, (pdfMake as any).vfs).download('Bina-4.pdf');
+
+
+      console.log('[pdfMake] PDF generated successfully.');
+    } catch (e) {
+      console.error('[pdfMake] Error generating PDF:', e);
+    }
+  };
+
 }
