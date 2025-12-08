@@ -1,0 +1,198 @@
+<div class="tw-w-full tw-p-6 tw-bg-gray-100">
+
+  <!-- GRID: LEFT + RIGHT -->
+  <div class="tw-grid tw-grid-cols-1 lg:tw-grid-cols-4 tw-gap-6">
+
+    <!-- LEFT SIDE -->
+    <div class="tw-col-span-1 lg:tw-col-span-3 tw-space-y-6">
+
+      <!-- TOP STATS -->
+      <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-4 tw-gap-4">
+        <div class="tw-bg-white tw-p-6 tw-rounded-2xl tw-shadow-md tw-border tw-flex tw-items-center tw-gap-4">
+          <div class="tw-text-4xl">👥</div>
+          <div>
+            <p class="tw-text-3xl tw-font-bold tw-text-gray-800">1200</p>
+            <p class="tw-text-sm tw-text-gray-600">Total User</p>
+            <p class="tw-text-xs tw-text-gray-500">+30 from last semester</p>
+          </div>
+        </div>
+
+        <div class="tw-bg-white tw-p-6 tw-rounded-2xl tw-shadow-md tw-border tw-flex tw-items-center tw-gap-4">
+          <div class="tw-text-4xl">👨‍🎓</div>
+          <div>
+            <p class="tw-text-3xl tw-font-bold tw-text-gray-800">5,432</p>
+            <p class="tw-text-sm tw-text-gray-600">Total Students</p>
+            <p class="tw-text-xs tw-text-gray-500">+25 from last semester</p>
+          </div>
+        </div>
+
+        <div class="tw-bg-white tw-p-6 tw-rounded-2xl tw-shadow-md tw-border tw-flex tw-items-center tw-gap-4">
+          <div class="tw-text-4xl">👨‍🏫</div>
+          <div>
+            <p class="tw-text-3xl tw-font-bold tw-text-gray-800">120</p>
+            <p class="tw-text-sm tw-text-gray-600">Active Teacher</p>
+            <p class="tw-text-xs tw-text-gray-500">+10 from last semester</p>
+          </div>
+        </div>
+
+        <div class="tw-bg-white tw-p-6 tw-rounded-2xl tw-shadow-md tw-border tw-flex tw-items-center tw-gap-4">
+          <div class="tw-text-4xl">🛡️</div>
+          <div>
+            <p class="tw-text-3xl tw-font-bold tw-text-gray-800">98%</p>
+            <p class="tw-text-sm tw-text-gray-600">System Health</p>
+            <p class="tw-text-xs tw-text-gray-500">+All system operational</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ADMISSION LINE CHART -->
+      <div class="tw-bg-white tw-p-6 tw-rounded-2xl tw-shadow-md tw-border">
+        <div class="tw-flex tw-items-center tw-justify-between tw-mb-4">
+          <h2 class="tw-text-xl tw-font-semibold tw-text-gray-800">Semester-wise Student Admission Overview</h2>
+          <select class="tw-px-3 tw-py-2 tw-border tw-rounded-lg tw-text-sm tw-text-gray-700">
+            <option>Select Year</option>
+            <option>2024</option>
+            <option>2025</option>
+          </select>
+        </div>
+        <div class="tw-w-full tw-h-72">
+          <canvas id="studentLineChart"></canvas>
+        </div>
+      </div>
+
+      <!-- ATTENDANCE CHART -->
+      <div class="tw-bg-white tw-p-6 tw-rounded-2xl tw-shadow-md tw-border">
+        <div class="tw-flex tw-items-center tw-justify-between tw-mb-4">
+          <h2 class="tw-text-xl tw-font-semibold tw-text-gray-800">Attendance Report Of 2025</h2>
+          <select class="tw-px-3 tw-py-2 tw-border tw-rounded-lg tw-text-sm tw-text-gray-700">
+            <option>Select Year</option>
+            <option>2024</option>
+            <option>2025</option>
+          </select>
+        </div>
+        <div class="tw-w-full tw-h-72">
+          <canvas id="attendanceBarChart"></canvas>
+        </div>
+      </div>
+
+      <!-- BOTTOM TWO BOXES -->
+      <div class="tw-grid tw-grid-cols-1 lg:tw-grid-cols-2 tw-gap-6">
+
+        <!-- FACULTY & STAFF STATUS PIE CHART -->
+        <div class="tw-bg-white tw-p-6 tw-rounded-2xl tw-shadow-md tw-border">
+          <h2 class="tw-text-lg tw-font-semibold tw-mb-6 tw-text-gray-800">Faculty & Staff Status</h2>
+
+          <div class="tw-flex tw-items-start tw-justify-between tw-gap-6">
+            <!-- PIE CHART -->
+            <div class="tw-w-32 tw-h-32 tw-flex-shrink-0">
+              <canvas id="facultyPieChart"></canvas>
+            </div>
+            
+            <!-- STATUS BOXES -->
+            <div class="tw-grid tw-grid-cols-2 tw-gap-3 tw-flex-1">
+              <div class="tw-bg-green-50 tw-p-4 tw-rounded-lg tw-border tw-border-green-200">
+                <p class="tw-text-xs tw-text-gray-600 tw-mb-1">New Hires (YTD)</p>
+                <p class="tw-text-2xl tw-font-bold tw-text-green-600">7</p>
+                <div class="tw-text-green-500 tw-text-xl">✓</div>
+              </div>
+              
+              <div class="tw-bg-purple-50 tw-p-4 tw-rounded-lg tw-border tw-border-purple-200">
+                <p class="tw-text-xs tw-text-gray-600 tw-mb-1">Pending Promotions</p>
+                <p class="tw-text-2xl tw-font-bold tw-text-purple-600">4</p>
+                <div class="tw-text-purple-500 tw-text-xl">⚙️</div>
+              </div>
+              
+              <div class="tw-bg-pink-50 tw-p-4 tw-rounded-lg tw-border tw-border-pink-200">
+                <p class="tw-text-xs tw-text-gray-600 tw-mb-1">On Sabbatical</p>
+                <p class="tw-text-2xl tw-font-bold tw-text-pink-600">3</p>
+                <div class="tw-text-pink-500 tw-text-xl">✧</div>
+              </div>
+              
+              <div class="tw-bg-red-50 tw-p-4 tw-rounded-lg tw-border tw-border-red-200">
+                <p class="tw-text-xs tw-text-gray-600 tw-mb-1">Overdue Evaluations</p>
+                <p class="tw-text-2xl tw-font-bold tw-text-red-600">5</p>
+                <div class="tw-text-red-500 tw-text-xl">⊗</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FACULTY WORKLOAD OVERVIEW -->
+        <div class="tw-bg-white tw-p-6 tw-rounded-2xl tw-shadow-md tw-border">
+          <h2 class="tw-text-lg tw-font-semibold tw-mb-6 tw-text-gray-800">Faculty Workload Overview</h2>
+
+          <div class="tw-w-full tw-h-64">
+            <canvas id="workloadStackedChart"></canvas>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- QUICK MENU -->
+      <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-5 tw-gap-3">
+        <button class="tw-bg-white tw-shadow-md tw-p-4 tw-rounded-xl tw-border tw-text-sm tw-font-medium tw-text-gray-700 hover:tw-bg-gray-50 tw-transition">Quick Menu</button>
+        <button class="tw-bg-white tw-shadow-md tw-p-4 tw-rounded-xl tw-border tw-text-sm tw-font-medium tw-text-gray-700 hover:tw-bg-gray-50 tw-transition">Academic Config</button>
+        <button class="tw-bg-white tw-shadow-md tw-p-4 tw-rounded-xl tw-border tw-text-sm tw-font-medium tw-text-gray-700 hover:tw-bg-gray-50 tw-transition">Faculty</button>
+        <button class="tw-bg-white tw-shadow-md tw-p-4 tw-rounded-xl tw-border tw-text-sm tw-font-medium tw-text-gray-700 hover:tw-bg-gray-50 tw-transition">Study Program</button>
+        <button class="tw-bg-white tw-shadow-md tw-p-4 tw-rounded-xl tw-border tw-text-sm tw-font-medium tw-text-gray-700 hover:tw-bg-gray-50 tw-transition">Curriculum</button>
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="tw-col-span-1 tw-space-y-6">
+
+      <!-- CALENDAR -->
+      <div class="tw-bg-white tw-rounded-2xl tw-shadow-md tw-border tw-p-6">
+        <div class="tw-flex tw-items-center tw-justify-between tw-mb-6">
+          <h2 class="tw-text-xl tw-font-semibold tw-text-gray-800">May 2023</h2>
+          <div class="tw-flex tw-gap-2">
+            <button class="tw-text-gray-600 hover:tw-text-gray-800 tw-text-xl">‹</button>
+            <button class="tw-text-gray-600 hover:tw-text-gray-800 tw-text-xl">›</button>
+          </div>
+        </div>
+
+        <!-- DAY HEADERS -->
+        <div class="tw-grid tw-grid-cols-7 tw-gap-1 tw-mb-3 tw-text-center">
+          <div class="tw-text-xs tw-font-semibold tw-text-gray-700 tw-py-2">Sun</div>
+          <div class="tw-text-xs tw-font-semibold tw-text-gray-700 tw-py-2">Mon</div>
+          <div class="tw-text-xs tw-font-semibold tw-text-gray-700 tw-py-2">Tue</div>
+          <div class="tw-text-xs tw-font-semibold tw-text-gray-700 tw-py-2">Wed</div>
+          <div class="tw-text-xs tw-font-semibold tw-text-gray-700 tw-py-2">Thu</div>
+          <div class="tw-text-xs tw-font-semibold tw-text-gray-700 tw-py-2">Fri</div>
+          <div class="tw-text-xs tw-font-semibold tw-text-gray-700 tw-py-2">Sat</div>
+        </div>
+
+        <!-- CALENDAR DAYS -->
+        <div class="tw-grid tw-grid-cols-7 tw-gap-1">
+          <div *ngFor="let day of calendarDays"
+               [class.tw-bg-gray-200]="day === 15 || day === 19 || day === 26"
+               class="tw-border tw-rounded-lg tw-py-2 tw-text-center tw-text-sm tw-text-gray-700 hover:tw-bg-gray-100 tw-cursor-pointer tw-transition">
+            {{ day }}
+          </div>
+        </div>
+      </div>
+
+      <!-- NOTIFICATIONS -->
+      <div class="tw-bg-white tw-rounded-2xl tw-shadow-md tw-border tw-p-6">
+        <h2 class="tw-text-xl tw-font-semibold tw-mb-6 tw-text-gray-800">Notification</h2>
+
+        <div class="tw-space-y-4">
+
+          <div *ngFor="let n of notifications" class="tw-flex tw-items-start tw-gap-3 tw-pb-3 tw-border-b tw-border-gray-200 tw-last:border-b-0">
+            <div class="tw-w-3 tw-h-3 tw-rounded-full tw-mt-1 tw-flex-shrink-0" [ngStyle]="{ 'background-color': n.color }"></div>
+
+            <div class="tw-flex-1">
+              <p class="tw-font-medium tw-text-gray-800 tw-text-sm">{{ n.title }}</p>
+              <p class="tw-text-xs tw-text-gray-500">Added on : {{ n.date }}</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,79 @@
+<div class="tw-w-full tw-p-4 tw-bg-gray-100">
+  <!-- Vacancy Request Lists Header -->
+  <div class="tw-flex tw-justify-between tw-items-center tw-mb-4">
+    <h1 class="tw-text-xl tw-font-semibold">Vacancy Request Lists</h1>
+
+    <!-- Search Input -->
+    <input [(ngModel)]="search" placeholder="Search..." 
+      class="tw-border tw-rounded tw-px-3 tw-py-2 tw-w-64 tw-text-sm" 
+      (input)="filterVacancyList()" />
+  </div>
+
+  <!-- Table Container -->
+  <div class="tw-overflow-x-auto tw-w-full">
+    <table class="tw-w-full tw-text-sm tw-border-collapse tw-shadow-md tw-rounded-lg tw-border tw-border-gray-300">
+      <thead>
+        <tr class="tw-bg-gray-200 tw-text-gray-700">
+          <th class="tw-px-3 tw-py-2"><input type="checkbox" /></th>
+          <th class="tw-px-3 tw-py-2">Department</th>
+          <th class="tw-px-3 tw-py-2">Request Date</th>
+          <th class="tw-px-3 tw-py-2">Justification / Remarks</th>
+          <th class="tw-px-3 tw-py-2">Attachment</th>
+          <th class="tw-px-3 tw-py-2">Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let row of paginatedVacancyList" class="tw-border-b">
+          <td class="tw-px-3 tw-py-2"><input type="checkbox" /></td>
+          <td class="tw-px-3 tw-py-2">{{ row.department }}</td>
+          <td class="tw-px-3 tw-py-2">{{ row.requestDate }}</td>
+          <td class="tw-px-3 tw-py-2">{{ row.remarks }}</td>
+          <td class="tw-px-3 tw-py-2">
+            <a class="tw-text-blue-700 hover:tw-underline">{{ row.attachment }}</a>
+          </td>
+          <td class="tw-px-3 tw-py-2 tw-flex tw-gap-2">
+            <!-- View Icon (Eye) -->
+            <button class="tw-text-green-600 hover:tw-text-green-800" (click)="viewDetails(row)">
+              <svg xmlns="http://www.w3.org/2000/svg" class="tw-h-5 tw-w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12c0-1.657-1.343-3-3-3s-3 1.343-3 3 1.343 3 3 3 3-1.343 3-3z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.905 5 12 5c4.095 0 8.268 2.943 9.542 7-1.274 4.057-5.447 7-9.542 7-4.095 0-8.268-2.943-9.542-7z" />
+              </svg>
+            </button>
+
+            <!-- Edit Icon (Pencil) -->
+            <button class="tw-text-yellow-600 hover:tw-text-yellow-800" (click)="editRow(row)">
+              <svg xmlns="http://www.w3.org/2000/svg" class="tw-h-5 tw-w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 17l-3 3 1 1 3-3m1-5l2-2m0 0L9 3l-2 2-5 5-1 7 7-1 5-5 2-2z" />
+              </svg>
+            </button>
+
+            <!-- Delete Icon (Trash Bin) -->
+            <button class="tw-text-red-600 hover:tw-text-red-800" (click)="deleteRow(row)">
+              <svg xmlns="http://www.w3.org/2000/svg" class="tw-h-5 tw-w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Pagination Controls -->
+  <div class="tw-flex tw-justify-between tw-items-center tw-mt-4">
+    <div class="tw-text-sm">Showing {{ (currentPage - 1) * itemsPerPage + 1 }} to {{ currentPage * itemsPerPage }} of {{ filteredVacancyList.length }} entries</div>
+    <div>
+      <button (click)="previousPage()" 
+        [disabled]="currentPage === 1" 
+        class="tw-bg-gray-200 tw-text-gray-700 tw-px-4 tw-py-2 tw-rounded hover:tw-bg-gray-300">
+        Previous
+      </button>
+      <button (click)="nextPage()" 
+        [disabled]="currentPage * itemsPerPage >= filteredVacancyList.length" 
+        class="tw-bg-gray-200 tw-text-gray-700 tw-px-4 tw-py-2 tw-rounded hover:tw-bg-gray-300">
+        Next
+      </button>
+    </div>
+  </div>
+</div>

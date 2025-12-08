@@ -27,6 +27,10 @@ import { AuditorLeaveApprovalComponent } from './pages/bina/auditor-leave-approv
 import { DepartmentHeadLeaveApprovalComponent } from './pages/bina/department-head-leave-approval/department-head-leave-approval.component';
 import { DeparmentHeadLeaveManagementComponent } from './pages/bina/deparment-head-leave-management/deparment-head-leave-management.component';
 import { DepartmentHeadTourApprovalComponent } from './pages/bina/department-head-tour-approval/department-head-tour-approval.component';
+import { VacancyRequestApprovalComponent } from './pages/recruitment/vacancy-request-approval/vacancy-request-approval.component';
+import { VacancyRequestViewComponent } from './pages/recruitment/vacancy-request-view/vacancy-request-view.component';
+import { InterviewCommitteComponent } from './pages/recruitment/interview-committe/interview-committe.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 
 @NgModule({
@@ -51,7 +55,11 @@ import { DepartmentHeadTourApprovalComponent } from './pages/bina/department-hea
     AuditorLeaveApprovalComponent,
     DepartmentHeadLeaveApprovalComponent,
     DeparmentHeadLeaveManagementComponent,
-    DepartmentHeadTourApprovalComponent
+    DepartmentHeadTourApprovalComponent,
+    VacancyRequestApprovalComponent,
+    VacancyRequestViewComponent,
+    InterviewCommitteComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,

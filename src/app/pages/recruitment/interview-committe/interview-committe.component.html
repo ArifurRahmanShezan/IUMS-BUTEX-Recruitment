@@ -1,0 +1,245 @@
+<div class="container tw-grid lg:tw-grid-cols-12 tw-gap-4 tw-p-4 tw-w-full">
+
+    <!-- LEFT: Committee List -->
+    <div class="tw-col-span-12 lg:tw-col-span-8 tw-bg-white tw-rounded-lg tw-border tw-border-gray-300 tw-p-4">
+
+        <div class="tw-bg-gray-100 tw-border-b tw-border-gray-300 tw-py-2 tw-px-3 tw-mb-3 tw-rounded-t-md">
+            <h2 class="tw-text-sm tw-font-semibold">Committee Lists</h2>
+        </div>
+
+        <input type="text" [(ngModel)]="searchText" (input)="filterCommittees()" placeholder="Search..."
+            class="tw-text-xs tw-w-48 tw-border tw-border-gray-300 tw-rounded tw-px-2 tw-py-1 tw-mb-3" />
+
+        <div class="tw-overflow-auto tw-border tw-border-gray-300 tw-rounded-lg">
+            <table class="tw-min-w-full tw-text-xs">
+                <thead class="tw-bg-gray-100 tw-text-left">
+                    <tr>
+                        <th class="tw-px-3 tw-py-2">Committee Name</th>
+                        <th class="tw-px-3 tw-py-2">Validity From</th>
+                        <th class="tw-px-3 tw-py-2">Validity To</th>
+                        <th class="tw-px-3 tw-py-2">Status</th>
+                        <th class="tw-px-3 tw-py-2">Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let cm of filteredCommittees" class="tw-border-t tw-border-gray-200">
+                        <td class="tw-px-3 tw-py-2">{{ cm.name }}</td>
+                        <td class="tw-px-3 tw-py-2">{{ cm.validFrom }}</td>
+                        <td class="tw-px-3 tw-py-2">{{ cm.validTo }}</td>
+                        <td class="tw-px-3 tw-py-2">
+                            <span class="tw-text-green-600 tw-font-semibold">{{ cm.status }}</span>
+                        </td>
+                        <td class="tw-px-3 tw-py-2">
+                            <div class="tw-flex tw-space-x-2 tw-text-base">
+                                <i class="bi bi-eye tw-text-blue-600 tw-cursor-pointer" (click)="openViewModal(cm)"></i>
+                                <i class="bi bi-pencil tw-text-yellow-600 tw-cursor-pointer"></i>
+                                <i class="bi bi-trash tw-text-red-600 tw-cursor-pointer"
+                                    (click)="deleteCommittee(cm)"></i>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <!-- RIGHT: FORM -->
+    <div class="tw-col-span-12 lg:tw-col-span-4 tw-bg-white tw-border tw-border-gray-300 tw-rounded-lg tw-p-4">
+
+        <div class="tw-bg-gray-100 tw-border-b tw-border-gray-300 tw-py-2 tw-px-3 tw-mb-3 tw-rounded-t-md">
+            <h2 class="tw-text-sm tw-font-semibold">Create Committee</h2>
+        </div>
+
+        <!-- Wrap in form -->
+        <form #committeeForm="ngForm" novalidate>
+
+            <!-- Committee Name -->
+            <label class="tw-text-xs tw-font-medium">Committee Name *</label>
+            <input type="text" [(ngModel)]="form.name" name="name" #name="ngModel" required
+                class="tw-w-full tw-text-xs tw-border tw-border-gray-300 tw-rounded tw-px-2 tw-py-1 tw-mb-1"
+                placeholder="Enter Committee Name" />
+            <p *ngIf="name.invalid && name.touched" class="tw-text-red-600 tw-text-xs tw-mb-3">Committee Name is
+                required.</p>
+
+            <!-- Department -->
+            <label class="tw-text-xs tw-font-medium">Department *</label>
+            <select [(ngModel)]="form.department" name="department" #department="ngModel" required
+                class="tw-w-full tw-text-xs tw-border tw-border-gray-300 tw-rounded tw-px-2 tw-py-1 tw-mb-1">
+                <option disabled selected>Select Department</option>
+                <option *ngFor="let d of departments">{{ d }}</option>
+            </select>
+            <p *ngIf="department.invalid && department.touched" class="tw-text-red-600 tw-text-xs tw-mb-3">Department is
+                required.</p>
+
+            <!-- Designation -->
+            <label class="tw-text-xs tw-font-medium">Designation *</label>
+            <select [(ngModel)]="form.designation" name="designation" #designation="ngModel" required
+                class="tw-w-full tw-text-xs tw-border tw-border-gray-300 tw-rounded tw-px-2 tw-py-1 tw-mb-1">
+                <option disabled selected>Select Designation</option>
+                <option *ngFor="let des of designations">{{ des }}</option>
+            </select>
+            <p *ngIf="designation.invalid && designation.touched" class="tw-text-red-600 tw-text-xs tw-mb-3">Designation
+                is required.</p>
+
+            <!-- Validity -->
+            <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-2 tw-gap-3 tw-mb-3">
+                <div>
+                    <label class="tw-text-xs tw-font-medium">Validity From *</label>
+                    <input type="date" [(ngModel)]="form.validFrom" name="validFrom" #validFrom="ngModel" required
+                        class="tw-w-full tw-text-xs tw-border tw-border-gray-300 tw-rounded tw-px-2 tw-py-1 tw-mb-1" />
+                    <p *ngIf="validFrom.invalid && validFrom.touched" class="tw-text-red-600 tw-text-xs">Validity From
+                        is required.</p>
+                </div>
+                <div>
+                    <label class="tw-text-xs tw-font-medium">Validity To *</label>
+                    <input type="date" [(ngModel)]="form.validTo" name="validTo" #validTo="ngModel" required
+                        class="tw-w-full tw-text-xs tw-border tw-border-gray-300 tw-rounded tw-px-2 tw-py-1 tw-mb-1" />
+                    <p *ngIf="validTo.invalid && validTo.touched" class="tw-text-red-600 tw-text-xs">Validity To is
+                        required.</p>
+                </div>
+            </div>
+
+            <!-- Internal Members -->
+            <label class="tw-text-xs tw-font-medium">Internal Committee Member *</label>
+            <select [(ngModel)]="selectedInternalMember" name="internalSelect" #internalSelect="ngModel"
+                (change)="addInternalMember()" required
+                class="tw-w-full tw-text-xs tw-border tw-border-gray-300 tw-rounded tw-px-2 tw-py-1 tw-mb-1">
+                <option disabled selected>Select Committee Member</option>
+                <option *ngFor="let m of internalMembersList">{{ m }}</option>
+            </select>
+            <p *ngIf="form.internalMembers.length === 0 && internalSelect.touched"
+                class="tw-text-red-600 tw-text-xs tw-mb-3">At least one internal member is required.</p>
+
+            <div class="tw-flex tw-flex-wrap tw-gap-2 tw-my-2">
+                <span *ngFor="let m of form.internalMembers"
+                    class="tw-bg-gray-200 tw-text-xs tw-px-2 tw-py-1 tw-rounded">
+                    {{ m }}
+                    <i class="bi bi-x tw-ml-1 tw-cursor-pointer" (click)="removeInternalMember(m)"></i>
+                </span>
+            </div>
+
+            <!-- External Members -->
+            <hr class="tw-my-4" />
+            <h3 class="tw-text-xs tw-font-semibold tw-mb-2">External Member</h3>
+
+            <div *ngFor="let ext of form.externalMembers; let i=index"
+                class="tw-mb-4 tw-border tw-border-gray-200 tw-rounded-lg tw-p-3">
+
+                <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-2 tw-gap-3">
+
+                    <div>
+                        <label class="tw-text-xs tw-font-medium">Name *</label>
+                        <input type="text" [(ngModel)]="ext.name" name="extName{{i}}" #extName="ngModel" required
+                            class="tw-w-full tw-text-xs tw-border tw-border-gray-300 tw-rounded tw-px-2 tw-py-1 mb-1" />
+                        <p *ngIf="extName.invalid && extName.touched" class="tw-text-red-600 tw-text-xs">Name is
+                            required.</p>
+                    </div>
+
+                    <div>
+                        <label class="tw-text-xs tw-font-medium">Designation *</label>
+                        <input type="text" [(ngModel)]="ext.designation" name="extDesig{{i}}" #extDesig="ngModel"
+                            required
+                            class="tw-w-full tw-text-xs tw-border tw-border-gray-300 tw-rounded tw-px-2 tw-py-1 mb-1" />
+                        <p *ngIf="extDesig.invalid && extDesig.touched" class="tw-text-red-600 tw-text-xs">Designation
+                            is required.</p>
+                    </div>
+
+                    <div>
+                        <label class="tw-text-xs tw-font-medium">Department *</label>
+                        <input type="text" [(ngModel)]="ext.department" name="extDept{{i}}" #extDept="ngModel" required
+                            class="tw-w-full tw-text-xs tw-border tw-border-gray-300 tw-rounded tw-px-2 tw-py-1 mb-1" />
+                        <p *ngIf="extDept.invalid && extDept.touched" class="tw-text-red-600 tw-text-xs">Department is
+                            required.</p>
+                    </div>
+
+                    <div>
+                        <label class="tw-text-xs tw-font-medium">Mobile *</label>
+                        <input type="text" [(ngModel)]="ext.mobile" name="extMobile{{i}}" #extMobile="ngModel" required
+                            class="tw-w-full tw-text-xs tw-border tw-border-gray-300 tw-rounded tw-px-2 tw-py-1 mb-1" />
+                        <p *ngIf="extMobile.invalid && extMobile.touched" class="tw-text-red-600 tw-text-xs">Mobile is
+                            required.</p>
+                    </div>
+
+                    <div>
+                        <label class="tw-text-xs tw-font-medium">Email</label>
+                        <input type="email" [(ngModel)]="ext.email"
+                            class="tw-w-full tw-text-xs tw-border tw-border-gray-300 tw-rounded tw-px-2 tw-py-1" />
+                    </div>
+
+                    <div>
+                        <label class="tw-text-xs tw-font-medium">Address</label>
+                        <input type="text" [(ngModel)]="ext.address"
+                            class="tw-w-full tw-text-xs tw-border tw-border-gray-300 tw-rounded tw-px-2 tw-py-1" />
+                    </div>
+
+                </div>
+
+                <button class="tw-text-red-600 tw-text-xs tw-mt-2" (click)="removeExternalMember(i)">Remove</button>
+
+            </div>
+
+            <button class="tw-text-xs tw-bg-blue-900 tw-text-white tw-px-3 tw-py-1 tw-rounded mb-4"
+                (click)="addExternalMember()">+ Add More</button>
+
+            <!-- Submit -->
+            <button class="tw-bg-blue-900 tw-text-white tw-w-full tw-rounded-md tw-py-2 tw-text-sm hover:tw-bg-blue-800"
+                (click)="submitForm(committeeForm)">
+                Submit
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <div *ngIf="showViewModal"
+        class="tw-fixed tw-inset-0 tw-bg-black/40 tw-flex tw-items-center tw-justify-center tw-z-50">
+
+        <div class="tw-bg-white tw-rounded-xl tw-w-[90%] md:tw-w-[600px] tw-p-6 tw-shadow-xl tw-relative">
+
+            <!-- Header -->
+            <div class="tw-flex tw-justify-between tw-items-center tw-mb-4">
+                <h2 class="tw-text-base tw-font-semibold">Committee Overview</h2>
+
+                <button (click)="closeViewModal()" class="tw-text-red-600 hover:tw-text-red-800 tw-text-lg">
+                    <i class="bi bi-x-circle"></i>
+                </button>
+            </div>
+
+            <div class="tw-text-sm tw-leading-6">
+                <p><strong>Committee Name:</strong> {{ selectedCommittee?.name }}</p>
+                <p><strong>Department:</strong> {{ selectedCommittee?.department }}</p>
+                <p><strong>Designation:</strong> {{ selectedCommittee?.designation }}</p>
+                <p>
+                    <strong>Validity Period:</strong>
+                    From {{ selectedCommittee?.validFrom }} to {{ selectedCommittee?.validTo }}
+                </p>
+
+                <br>
+                <!-- Internal Members -->
+                <p class="tw-font-semibold tw-underline">Internal Committee Members</p>
+                <ul class="tw-list-disc tw-ml-5">
+                    <li *ngFor="let m of selectedCommittee?.internalMembers">{{ m }}</li>
+                </ul>
+
+                <br>
+                <!-- External Members -->
+                <p class="tw-font-semibold tw-mb-1 tw-underline">External Member Details</p>
+
+                <div *ngFor="let ext of selectedCommittee?.externalMembers">
+                    <p><strong>Name:</strong> {{ ext.name }}</p>
+                    <p><strong>Designation:</strong> {{ ext.designation }}</p>
+                    <p><strong>Department/Organization:</strong> {{ ext.department }}</p>
+                    <p><strong>Mobile Number:</strong> {{ ext.mobile }}</p>
+                    <p><strong>Email:</strong> {{ ext.email }}</p>
+                    <p><strong>Address:</strong> {{ ext.address }}</p>
+                    <hr class="tw-my-3">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

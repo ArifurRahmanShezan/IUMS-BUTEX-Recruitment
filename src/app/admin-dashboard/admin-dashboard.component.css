@@ -1,0 +1,6 @@
+/* Mostly handled by Tailwind; keep minimal custom styles */
+
+:host {
+  display: block;
+  width: 100%;
+}

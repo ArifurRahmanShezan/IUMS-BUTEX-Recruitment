@@ -1,0 +1,140 @@
+<div class="tw-bg-white tw-w-full tw-p-4 tw-rounded-md tw-border tw-border-gray-200">
+
+    <!-- Page Title -->
+    <div class="tw-bg-gray-100 tw-border-b tw-border-gray-300 tw-py-2 tw-px-3 tw-mb-3 tw-rounded-t-md">
+        <h2 class="tw-text-sm tw-font-semibold">Vacancy Request Lists View</h2>
+    </div>
+
+    <!-- Department Name -->
+    <div class="tw-text-xs tw-mb-1">
+        <span class="tw-font-semibold">Department Name:</span>
+        {{ department }}
+    </div>
+
+    <!-- Justification -->
+    <div class="tw-text-xs tw-leading-4 tw-mb-3">
+        <span class="tw-font-semibold">Justification / Remarks:</span>
+        {{ justification }}
+    </div>
+
+    <!-- Request Date -->
+    <div class="tw-text-xs tw-mb-2">
+        <span class="tw-font-semibold">Request Date:</span>
+        {{ date }}
+    </div>
+
+    <!-- Attachment -->
+    <div class="tw-text-xs tw-mb-4">
+        <span class="tw-font-semibold">Attachment:</span>
+        <a href="assets/JD-Professor.pdf" class="tw-text-blue-600 tw-underline">
+            JD-Professor.pdf
+        </a>
+    </div>
+
+    <!-- Search -->
+    <div class="tw-w-64 tw-relative tw-mb-3">
+        <i class="bi bi-search tw-absolute tw-left-2 tw-top-1.5 tw-text-gray-500 tw-text-xs"></i>
+        <input type="text" placeholder="Search..." [(ngModel)]="searchText" (input)="filterTable()"
+            class="tw-text-xs tw-w-full tw-pl-6 tw-pr-2 tw-py-1 tw-border tw-border-gray-300 tw-rounded focus:tw-border-blue-500" />
+    </div>
+
+    <!-- Data Table -->
+    <div class="tw-border tw-border-gray-300 tw-rounded-md tw-overflow-auto">
+        <table class="tw-min-w-full tw-text-xs">
+            <thead class="tw-bg-gray-100">
+                <tr class="tw-text-left tw-border-b tw-border-gray-300">
+                    <th class="tw-px-3 tw-py-2">Designation</th>
+                    <th class="tw-px-3 tw-py-2">Proposed</th>
+                    <th class="tw-px-3 tw-py-2">Current</th>
+                    <th class="tw-px-3 tw-py-2">UGC Approved</th>
+                    <th class="tw-px-3 tw-py-2">Required</th>
+                    <th class="tw-px-3 tw-py-2">HR Director</th>
+                    <th class="tw-px-3 tw-py-2">Registrar</th>
+                    <th class="tw-px-3 tw-py-2">VC</th>
+                    <th class="tw-px-3 tw-py-2">Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let row of filteredRequests" class="tw-border-t tw-border-gray-200">
+
+                    <td class="tw-px-3 tw-py-2">{{ row.designation }}</td>
+                    <td class="tw-px-3 tw-py-2">{{ row.proposed }}</td>
+                    <td class="tw-px-3 tw-py-2">{{ row.current }}</td>
+                    <td class="tw-px-3 tw-py-2">{{ row.ugcApproved }}</td>
+                    <td class="tw-px-3 tw-py-2">{{ row.required }}</td>
+
+                    <td class="tw-px-3 tw-py-2">
+                        <span class="tw-text-red-600">{{ row.hrDirectorStatus }}</span>
+                    </td>
+
+                    <td class="tw-px-3 tw-py-2">
+                        <span class="tw-text-red-600">{{ row.registrarStatus }}</span>
+                    </td>
+
+                    <td class="tw-px-3 tw-py-2">
+                        <span class="tw-text-red-600">{{ row.vcStatus }}</span>
+                    </td>
+
+                    <!-- Actions -->
+                    <td class="tw-px-3 tw-py-2">
+                        <div class="tw-flex tw-items-center tw-space-x-2">
+
+                            <button (click)="approve(row)" class="tw-text-green-600 hover:tw-text-green-800">
+                                <i class="bi bi-check-circle tw-text-base"></i>
+                            </button>
+
+                            <button (click)="reject(row)" class="tw-text-red-600 hover:tw-text-red-800">
+                                <i class="bi bi-x-circle tw-text-base"></i>
+                            </button>
+
+                        </div>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<!-- Reject Reason Modal -->
+<div
+    *ngIf="showReasonModal"
+    class="tw-fixed tw-inset-0 tw-flex tw-items-center tw-justify-center tw-bg-black/40 tw-z-50"
+>
+    <div class="tw-bg-white tw-rounded-xl tw-w-[650px] tw-p-6 tw-shadow-xl tw-relative">
+
+        <!-- Header -->
+        <div class="tw-flex tw-justify-between tw-items-center tw-mb-4">
+            <h2 class="tw-text-base tw-font-semibold">Reason</h2>
+
+            <button (click)="closeReasonModal()"
+                class="tw-text-red-600 hover:tw-text-red-800 tw-text-lg">
+                <i class="bi bi-x-circle"></i>
+            </button>
+        </div>
+
+        <!-- Label -->
+        <label class="tw-text-sm tw-font-medium tw-mb-2 tw-block">
+            Reason <span class="tw-text-red-500">*</span>
+        </label>
+
+        <!-- Textarea -->
+        <textarea
+            [(ngModel)]="reasonText"
+            class="tw-w-full tw-h-32 tw-border tw-border-gray-300 tw-rounded-md tw-text-sm tw-p-3 focus:tw-border-blue-500"
+            placeholder="Enter Reason"
+        ></textarea>
+
+        <!-- Submit Button -->
+        <div class="tw-text-center tw-mt-6">
+            <button
+                (click)="submitReason()"
+                class="tw-bg-blue-900 tw-text-white tw-text-sm tw-px-10 tw-py-2 tw-rounded-md hover:tw-bg-blue-800"
+            >
+                Submit
+            </button>
+        </div>
+    </div>
+</div>

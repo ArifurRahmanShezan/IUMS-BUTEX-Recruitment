@@ -20,6 +20,10 @@ import { AuditorLeaveApprovalComponent } from './pages/bina/auditor-leave-approv
 import { DepartmentHeadLeaveApprovalComponent } from './pages/bina/department-head-leave-approval/department-head-leave-approval.component';
 import { DeparmentHeadLeaveManagementComponent } from './pages/bina/deparment-head-leave-management/deparment-head-leave-management.component';
 import { DepartmentHeadTourApprovalComponent } from './pages/bina/department-head-tour-approval/department-head-tour-approval.component';
+import { VacancyRequestApprovalComponent } from './pages/recruitment/vacancy-request-approval/vacancy-request-approval.component';
+import { VacancyRequestViewComponent } from './pages/recruitment/vacancy-request-view/vacancy-request-view.component';
+import { InterviewCommitteComponent } from './pages/recruitment/interview-committe/interview-committe.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 // import { LeaveApprovalComponent } from './pages/bina/leave-approval/leave-approval.component';
 
 const routes: Routes = [
@@ -91,34 +95,50 @@ const routes: Routes = [
     path: 'hr-dashboard',
     component: HrDashboardComponent
   },
+  {
+    path: 'vacancy-req-approval',
+    component: VacancyRequestApprovalComponent
+  },
+  {
+    path: 'vacancy-req-view',
+    component: VacancyRequestViewComponent
+  },
+  {
+    path: 'interview-committe',
+    component: InterviewCommitteComponent
+  },
+  {
+    path: 'admin',
+    component: AdminDashboardComponent
+  },
 
   {
-    path:'bina',
-    children:[
+    path: 'bina',
+    children: [
       {
-    path: 'leave-approval',
-    component:LeaveApprovalComponent
-  },
-  {
-    path: 'auditor-leave-approval',
-    component:AuditorLeaveApprovalComponent
-  },
-  {
-    path: 'department-head-leave-approval',
-    component:DepartmentHeadLeaveApprovalComponent
-  },
-  {
-    path: 'deparment-head-leave-management',
-    component:DeparmentHeadLeaveManagementComponent
-  },
-  {
-    path:'depatment-head-tour-approval',
-    component:DepartmentHeadTourApprovalComponent
-  }
+        path: 'leave-approval',
+        component: LeaveApprovalComponent
+      },
+      {
+        path: 'auditor-leave-approval',
+        component: AuditorLeaveApprovalComponent
+      },
+      {
+        path: 'department-head-leave-approval',
+        component: DepartmentHeadLeaveApprovalComponent
+      },
+      {
+        path: 'deparment-head-leave-management',
+        component: DeparmentHeadLeaveManagementComponent
+      },
+      {
+        path: 'depatment-head-tour-approval',
+        component: DepartmentHeadTourApprovalComponent
+      }
     ]
   },
 
-  
+
 ];
 
 @NgModule({
